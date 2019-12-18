@@ -102,24 +102,95 @@ ID_EXE ID_EXE(
   .EXE_RegWrite(EXE_RegWrite)
 );
 
+
+///////////////////////////////////////////////
+// TODO
+
+
 EXE_stage EXE_stage(
   //input
-  .RegDst(EXE_RegDst),
-  .read_data1(ID_read_data1),
-  .read_data2(ID_read_data2),
-  .opcode(EXE_opcode),
-  .rd_addr(EXE_rd_addr),
-  .rt_addr(EXE_rt_addr),
-  .shamt(EXE_shamt),
-  .funct(EXE_funct),
-  .immd(EXE_immd),
-  .ALUOp(EXE_ALUOp),
-  .ALUSrc(EXE_ALUSrc),
-  //output
-  .write_addr(EXE_write_addr),
-  .alu_result(EXE_alu_result),
-  .alu_overflow(EXE_alu_overflow),
-  .zero(EXE_zero)
+	.RegDst(EXE_RegDst),
+	.read_data1(ID_read_data1),
+	.read_data2(ID_read_data2),
+	.opcode(EXE_opcode),
+	.rd_addr(EXE_rd_addr),
+	.rt_addr(EXE_rt_addr),
+	.shamt(EXE_shamt),
+	.funct(EXE_funct),
+	.immd(EXE_immd),
+	.ALUOp(EXE_ALUOp),
+	.ALUSrc(EXE_ALUSrc),
+	//output
+	.write_addr(EXE_write_addr),	// register addr
+	.alu_result(EXE_alu_result),
+	.alu_overflow(EXE_alu_overflow),
+	.zero(EXE_zero),
+	.pc_counter_o(EXE_pc_counter),
+	.reg_write_enable(EXE_reg_write_enable) // low active???
+);
+
+EX_MEM EX_MEM(
+	// input
+	.pc_counter_i(EXE_pc_counter),
+	.alu_result(EXE_alu_result),
+	.wirte_enable(wirte_enable),	// low activa for sram
+  	.write_addr(EXE_write_addr),	// register addr
+  	.zero_i(EXE_zero),
+	.reg_write_enable_i(EXE_reg_write_enable) // low active???
+
+	// output
+	.alu_result(EX_MEM_pc_counter),
+	.mem_wirte_enable(),	// low activa
+	.PC_counter_o(EXE_pc_counter),
+  	.MEM_write_addr(EXE_write_addr), // register addr
+	.PC_counter_o(PC_counter_o),
+  	.zero_o(EX_MEM_zero),
+	.reg_write_enable_o(EX_MEM_reg_write_enable) // low active???
+);
+
+
+MEM_stage MEM_stage(
+	// input
+	.write_addr_i(write_addr), // register addr
+	.write_data(MEM_write_data),
+	.wirte_enable(MEM_wirte_enable_i),	// low activa
+	.alu_result_i(MEM_alu_result_i),
+  	.zero_o(MEM_zero)
+  	.reg_write_enable_i(EX_MEM_reg_write_enable),
+	// output
+	.mem_read_data(mem_read_data),
+	.alu_result_o(MEM_alu_result_o),
+	.write_addr_o(MEM_write_addr_o), // register addr
+  	.reg_write_enable_o(MEM_reg_write_enable)
+);
+
+MEM_WB_stage MEM_WB_stage(
+	// input
+	.alu_result_i(MEM_WB_alu_result),
+	.read_data_i(mem_read_data),
+	.wirte_enable_i(MEM_WB_MEM_wirte_enable_i),	// low activa
+	.write_addr_i(MEM_write_addr_o), // register addr
+	.reg_write_enable_i(MEM_reg_write_enable),
+	// output
+	.alu_result_o(MEM_WB_alu_result_o),
+	.read_data_o(MEM_WB_read_data),
+	.MEM_wirte_enable_i(MEM_WB_MEM_wirte_enable_i),	// low activa
+	.write_addr_o(MEM_WB_write_addr_o),
+	.reg_write_enable_i(MEM_WB_reg_write_enable),
+
+);
+
+WB_stage WB_stage(
+	// input
+	.alu_result(WB_alu_result),
+	.read_data(WB_read_data),
+	.MEM_wirte_enable_i(WB_MEM_wirte_enable_i),	// low activa
+	.write_addr_i(MEM_WB_write_addr_o),
+	.reg_write_enable_i
+	// output
+	.WB_write_back_data(WB_write_back_data),
+	.write_addr_o(WB_write_addr_o)
+	.reg_write_enable_o()
 );
 
 endmodule
