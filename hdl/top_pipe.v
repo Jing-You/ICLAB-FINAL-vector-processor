@@ -52,15 +52,15 @@ end
 top top0(
 	.clk(clk),
 	.rst_n(rst_n_d),
-        //input (icache input)
-        .boot_up(boot_up_d),
-        .boot_addr(boot_addr_d),
-        .boot_datai(boot_datai_d),
-        .boot_web(boot_web_d),
-        //output (peripheral write)
-        .peri_web(peri_web_pre),
-        .peri_addr(peri_addr_pre),
-        .peri_datao(peri_datao_pre)
+  //input (icache input)
+  .boot_up(boot_up_d),
+  .boot_addr(boot_addr_d),
+  .boot_datai(boot_datai_d),
+  .boot_web(boot_web_d),
+  //output (peripheral write)
+  .peri_web(peri_web_pre),
+  .peri_addr(peri_addr_pre),
+  .peri_datao(peri_datao_pre)
 );
 
 

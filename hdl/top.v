@@ -1,15 +1,15 @@
 module top(
 	clk,
 	rst_n,
-        //input (icache input)
-        boot_up,
-        boot_addr,
-        boot_datai,
-        boot_web,
-        //output (peripheral write)
-        peri_web,
-        peri_addr,
-        peri_datao
+	//input (icache input)
+	boot_up,
+	boot_addr,
+	boot_datai,
+	boot_web,
+	//output (peripheral write)
+	peri_web,
+	peri_addr,
+	peri_datao
 );
 
 
@@ -66,14 +66,16 @@ wire [1:0]EXE_ALUOp;
 wire EXE_ALUSrc;
 wire MEM_MemtoReg;
 wire EXE_alu_overflow;
-wire [31:0]write_data;
-wire [4:0]EXE_write_addr;
-wire [31:0]EXE_alu_result;
-wire [15:0]MEM_PC;
+wire [31:0] WB_write_back_data;
+wire [4:0] EXE_write_addr;
+wire [31:0] EXE_alu_result;
+wire [15:0] MEM_PC;
 
-wire [31:0]MEM_alu_result;
+wire [31:0] MEM_alu_result;
+wire [31:0] MEM_write_data;
 wire MEM_zero;
 wire MEM_branch;
+wire MEM_MemRead;
 wire [15:0]Branch_in;
 wire EXE_zero;
 wire PCSrc;
@@ -82,8 +84,7 @@ wire PC_run;
 wire [1:0] state,next_state;
 wire beq_enable;
 
-assign write_data = EXE_MemtoReg ? dsram_out : EXE_alu_result;		//select write back data from ALU or Data Memory
-assign PCSrc = EXE_zero & EXE_branch;
+assign PCSrc = MEM_zero & MEM_branch;
 
 //reset signal for all module (also reset when bootup), except PC
 wire rstn_system = rst_n & PC_run;
@@ -120,9 +121,9 @@ ID_stage ID_stage(
 	////////////////////////input///////////////////
 	.clk(clk),
 	.rst_n(rstn_system),
-	.MEM_RegWrite(WB_RegWrite),
-	.write_addr(EXE_write_addr),
-	.write_data(write_data),
+	.WB_RegWrite(WB_RegWrite),
+	.write_addr(WB_write_addr),
+	.write_data(WB_write_back_data),
 	.instn(ID_instn),
 	///////////////////////output//////////////////////
 	.read_data1(ID_read_data1),
@@ -143,7 +144,7 @@ ID_stage ID_stage(
 	.ALUSrc(ID_ALUSrc),
 	//Memory access stage control lines
 	.branch(ID_branch),
-	//.MemRead(ID_read),
+	.MemRead(ID_MemRead),
 	//.MemWrite(ID_write),
 	//Write-back stage control lines
 	.RegWrite(ID_RegWrite),
@@ -156,7 +157,6 @@ ID_stage ID_stage(
     .peri_web(peri_web),
     .peri_addr(peri_addr),
     .peri_datao(peri_datao)
-	.MemtoReg_o()
 );
 
 
@@ -177,13 +177,14 @@ ID_EXE ID_EXE(
 	//.ID_read_data2(ID_read_data2),
     //.ID_read(ID_read),
     //.ID_write(ID_write),
+	.ID_MemRead(ID_MemRead),
 	.ID_branch(ID_branch),
 	.ID_RegDst(ID_RegDst),
 	.ID_ALUOp(ID_ALUOp),
 	.ID_ALUSrc(ID_ALUSrc),
 	.ID_RegWrite(ID_RegWrite),
     .ID_MemtoReg(ID_MemtoReg),
-	.MemtoReg_i()
+	.MemtoReg_i(ID_MemtoReg)
 	//output
 	.EXE_PC(EXE_PC),
 	.EXE_opcode(EXE_opcode),
@@ -203,10 +204,10 @@ ID_EXE ID_EXE(
 	.EXE_ALUSrc(EXE_ALUSrc),
 	.EXE_RegWrite(EXE_RegWrite),
 	.EXE_MemtoReg(EXE_MemtoReg),
+	.EXE_MemRead(EXE_MemRead),
 	//beq
 	.state(state),
 	.next_state(next_state)
-	.MemtoReg_o()
 );
 
 EXE_stage EXE_stage(
@@ -226,7 +227,6 @@ EXE_stage EXE_stage(
 	.ALUOp(EXE_ALUOp),
     .ALUSrc(EXE_ALUSrc),
 	//output
-	.write_addr(EXE_write_addr),
 	.alu_result(EXE_alu_result),
 	.alu_overflow(EXE_alu_overflow),
 	.zero(EXE_zero),
@@ -237,71 +237,68 @@ EXE_stage EXE_stage(
 
 EX_MEM EX_MEM(
 	// input
+	.clk(clk),
+	.rst_n(rstn_system),
 	.PC_i(PC_out),
-	.RegWrite_i(),
-	.alu_result(EXE_alu_result),
+	.RegWrite_i(EXE_RegWrite),
+	.alu_result_i(EXE_alu_result),
 	.wirte_enable(wirte_enable),	// low activa for sram
-  	.write_addr(EXE_write_addr),	// register addr
-	.MemRead_i(),	// low activa
+  	.write_addr_i(EXE_write_addr),	// register addr
+	.MemRead_i(EX_MemRead),	// low activa
   	.zero_i(EXE_zero),
 	.reg_write_enable_i(EXE_reg_write_enable) // low active???
-	.MemtoReg_i()
+	.MemtoReg_i(EXE_MemtoReg)
+	.branch_i(EXE_branch),
 	// output
-	.RegWrite_o(),
-	.alu_result(EX_MEM_pc_counter),
-	.MemRead_o(),	// low activa
+	.RegWrite_o(MEM_RegWrite),
+	.alu_result_o(MEM_alu_result),
+	.MemRead_o(MEM_MemRead), // low activa
 	.PC_o(Branch_in),
-  	.write_addr(EXE_write_addr), // register addr
-  	.zero_o(EX_MEM_zero),
-	.reg_write_enable_o(EX_MEM_reg_write_enable) // low active???
-	.MemtoReg_o()
+  	.write_addr_o(MEM_write_addr), // register addr
+  	.zero_o(MEM_zero),
+	.reg_write_enable_o(EX_MEM_reg_write_enable), // low active???
+	.MemtoReg_o(MEM_MemtoReg),
+	.branch_o(MEM_branch)
 );
 
 
 MEM_stage MEM_stage(
 	// input
-	.RegWrite_i(),
-	.write_addr_i(MEM_write_addr), // register addr
+	.clk(clk),
+	.rst_n(rstn_system),
 	.write_data(MEM_write_data),
-	.MemRead(),	// low activa
-	.alu_result_i(MEM_alu_result_i),
-  	.zero_o(EX_MEM_zero)
-  	.reg_write_enable_i(EX_MEM_reg_write_enable),
-	.MemtoReg_i()
+	.MemRead(MEM_MemRead),	// low activa
+	.alu_result_i(MEM_alu_result),
+  	.zero_o(MEM_zero)
 	// output
-	.RegWrite_i(),
-	.mem_read_data(mem_read_data),
-	.alu_result_o(MEM_alu_result_o),
-	.write_addr_o(MEM_write_addr_o), // register addr
-  	.reg_write_enable_o(MEM_reg_write_enable)
-	.MemtoReg_o()
+	.mem_read_data(mem_read_data)
 );
 
 MEM_WB_stage MEM_WB_stage(
 	// input
-	.RegWrite_i(),
-	.alu_result_i(MEM_WB_alu_result),
+	.clk(clk),
+	.rst_n(rstn_system),
+	.RegWrite_i(MEM_RegWrite),
+	.alu_result_i(MEM_alu_result),
 	.read_data_i(mem_read_data),
-	.wirte_enable_i(MEM_WB_MEM_wirte_enable_i),	// low activa
-	.write_addr_i(MEM_write_addr_o), // register addr
-	.reg_write_enable_i(MEM_reg_write_enable),
-	.MemtoReg_i()
+	.write_addr_i(MEM_write_addr), // register addr
+	.MemtoReg_i(MEM_MemtoReg)
 	// output
-	.RegWrite_o(),
-	.alu_result_o(MEM_WB_alu_result_o),
+	.RegWrite_o(WB_RegWrite),
+	.alu_result_o(WB_alu_result),
 	.read_data_o(MEM_WB_read_data),
-	.MEM_wirte_enable_i(MEM_WB_MEM_wirte_enable_i),	// low activa
-	.write_addr_o(MEM_WB_write_addr_o),
-	.reg_write_enable_i(MEM_WB_reg_write_enable),
-	.MemtoReg_o()
+	.write_addr_o(WB_write_addr),
+	.MemtoReg_o(WB_MemtoReg)
 
 );
 
 WB_stage WB_stage(
 	// input
+	.clk(clk),
+	.rst_n(rstn_system),
 	.alu_result(WB_alu_result),
 	.read_data(WB_read_data),
-	.MemtoReg()
+	.MemtoReg(WB_MemtoReg)
 	.write_addr_i(MEM_WB_write_addr_o),
 	.reg_write_enable_i
 	// output

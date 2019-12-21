@@ -132,12 +132,12 @@ controller controller(
 
 
 //write peripheral memory if memory write address > 256
-wire peri_web = ~(MemWrite ? |instn[15:8] : 1'b0);
-wire [15:0] peri_addr  = ~peri_web ?   instn[15:0] : 16'b0;
-wire [15:0] peri_datao = ~peri_web ? sw_data[15:0] : 16'b0;
+// wire peri_web = ~(MemWrite ? |instn[15:8] : 1'b0);
+// wire [15:0] peri_addr  = ~peri_web ?   instn[15:0] : 16'b0;
+// wire [15:0] peri_datao = ~peri_web ? sw_data[15:0] : 16'b0;
 
 
-wire dcache_web = MemWrite ? ~peri_web : 1'b1;
+// wire dcache_web = MemWrite ? ~peri_web : 1'b1;
 
 /*
 dsram dcache(
