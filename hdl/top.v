@@ -73,6 +73,7 @@ wire [15:0] MEM_PC;
 
 wire [31:0] MEM_alu_result;
 wire [31:0] MEM_write_data;
+wire [31:0] mem_read_data;
 wire MEM_zero;
 wire MEM_branch;
 wire MEM_MemRead;
@@ -80,9 +81,10 @@ wire [15:0]Branch_in;
 wire EXE_zero;
 wire PCSrc;
 wire PC_run;
-
+wire [31:0] WB_read_data;
 wire [1:0] state,next_state;
 wire beq_enable;
+wire [4:0] WB_write_addr;
 
 assign PCSrc = MEM_zero & MEM_branch;
 
@@ -286,7 +288,7 @@ MEM_WB_stage MEM_WB_stage(
 	// output
 	.RegWrite_o(WB_RegWrite),
 	.alu_result_o(WB_alu_result),
-	.read_data_o(MEM_WB_read_data),
+	.read_data_o(WB_read_data),
 	.write_addr_o(WB_write_addr),
 	.MemtoReg_o(WB_MemtoReg)
 
@@ -299,11 +301,9 @@ WB_stage WB_stage(
 	.alu_result(WB_alu_result),
 	.read_data(WB_read_data),
 	.MemtoReg(WB_MemtoReg)
-	.write_addr_i(MEM_WB_write_addr_o),
 	.reg_write_enable_i
 	// output
 	.WB_write_back_data(WB_write_back_data),
-	.write_addr_o(WB_write_addr_o)
 );
 
 endmodule
