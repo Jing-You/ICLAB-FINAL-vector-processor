@@ -295,12 +295,9 @@ MEM_WB_stage MEM_WB_stage(
 
 WB_stage WB_stage(
 	// input
-	.clk(clk),
-	.rst_n(rstn_system),
 	.alu_result(WB_alu_result),
 	.read_data(WB_read_data),
 	.MemtoReg(WB_MemtoReg)
-	.reg_write_enable_i
 	// output
 	.WB_write_back_data(WB_write_back_data),
 );
