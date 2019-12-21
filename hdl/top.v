@@ -56,6 +56,7 @@ wire [4:0]EXE_rd_addr;
 wire [4:0]EXE_shamt;
 wire [5:0]EXE_funct;
 wire [31:0]EXE_immd;
+wire [15:0] PC_out;
 wire EXE_RegWrite;
 wire EXE_MemtoReg;
 wire [31:0]EXE_read_data1;
@@ -248,7 +249,6 @@ EX_MEM EX_MEM(
   	.write_addr_i(EXE_write_addr),	// register addr
 	.MemRead_i(EX_MemRead),	// low activa
   	.zero_i(EXE_zero),
-	.reg_write_enable_i(EXE_reg_write_enable) // low active???
 	.MemtoReg_i(EXE_MemtoReg)
 	.branch_i(EXE_branch),
 	// output
@@ -258,7 +258,6 @@ EX_MEM EX_MEM(
 	.PC_o(Branch_in),
   	.write_addr_o(MEM_write_addr), // register addr
   	.zero_o(MEM_zero),
-	.reg_write_enable_o(EX_MEM_reg_write_enable), // low active???
 	.MemtoReg_o(MEM_MemtoReg),
 	.branch_o(MEM_branch)
 );
