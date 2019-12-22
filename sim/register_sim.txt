@@ -10,7 +10,7 @@ r5 =         50 ,the answer is         208
 
 r6 =          0 ,the answer is          32
 
-r7 =          0 ,the answer is         208
+r7 =         20 ,the answer is         208
 
 r8 =          0 ,the answer is         243
 

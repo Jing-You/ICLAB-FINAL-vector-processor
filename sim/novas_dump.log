@@ -119,25 +119,25 @@ argv[3]=test_top.v
 argv[4]=../source/*.v
 argv[5]=+access+r
 121 profile - 100
-          CPU/Mem usage: 0.050 sys,  0.030 user,  235.34M sys,  0.00M vm
+          CPU/Mem usage: 0.040 sys,  0.030 user,  235.34M sys,  0.00M vm
 122 VC callback profile - scalar:0 vector:0
-123 Sun Dec 22 18:17:16 2019
+123 Sun Dec 22 19:32:37 2019
 124 pliAppInit
 125 pliAppMiscSet: New Sim Round
 126 LIBSSCORE=found /usr/cad/spring_soft/verdi/2012.01/share/PLI/IUS/LINUX64/libsscore_ius111.so through $LD_LIBRARY_PATH setting.
 127 argv[0]: lab7_presim.fsdb
 128 Catch signal 11. Stack trace follows:
-#0  0x00007f386c0a6c30 in __read_nocancel () at /lib64/libc.so.6
-#1  0x00007f386c0355a0 in __GI__IO_file_underflow () at /lib64/libc.so.6
-#2  0x00007f386c03652e in __GI__IO_default_uflow () at /lib64/libc.so.6
-#3  0x00007f386c02a4d4 in __GI__IO_getline_info () at /lib64/libc.so.6
-#4  0x00007f386c0293d6 in fgets () at /lib64/libc.so.6
-#5  0x00007f3861cf69f3 in ndpGetCallStack () at /usr/cad/spring_soft/verdi/2012.01/share/PLI/IUS/LINUX64/libsscore_ius111.so
-#6  0x00007f3861d23a20 in pliAppDbg_SigHandler () at /usr/cad/spring_soft/verdi/2012.01/share/PLI/IUS/LINUX64/libsscore_ius111.so
-#7  0x00007f3861cf64f6 in catchSignalCB () at /usr/cad/spring_soft/verdi/2012.01/share/PLI/IUS/LINUX64/libsscore_ius111.so
-#8  0x00007f386c38e370 in <signal handler called> () at /lib64/libpthread.so.0
-#9  0x0000000003dc5669 in  ()
-#10 0x0000000003dc5660 in  ()
+#0  0x00007f8520eb0c30 in __read_nocancel () at /lib64/libc.so.6
+#1  0x00007f8520e3f5a0 in __GI__IO_file_underflow () at /lib64/libc.so.6
+#2  0x00007f8520e4052e in __GI__IO_default_uflow () at /lib64/libc.so.6
+#3  0x00007f8520e344d4 in __GI__IO_getline_info () at /lib64/libc.so.6
+#4  0x00007f8520e333d6 in fgets () at /lib64/libc.so.6
+#5  0x00007f8516b009f3 in ndpGetCallStack () at /usr/cad/spring_soft/verdi/2012.01/share/PLI/IUS/LINUX64/libsscore_ius111.so
+#6  0x00007f8516b2da20 in pliAppDbg_SigHandler () at /usr/cad/spring_soft/verdi/2012.01/share/PLI/IUS/LINUX64/libsscore_ius111.so
+#7  0x00007f8516b004f6 in catchSignalCB () at /usr/cad/spring_soft/verdi/2012.01/share/PLI/IUS/LINUX64/libsscore_ius111.so
+#8  0x00007f8521198370 in <signal handler called> () at /lib64/libpthread.so.0
+#9  0x0000000003ea3669 in  ()
+#10 0x0000000003ea3660 in  ()
 #11 0x0000000000000000 in  ()
 129 Novas FSDB Dumper for IUS, Release 2012.01, Linux x86_64/64bit, 01/12/2012
 130 Copyright (C) 1996 - 2012 by SpringSoft, Inc.
@@ -164,7 +164,7 @@ argv[5]=+access+r
                  accu: 394 var,  194 idcode,  194 callback
             accu incr: 394 var,  194 idcode,  194 callback
 144 VC callback profile - scalar:0 vector:0
-145 Sun Dec 22 18:17:16 2019
+145 Sun Dec 22 19:32:38 2019
 146 fsdbDumpvars: profile - 
           CPU/Mem usage: 0.050 sys,  0.040 user,  256.77M sys,  0.00M vm
                    incr: 0.000 sys,  0.000 user,  1.05M sys,  0.00M vm
@@ -176,9 +176,9 @@ argv[5]=+access+r
                  accu: 394 var,  194 idcode,  194 callback
             accu incr: 0 var,  0 idcode,  0 callback
 147 VC callback profile - scalar:65 vector:129
-148 Sun Dec 22 18:17:16 2019
+148 Sun Dec 22 19:32:38 2019
 149 End of simulation at 1910000
-150 VC callback profile - scalar:566 vector:1489
-151 Sun Dec 22 18:17:16 2019
+150 VC callback profile - scalar:628 vector:1580
+151 Sun Dec 22 19:32:38 2019
 152 SimExit
 153 Sim process exit

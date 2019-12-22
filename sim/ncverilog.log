@@ -1,5 +1,5 @@
 ncverilog(64): 15.20-s039: (c) Copyright 1995-2017 Cadence Design Systems, Inc.
-TOOL:	ncverilog	15.20-s039: Started on Dec 22, 2019 at 18:17:15 CST
+TOOL:	ncverilog	15.20-s039: Started on Dec 22, 2019 at 19:32:36 CST
 ncverilog
 	-f sim_pre.f
 		test_top.v
@@ -38,7 +38,7 @@ r5 =         50 ,the answer is         208
 
 r6 =          0 ,the answer is          32
 
-r7 =          0 ,the answer is         208
+r7 =         20 ,the answer is         208
 
 r8 =          0 ,the answer is         243
 
@@ -49,4 +49,4 @@ r10 =          0 ,the answer is          35
 Simulation complete via $finish(1) at time 1910 NS + 0
 ./test_top.v:139 #(PERIOD) $finish;
 ncsim> exit
-TOOL:	ncverilog	15.20-s039: Exiting on Dec 22, 2019 at 18:17:16 CST  (total: 00:00:01)
+TOOL:	ncverilog	15.20-s039: Exiting on Dec 22, 2019 at 19:32:38 CST  (total: 00:00:02)
