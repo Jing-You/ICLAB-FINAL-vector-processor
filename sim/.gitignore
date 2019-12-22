@@ -1,0 +1,13 @@
+SLib.lib++
+Makefile
+novas.conf
+register_gate.txt
+lab7_gatesim.fsdb
+ncverilog.history 
+novas_dump.log 
+INCA_libs
+lab7_presim.fsdb
+ncverilog.log 
+nWaveLog
+top_pipe_syn.sdf.X
+

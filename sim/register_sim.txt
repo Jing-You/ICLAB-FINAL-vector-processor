@@ -1,0 +1,20 @@
+r1 =         15 ,the answer is          60
+
+r2 =          0 ,the answer is          70
+
+r3 =         20 ,the answer is         240
+
+r4 =         35 ,the answer is          35
+
+r5 =         50 ,the answer is         208
+
+r6 =          0 ,the answer is          32
+
+r7 =          0 ,the answer is         208
+
+r8 =          0 ,the answer is         243
+
+r9 =          0 ,the answer is         240
+
+r10 =          0 ,the answer is          35
+
