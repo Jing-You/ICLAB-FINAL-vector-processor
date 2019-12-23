@@ -1,20 +1,38 @@
-r1 =         15 ,the answer is          60
 
-r2 =          0 ,the answer is          70
+r1 =          2 ,the answer is          60
+
+r2 =         22 ,the answer is          70
 
 r3 =         20 ,the answer is         240
 
-r4 =         35 ,the answer is          35
+r4 =         22 ,the answer is          35
 
-r5 =         50 ,the answer is         208
+r5 =          0 ,the answer is         208
 
-r6 =          0 ,the answer is          32
+r6 =         14 ,the answer is          32
 
-r7 =         20 ,the answer is         208
+r7 =         28 ,the answer is         208
 
 r8 =          0 ,the answer is         243
 
-r9 =          0 ,the answer is         240
+r9 =         41 ,the answer is         240
 
-r10 =          0 ,the answer is          35
+r10 =         56 ,the answer is          35
+
+d1 =          x
+
+d2 =          x
+
+d3 =         22
+
+d4 =          x
+
+d5 =          x
+
+d6 =          x
+
+d7 =          x
+
+d8 =          x
+
 

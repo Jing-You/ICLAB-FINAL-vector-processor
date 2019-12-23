@@ -116,6 +116,14 @@ case(ALUOp)
 			alu_result_tmp = src2 >>> shamt;
 			zero = 1'b0;
 		end
+		else if(funct==`SW) begin
+			alu_result_tmp = src1 + shamt;
+			zero = 1'b0;
+		end
+		else if(funct==`LW) begin
+			alu_result_tmp = src1 + shamt;
+			zero = 1'b0;
+		end
 		else begin
 			alu_result_tmp = 32'd0;
 			zero = 1'b0;

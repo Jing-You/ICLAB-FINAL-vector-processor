@@ -24,5 +24,7 @@ always @ (posedge clk)
 
 always @ (data_out1)begin
 		out = data_out1;
+		// out = memory[addr];
 end
+
 endmodule

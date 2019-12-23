@@ -43,6 +43,7 @@ wire ID_RegDst;
 wire [1:0]ID_ALUOp;
 wire ID_ALUSrc;
 wire ID_branch;
+wire ID_MemWrite;
 wire ID_RegWrite;
 wire ID_MemtoReg;
 wire [15:0]ID_PC;
@@ -63,6 +64,7 @@ wire [31:0]EXE_read_data1;
 wire [31:0]EXE_read_data2;
 wire EXE_RegDst;
 wire EXE_branch;
+wire EXE_MemWrite;
 wire [1:0]EXE_ALUOp;
 wire EXE_ALUSrc;
 wire MEM_MemtoReg;
@@ -75,8 +77,10 @@ wire [15:0] MEM_PC;
 wire [31:0] MEM_alu_result;
 wire [31:0] MEM_write_data;
 wire [31:0] mem_read_data;
+wire [31:0] MEM_read_data2;
 wire MEM_zero;
 wire MEM_branch;
+wire MEM_MemWrite;
 wire MEM_MemRead;
 wire [15:0]Branch_in;
 wire EXE_zero;
@@ -148,7 +152,7 @@ ID_stage ID_stage(
 	//Memory access stage control lines
 	.branch(ID_branch),
 	// .MemRead(ID_MemRead),
-	//.MemWrite(ID_write),
+	.MemWrite(ID_MemWrite),
 	//Write-back stage control lines
 	.RegWrite(ID_RegWrite),
 	.MemtoReg(ID_MemtoReg),
@@ -179,7 +183,7 @@ ID_EXE ID_EXE(
 	//.ID_read_data1(ID_read_data1),
 	//.ID_read_data2(ID_read_data2),
     //.ID_read(ID_read),
-    //.ID_write(ID_write),
+    .ID_write(ID_MemWrite),
 	// .ID_MemRead(ID_MemRead),
 	.ID_branch(ID_branch),
 	.ID_RegDst(ID_RegDst),
@@ -196,7 +200,8 @@ ID_EXE ID_EXE(
 	.EXE_funct(EXE_funct),
 	.EXE_immd(EXE_immd),
 	//.EXE_read(),
-	//.EXE_write(),
+	.EXE_write(EXE_MemWrite),
+
 	//.EXE_read_data1(EXE_read_data1),
 	//.EXE_read_data2(EXE_read_data2),
 	.EXE_RegDst(EXE_RegDst),
@@ -243,19 +248,24 @@ EX_MEM EX_MEM(
 	.alu_result_i(EXE_alu_result),
 	.wirte_enable(wirte_enable),	// low activa for sram
   	.write_addr_i(EXE_write_addr),	// register addr
-	.MemRead_i(EX_MemRead),	// low activa
+	// .write_data_i(EXE_write_data),  // mem data
+	.write_data_i(ID_read_data2), // mem data
+	.MemRead_i(EXE_MemWrite),	// low activa
   	.zero_i(EXE_zero),
 	.MemtoReg_i(EXE_MemtoReg),
 	.branch_i(EXE_branch),
+	.read_data2_i(ID_read_data2),
 	// output
 	.RegWrite_o(MEM_RegWrite),
 	.alu_result_o(MEM_alu_result),
-	.MemRead_o(MEM_MemRead), // low activa
+	.MemRead_o(MEM_MemWrite), // low activa
 	.PC_o(Branch_in),
   	.write_addr_o(MEM_write_addr), // register addr
+	.write_data_o(MEM_write_data), // mem data
   	.zero_o(MEM_zero),
 	.MemtoReg_o(MEM_MemtoReg),
-	.branch_o(MEM_branch)
+	.branch_o(MEM_branch),
+	.read_data2_o(MEM_read_data2)
 );
 
 
@@ -264,7 +274,8 @@ MEM_stage MEM_stage(
 	.clk(clk),
 	.rst_n(rstn_system),
 	.write_data(MEM_write_data),
-	.MemRead(MEM_MemRead),	// low activa
+	.MemWrite(MEM_MemWrite),	// low activa
+
 	.alu_result_i(MEM_alu_result),
 	// output
 	.mem_read_data(mem_read_data)
@@ -291,7 +302,8 @@ MEM_WB_stage MEM_WB_stage(
 WB_stage WB_stage(
 	// input
 	.alu_result(WB_alu_result),
-	.read_data(WB_read_data),
+	// .read_data(WB_read_data), // no pipe
+	.read_data(mem_read_data),
 	.MemtoReg(WB_MemtoReg),
 	// output
 	.WB_write_back_data(WB_write_back_data)

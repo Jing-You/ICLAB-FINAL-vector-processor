@@ -26,7 +26,7 @@ module ID_stage(
 	//Memory access stage control lines
 	branch,
 	//MemRead,
-	//MemWrite,
+	MemWrite,
 	//Write-back stage control lines
 	RegWrite,
 	MemtoReg,
@@ -62,7 +62,7 @@ output   [1:0]ALUOp;
 output   ALUSrc;
 output   branch;
 // output   MemRead;
-//output   MemWrite;		
+output   MemWrite;		
 output   RegWrite;
 output   MemtoReg;
 output   [31:0]dsram_out;
