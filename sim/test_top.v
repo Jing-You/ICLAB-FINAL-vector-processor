@@ -176,6 +176,7 @@ $fdisplay(write_to,"r7 = %d ,the answer is %d\n",top_pipe_U0.top0.ID_stage.regfi
 $fdisplay(write_to,"r8 = %d ,the answer is %d\n",top_pipe_U0.top0.ID_stage.regfile.gpr[8],r8);
 $fdisplay(write_to,"r9 = %d ,the answer is %d\n",top_pipe_U0.top0.ID_stage.regfile.gpr[9],r9);
 $fdisplay(write_to,"r10 = %d ,the answer is %d\n",top_pipe_U0.top0.ID_stage.regfile.gpr[10],r10);
+
 $fdisplay(write_to,"d1 = %d\n",top_pipe_U0.top0.MEM_stage.dcache.memory[1]);
 $fdisplay(write_to,"d2 = %d\n",top_pipe_U0.top0.MEM_stage.dcache.memory[2]);
 $fdisplay(write_to,"d3 = %d\n",top_pipe_U0.top0.MEM_stage.dcache.memory[3]);

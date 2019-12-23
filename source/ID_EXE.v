@@ -14,6 +14,7 @@ module ID_EXE(
     ID_MemtoReg,
     //ID_read,
     ID_write,
+
 	ID_RegDst,
 	ID_branch,
 	ID_ALUOp,
@@ -75,6 +76,7 @@ output	reg EXE_RegWrite;
 output	reg EXE_MemtoReg;
 //output	reg EXE_read;
 output	reg EXE_write;
+
 output	reg EXE_branch;
 output	reg [1:0]EXE_ALUOp;
 output	reg EXE_ALUSrc;
@@ -99,6 +101,7 @@ always@(posedge clk) begin
 		EXE_MemtoReg <= 1'b0;
 		//EXE_read <= 1'b0;
 		EXE_write <= 1'b1;
+
 		EXE_branch <= 1'b0;
 		EXE_ALUOp <= 2'd0;
 		EXE_ALUSrc <= 1'b0;
@@ -118,6 +121,7 @@ always@(posedge clk) begin
 		EXE_MemtoReg <= ID_MemtoReg;
 		//EXE_read <= ID_read;
 		EXE_write <= ID_write;
+
 		EXE_branch <= ID_branch;
 		EXE_ALUOp <= ID_ALUOp;
 		EXE_ALUSrc <= ID_ALUSrc;

@@ -1,3 +1,4 @@
+
 r1 =          2 ,the answer is          60
 
 r2 =         22 ,the answer is          70
@@ -33,4 +34,5 @@ d6 =          x
 d7 =          x
 
 d8 =          x
+
 

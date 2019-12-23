@@ -9,6 +9,7 @@
 `define AND 	6'b10_0100
 `define OR  	6'b10_0101
 `define XOR 	6'b10_1000
+
 `define	SLT	    6'b10_1010
 `define ABS	    6'b10_1100
 `define SLL	    6'b00_0011
@@ -21,6 +22,7 @@
 `define SW      6'b10_1011
 `define BEQ	    6'b00_0100
 `define SET	    6'b00_0001
+
 
 
 

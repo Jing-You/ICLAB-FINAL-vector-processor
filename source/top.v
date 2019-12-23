@@ -201,6 +201,7 @@ ID_EXE ID_EXE(
 	.EXE_immd(EXE_immd),
 	//.EXE_read(),
 	.EXE_write(EXE_MemWrite),
+
 	//.EXE_read_data1(EXE_read_data1),
 	//.EXE_read_data2(EXE_read_data2),
 	.EXE_RegDst(EXE_RegDst),
@@ -274,6 +275,7 @@ MEM_stage MEM_stage(
 	.rst_n(rstn_system),
 	.write_data(MEM_write_data),
 	.MemWrite(MEM_MemWrite),	// low activa
+
 	.alu_result_i(MEM_alu_result),
 	// output
 	.mem_read_data(mem_read_data)

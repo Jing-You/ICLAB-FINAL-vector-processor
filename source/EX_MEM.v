@@ -8,22 +8,26 @@ module EX_MEM(
 	input wirte_enable,	// low activa for sram
   	input [4:0] write_addr_i,	// register addr
     input [31:0] write_data_i, // mem data
+
 	input MemRead_i,	// low activa
   	input zero_i,
 	input MemtoReg_i,
 	input branch_i,
     input read_data2_i,
+
 	// output
 	output reg RegWrite_o,
 	output reg [31:0] alu_result_o,
 	output reg MemRead_o, // high activa
 	output reg [15:0] PC_o,
   	output reg [4:0] write_addr_o, // register addr
+
     output reg [31:0] write_data_o, // mem data
   	output reg zero_o,
 	output reg MemtoReg_o,
 	output reg branch_o,
     output reg read_data2_o
+
 
 );
 always @(posedge clk) begin
@@ -38,6 +42,7 @@ always @(posedge clk) begin
         MemtoReg_o      <= 0;
         branch_o        <= 0;
         read_data2_o    <= 0;
+
     end
     else begin
         RegWrite_o      <= RegWrite_i;
@@ -50,6 +55,7 @@ always @(posedge clk) begin
         MemtoReg_o      <= MemtoReg_i;
         branch_o        <= branch_i;
         read_data2_o    <= read_data2_i;
+
     end
 end
 
