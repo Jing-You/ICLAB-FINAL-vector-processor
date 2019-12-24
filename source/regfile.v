@@ -187,11 +187,10 @@ always@(posedge clk) begin
 		read_data1<= 0;
 		read_data2<= 0;
 	end
-	/*else if(read) begin
-		read_data1 <= gpr[read_addr1];
-		read_data2 <= gpr[read_addr2];
-	end
-	*/
+	// else if(read) begin
+	// 	read_data1 <= gpr[read_addr1];
+	// 	read_data2 <= gpr[read_addr2];
+	// end
 	else if(write) begin
 		gpr[write_addr] <= write_data;
 		read_data1 <= gpr[read_addr1];

@@ -151,6 +151,8 @@ regfile regfile(
 	.rst_n(rst_n),
 	.read_data1(read_data1),
 	.read_data2(read_data2),
+	.read_addr1(rs_addr),
+	.read_addr2(rt_addr),
 	.write_addr(write_addr),
 	.write_data(write_data),
 	.write_data_v0(write_data_v0),
