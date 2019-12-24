@@ -10,4 +10,4 @@ lab7_presim.fsdb
 ncverilog.log 
 /nWaveLog/*
 top_pipe_syn.sdf.X
-
+/BSSLib.lib++/*

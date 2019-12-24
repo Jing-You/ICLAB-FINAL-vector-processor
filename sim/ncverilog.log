@@ -1,5 +1,5 @@
 ncverilog(64): 15.20-s039: (c) Copyright 1995-2017 Cadence Design Systems, Inc.
-TOOL:	ncverilog	15.20-s039: Started on Dec 24, 2019 at 02:28:19 CST
+TOOL:	ncverilog	15.20-s039: Started on Dec 24, 2019 at 16:24:37 CST
 ncverilog
 	-f sim_pre.f
 		test_top.v
@@ -28,11 +28,11 @@ ncsim: *W,RMEMAR: $readmem warning: address incremented out of range. Too many d
 
 r1 =          2 ,the answer is          60
 
-r2 =         23 ,the answer is          70
+r2 =         22 ,the answer is          70
 
-r3 =         21 ,the answer is         240
+r3 =         20 ,the answer is         240
 
-r4 =         23 ,the answer is          35
+r4 =         22 ,the answer is          35
 
 r5 =          0 ,the answer is         208
 
@@ -42,7 +42,7 @@ r7 =         28 ,the answer is         208
 
 r8 =          0 ,the answer is         243
 
-r9 =         42 ,the answer is         240
+r9 =         41 ,the answer is         240
 
 r10 =         56 ,the answer is          35
 
@@ -50,7 +50,7 @@ d1 =          x
 
 d2 =          x
 
-d3 =         23
+d3 =         22
 
 d4 =          x
 
@@ -65,4 +65,4 @@ d8 =          x
 Simulation complete via $finish(1) at time 1910 NS + 0
 ./test_top.v:139 #(PERIOD) $finish;
 ncsim> exit
-TOOL:	ncverilog	15.20-s039: Exiting on Dec 24, 2019 at 02:28:20 CST  (total: 00:00:01)
+TOOL:	ncverilog	15.20-s039: Exiting on Dec 24, 2019 at 16:24:38 CST  (total: 00:00:01)
