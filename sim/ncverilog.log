@@ -1,0 +1,125 @@
+ncverilog(64): 15.20-s039: (c) Copyright 1995-2017 Cadence Design Systems, Inc.
+TOOL:	ncverilog	15.20-s039: Started on Dec 24, 2019 at 16:18:36 CST
+ncverilog
+	-f sim_pre.f
+		test_top.v
+		../source/*.v
+		+access+r
+Recompiling... reason: file '../source/ID_stage.v' is newer than expected.
+	expected: Tue Dec 24 15:19:07 2019
+	actual:   Tue Dec 24 15:19:55 2019
+file: test_top.v
+show_register_value();
+                    |
+ncvlog: *W,TMTPAR (test_top.v,137|20): A task enable with no arguments must not include an empty set of parentheses [10.2.2 (IEEE Std 1364-2005)].  The compiler has ignored the parentheses.  Use 'nchelp ncvlog TMTPAR'  for further information.
+file: ../source/ID_stage.v
+	module worklib.ID_stage:v
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+regfile regfile(
+              |
+ncelab: *W,CUVWSP (../source/ID_stage.v,149|14): 1 output port was not connected:
+ncelab: (../source/regfile.v,42): vlen
+
+ID_EXE ID_EXE(
+            |
+ncelab: *W,CUVWSP (../source/top.v,269|12): 1 output port was not connected:
+ncelab: (../source/ID_EXE.v,27): EXE_opcode
+
+alu alu(
+      |
+ncelab: *W,CUVWSI (../source/EXE_stage.v,117|6): 1 input port was not connected:
+ncelab: (../source/alu.v,5): opcode
+
+EX_MEM EX_MEM(
+            |
+ncelab: *W,CUVWSI (../source/top.v,378|12): 1 input port was not connected:
+ncelab: (../source/EX_MEM.v,8): wirte_enable
+
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.ID_stage:v <0x5795ee56>
+			streams:   1, words:   747
+		worklib.regfile:v <0x46ea14cb>
+			streams: 101, words: 37569
+		worklib.test_top:v <0x0ae2a840>
+			streams:   9, words: 29755
+	Building instance specific data structures.
+	.VRegWrite(WB_VRegWrite),
+	                      |
+ncelab: *W,CSINFI (../source/ID_stage.v,184|23): implicit wire has no fanin (test_top.top_pipe_U0.top0.ID_stage.WB_VRegWrite).
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                18      17
+		Registers:             130     127
+		Scalar wires:           38       -
+		Vectored wires:        158       -
+		Always blocks:          26      24
+		Initial blocks:          5       5
+		Cont. assignments:      42      52
+		Pseudo assignments:      3       3
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.test_top:v
+Loading snapshot worklib.test_top:v .................... Done
+*Novas* Loading libsscore_ius111.so
+ncsim> source /usr/cad/cadence/INCISIV/cur/tools/inca/files/ncsimrc
+ncsim> run
+Novas FSDB Dumper for IUS, Release 2012.01, Linux x86_64/64bit, 01/12/2012
+Copyright (C) 1996 - 2012 by SpringSoft, Inc.
+***********************************************************************
+*  WARNING -                                                          *
+*  The simulator version is newer than the FSDB dumper version which  *
+*  may cause abnormal behavior. Please contact SpringSoft support at  *
+*  support@springsoft.com for assistance.                             *
+***********************************************************************
+*Novas* : Create FSDB file 'lab7_presim.fsdb'
+*Novas* : Begin traversing the scopes, layer (0).
+*Novas* : End of traversing.
+ncsim: *W,RMEMAR: $readmem warning: address incremented out of range. Too many data words read
+	at line 1 of file "instruction.txt". Current address: 45, address range: [0:44].
+            File: ./test_top.v, line = 57, pos = 31
+           Scope: test_top
+            Time: 0 FS + 0
+
+r1 =          2 ,the answer is          60
+
+r2 =         22 ,the answer is          70
+
+r3 =         20 ,the answer is         240
+
+r4 =         22 ,the answer is          35
+
+r5 =          0 ,the answer is         208
+
+r6 =         14 ,the answer is          32
+
+r7 =         28 ,the answer is         208
+
+r8 =          0 ,the answer is         243
+
+r9 =         41 ,the answer is         240
+
+r10 =         56 ,the answer is          35
+
+d1 =          x
+
+d2 =          x
+
+d3 =         22
+
+d4 =          x
+
+d5 =          x
+
+d6 =          x
+
+d7 =          x
+
+d8 =          x
+
+Simulation complete via $finish(1) at time 1910 NS + 0
+./test_top.v:139 #(PERIOD) $finish;
+ncsim> exit
+TOOL:	ncverilog	15.20-s039: Exiting on Dec 24, 2019 at 16:18:37 CST  (total: 00:00:01)

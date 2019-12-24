@@ -53,3 +53,8 @@ s52(24Dec2019:14:47:27):  ncverilog -f sim_pre.f
 s53(24Dec2019:14:47:52):  ncverilog -f sim_pre.f 
 s54(24Dec2019:14:49:22):  ncverilog -f sim_pre.f 
 s55(24Dec2019:14:53:00):  ncverilog -f sim_pre.f 
+s56(24Dec2019:15:36:03):  ncverilog -f sim_pre.f 
+s57(24Dec2019:15:38:48):  ncverilog -f sim_pre.f 
+s58(24Dec2019:15:42:36):  ncverilog -f sim_pre.f 
+s59(24Dec2019:16:16:42):  ncverilog -f sim_pre.f 
+s60(24Dec2019:16:18:36):  ncverilog -f sim_pre.f 

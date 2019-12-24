@@ -382,7 +382,6 @@ EX_MEM EX_MEM(
 	.PC_i(PC_out),
 	.RegWrite_i(EXE_RegWrite),
 	.alu_result_i(EXE_alu_result),
-	.wirte_enable(wirte_enable),	// low activa for sram
   	.write_addr_i(EXE_write_addr),	// register addr
 	// .write_data_i(EXE_write_data),  // mem data
 	.write_data_i(ID_read_data2), // mem data
@@ -391,8 +390,6 @@ EX_MEM EX_MEM(
 	.MemtoReg_i(EXE_MemtoReg),
 	.branch_i(EXE_branch),
 	.read_data2_i(ID_read_data2),
-
-
 	.alu_result_v0_i(EXE_alu_result_v0),
 	.alu_result_v1_i(EXE_alu_result_v1),
 	.alu_result_v2_i(EXE_alu_result_v2),
