@@ -13,8 +13,15 @@ module EX_MEM(
   	input zero_i,
 	input MemtoReg_i,
 	input branch_i,
-    input read_data2_i,
-
+    input [31:0] read_data2_i,
+    input [31:0] alu_result_v0_i,
+    input [31:0] alu_result_v1_i,
+    input [31:0] alu_result_v2_i,
+    input [31:0] alu_result_v3_i,
+    input [31:0] alu_result_v4_i,
+    input [31:0] alu_result_v5_i,
+    input [31:0] alu_result_v6_i,
+    input [31:0] alu_result_v7_i,
 	// output
 	output reg RegWrite_o,
 	output reg [31:0] alu_result_o,
@@ -26,7 +33,16 @@ module EX_MEM(
   	output reg zero_o,
 	output reg MemtoReg_o,
 	output reg branch_o,
-    output reg read_data2_o
+    output reg [31:0] read_data2_o,
+    output reg [31:0] alu_result_v0_o,
+    output reg [31:0] alu_result_v1_o,
+    output reg [31:0] alu_result_v2_o,
+    output reg [31:0] alu_result_v3_o,
+    output reg [31:0] alu_result_v4_o,
+    output reg [31:0] alu_result_v5_o,
+    output reg [31:0] alu_result_v6_o,
+    output reg [31:0] alu_result_v7_o
+
 
 
 );
@@ -42,7 +58,14 @@ always @(posedge clk) begin
         MemtoReg_o      <= 0;
         branch_o        <= 0;
         read_data2_o    <= 0;
-
+        alu_result_v0_o <= 0; 
+        alu_result_v1_o <= 0;
+        alu_result_v2_o <= 0;
+        alu_result_v3_o <= 0;
+        alu_result_v4_o <= 0;
+        alu_result_v5_o <= 0;
+        alu_result_v6_o <= 0;
+        alu_result_v7_o <= 0;
     end
     else begin
         RegWrite_o      <= RegWrite_i;
@@ -55,7 +78,14 @@ always @(posedge clk) begin
         MemtoReg_o      <= MemtoReg_i;
         branch_o        <= branch_i;
         read_data2_o    <= read_data2_i;
-
+        alu_result_v0_o <= alu_result_v0_i; 
+        alu_result_v1_o <= alu_result_v1_i;
+        alu_result_v2_o <= alu_result_v2_i;
+        alu_result_v3_o <= alu_result_v3_i;
+        alu_result_v4_o <= alu_result_v4_i;
+        alu_result_v5_o <= alu_result_v5_i;
+        alu_result_v6_o <= alu_result_v6_i;
+        alu_result_v7_o <= alu_result_v7_i;
     end
 end
 

@@ -1,0 +1,98 @@
+ncverilog(64): 15.20-s039: (c) Copyright 1995-2017 Cadence Design Systems, Inc.
+TOOL:	ncverilog	15.20-s039: Started on Dec 24, 2019 at 14:53:00 CST
+ncverilog
+	-f sim_pre.f
+		test_top.v
+		../source/*.v
+		+access+r
+Recompiling... reason: file '../source/EX_MEM.v' is newer than expected.
+	expected: Tue Dec 24 13:49:09 2019
+	actual:   Tue Dec 24 13:54:23 2019
+file: test_top.v
+show_register_value();
+                    |
+ncvlog: *W,TMTPAR (test_top.v,137|20): A task enable with no arguments must not include an empty set of parentheses [10.2.2 (IEEE Std 1364-2005)].  The compiler has ignored the parentheses.  Use 'nchelp ncvlog TMTPAR'  for further information.
+file: ../source/EX_MEM.v
+	module worklib.EX_MEM:v
+		errors: 0, warnings: 0
+file: ../source/top.v
+	module worklib.top:v
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+regfile regfile(
+              |
+ncelab: *W,CUVWSP (../source/ID_stage.v,149|14): 1 output port was not connected:
+ncelab: (../source/regfile.v,42): vlen
+
+regfile regfile(
+              |
+ncelab: *W,CUVWSI (../source/ID_stage.v,149|14): 2 input ports were not connected:
+ncelab: (../source/regfile.v,4): read_addr1
+ncelab: (../source/regfile.v,6): read_addr2
+
+ID_EXE ID_EXE(
+            |
+ncelab: *W,CUVWSP (../source/top.v,269|12): 1 output port was not connected:
+ncelab: (../source/ID_EXE.v,27): EXE_opcode
+
+alu alu(
+      |
+ncelab: *W,CUVWSI (../source/EXE_stage.v,117|6): 1 input port was not connected:
+ncelab: (../source/alu.v,5): opcode
+
+	$fsdbDumpfile("lab7_presim.fsdb");
+	            |
+ncelab: *W,MISSYST (./test_top.v,45|13): Unrecognized system task or function: $fsdbDumpfile (did not match built-in or user-defined names) [2.7.4(IEEE Std 1364-2001)].
+If item was defined in a shared-object library, the problem could be:
+libvpi.so: cannot open shared object file: No such file or directory or file is not valid ELFCLASS64 library.
+libpli.so: cannot open shared object file: No such file or directory or file is not valid ELFCLASS64 library..
+	$fsdbDumpvars;
+	            |
+ncelab: *W,MISSYST (./test_top.v,46|13): Unrecognized system task or function: $fsdbDumpvars (did not match built-in or user-defined names) [2.7.4(IEEE Std 1364-2001)].
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.EXE_stage:v <0x15530acb>
+			streams:   3, words:   717
+		worklib.EX_MEM:v <0x0cca712b>
+			streams:   3, words:  4972
+		worklib.ID_stage:v <0x5795ee56>
+			streams:   1, words:   747
+		worklib.MEM_WB_stage:v <0x4388212e>
+			streams:   3, words:  3575
+		worklib.alu:v <0x221c5856>
+			streams:   7, words:  6789
+		worklib.regfile:v <0x46ea14cb>
+			streams: 101, words: 37569
+		worklib.test_top:v <0x7f916234>
+			streams:   9, words: 29755
+		worklib.top:v <0x4fb2c3ce>
+			streams:   0, words:     0
+	Building instance specific data structures.
+	.wirte_enable(wirte_enable),	// low activa for sram
+	                         |
+ncelab: *W,CSINFI (../source/top.v,385|26): implicit wire has no fanin (test_top.top_pipe_U0.top0.wirte_enable).
+	.VRegWrite(WB_VRegWrite),
+	                      |
+ncelab: *W,CSINFI (../source/ID_stage.v,182|23): implicit wire has no fanin (test_top.top_pipe_U0.top0.ID_stage.WB_VRegWrite).
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                18      17
+		Registers:             130     127
+		Scalar wires:           38       -
+		Vectored wires:        160       -
+		Always blocks:          26      24
+		Initial blocks:          5       5
+		Cont. assignments:      42      52
+		Pseudo assignments:      3       3
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.test_top:v
+Loading snapshot worklib.test_top:v .................... Done
+	$fsdbDumpfile("lab7_presim.fsdb");
+	            |
+ncsim: *E,MSSYSTF (./test_top.v,45|13): User Defined system task or function ($fsdbDumpfile) registered during elaboration and used within the simulation has not been registered during simulation.
+	$fsdbDumpvars;
+	            |
+ncsim: *E,MSSYSTF (./test_top.v,46|13): User Defined system task or function ($fsdbDumpvars) registered during elaboration and used within the simulation has not been registered during simulation.
+TOOL:	ncverilog	15.20-s039: Exiting on Dec 24, 2019 at 14:53:01 CST  (total: 00:00:01)
