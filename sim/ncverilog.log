@@ -1,0 +1,68 @@
+ncverilog(64): 15.20-s039: (c) Copyright 1995-2017 Cadence Design Systems, Inc.
+TOOL:	ncverilog	15.20-s039: Started on Dec 24, 2019 at 02:28:19 CST
+ncverilog
+	-f sim_pre.f
+		test_top.v
+		../source/*.v
+		+access+r
+Loading snapshot worklib.test_top:v .................... Done
+*Novas* Loading libsscore_ius111.so
+ncsim> source /usr/cad/cadence/INCISIV/cur/tools/inca/files/ncsimrc
+ncsim> run
+Novas FSDB Dumper for IUS, Release 2012.01, Linux x86_64/64bit, 01/12/2012
+Copyright (C) 1996 - 2012 by SpringSoft, Inc.
+***********************************************************************
+*  WARNING -                                                          *
+*  The simulator version is newer than the FSDB dumper version which  *
+*  may cause abnormal behavior. Please contact SpringSoft support at  *
+*  support@springsoft.com for assistance.                             *
+***********************************************************************
+*Novas* : Create FSDB file 'lab7_presim.fsdb'
+*Novas* : Begin traversing the scopes, layer (0).
+*Novas* : End of traversing.
+ncsim: *W,RMEMAR: $readmem warning: address incremented out of range. Too many data words read
+	at line 1 of file "instruction.txt". Current address: 45, address range: [0:44].
+            File: ./test_top.v, line = 57, pos = 31
+           Scope: test_top
+            Time: 0 FS + 0
+
+r1 =          2 ,the answer is          60
+
+r2 =         23 ,the answer is          70
+
+r3 =         21 ,the answer is         240
+
+r4 =         23 ,the answer is          35
+
+r5 =          0 ,the answer is         208
+
+r6 =         14 ,the answer is          32
+
+r7 =         28 ,the answer is         208
+
+r8 =          0 ,the answer is         243
+
+r9 =         42 ,the answer is         240
+
+r10 =         56 ,the answer is          35
+
+d1 =          x
+
+d2 =          x
+
+d3 =         23
+
+d4 =          x
+
+d5 =          x
+
+d6 =          x
+
+d7 =          x
+
+d8 =          x
+
+Simulation complete via $finish(1) at time 1910 NS + 0
+./test_top.v:139 #(PERIOD) $finish;
+ncsim> exit
+TOOL:	ncverilog	15.20-s039: Exiting on Dec 24, 2019 at 02:28:20 CST  (total: 00:00:01)

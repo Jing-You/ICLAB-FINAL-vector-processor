@@ -13,12 +13,42 @@ module EXE_stage(
 	immd,
 	ALUOp,
     ALUSrc,
+
+
+	read_data_v1_0,
+	read_data_v1_1,
+	read_data_v1_2,
+	read_data_v1_3,
+	read_data_v1_4,
+	read_data_v1_5,
+	read_data_v1_6,
+	read_data_v1_7,
+	read_data_v2_0,
+	read_data_v2_1,
+	read_data_v2_2,
+	read_data_v2_3,
+	read_data_v2_4,
+	read_data_v2_5,
+	read_data_v2_6,
+	read_data_v2_7,
+
+
+
 	//output
 	write_addr,
 	alu_result,
 	alu_overflow,
 	zero,
-	PC_out
+	PC_out,
+
+	alu_result_v0,
+	alu_result_v1,
+	alu_result_v2,
+	alu_result_v3,
+	alu_result_v4,
+	alu_result_v5,
+	alu_result_v6,
+	alu_result_v7
     
 );
 
@@ -41,6 +71,32 @@ output signed [31:0]alu_result;
 output alu_overflow;
 output zero;
 output reg [15:0]PC_out;
+
+input [31:0] read_data_v1_0;
+input [31:0] read_data_v1_1;
+input [31:0] read_data_v1_2;
+input [31:0] read_data_v1_3;
+input [31:0] read_data_v1_4;
+input [31:0] read_data_v1_5;
+input [31:0] read_data_v1_6;
+input [31:0] read_data_v1_7;
+input [31:0] read_data_v2_0;
+input [31:0] read_data_v2_1;
+input [31:0] read_data_v2_2;
+input [31:0] read_data_v2_3;
+input [31:0] read_data_v2_4;
+input [31:0] read_data_v2_5;
+input [31:0] read_data_v2_6;
+input [31:0] read_data_v2_7;
+
+output [31:0] alu_result_v0;
+output [31:0] alu_result_v1;
+output [31:0] alu_result_v2;
+output [31:0] alu_result_v3;
+output [31:0] alu_result_v4;
+output [31:0] alu_result_v5;
+output [31:0] alu_result_v6;
+output [31:0] alu_result_v7;
 
 always@(*) begin
 	if(RegDst==1'b1) begin

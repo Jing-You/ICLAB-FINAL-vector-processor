@@ -91,6 +91,78 @@ wire [1:0] state,next_state;
 wire beq_enable;
 wire [4:0] WB_write_addr;
 
+
+wire [31:0] ID_read_data_v1_0;
+wire [31:0] ID_read_data_v1_1;
+wire [31:0] ID_read_data_v1_2;
+wire [31:0] ID_read_data_v1_3;
+wire [31:0] ID_read_data_v1_4;
+wire [31:0] ID_read_data_v1_5;
+wire [31:0] ID_read_data_v1_6;
+wire [31:0] ID_read_data_v1_7;
+wire [31:0] ID_read_data_v2_0;
+wire [31:0] ID_read_data_v2_1;
+wire [31:0] ID_read_data_v2_2;
+wire [31:0] ID_read_data_v2_3;
+wire [31:0] ID_read_data_v2_4;
+wire [31:0] ID_read_data_v2_5;
+wire [31:0] ID_read_data_v2_6;
+wire [31:0] ID_read_data_v2_7;
+
+
+wire [31:0] EXE_read_data_v2_0;
+wire [31:0] EXE_read_data_v2_1;
+wire [31:0] EXE_read_data_v2_2;
+wire [31:0] EXE_read_data_v2_3;
+wire [31:0] EXE_read_data_v2_4;
+wire [31:0] EXE_read_data_v2_5;
+wire [31:0] EXE_read_data_v2_6;
+wire [31:0] EXE_read_data_v2_7;
+wire [31:0] EXE_read_data_v1_0;
+wire [31:0] EXE_read_data_v1_1;
+wire [31:0] EXE_read_data_v1_2;
+wire [31:0] EXE_read_data_v1_3;
+wire [31:0] EXE_read_data_v1_4;
+wire [31:0] EXE_read_data_v1_5;
+wire [31:0] EXE_read_data_v1_6;
+wire [31:0] EXE_read_data_v1_7;
+
+wire [31:0] WB_write_data_v0;
+wire [31:0] WB_write_data_v1;
+wire [31:0] WB_write_data_v2;
+wire [31:0] WB_write_data_v3;
+wire [31:0] WB_write_data_v4;
+wire [31:0] WB_write_data_v5;
+wire [31:0] WB_write_data_v6;
+wire [31:0] WB_write_data_v7;
+
+wire [31:0] EXE_alu_result_v0;
+wire [31:0] EXE_alu_result_v1;
+wire [31:0] EXE_alu_result_v2;
+wire [31:0] EXE_alu_result_v3;
+wire [31:0] EXE_alu_result_v4;
+wire [31:0] EXE_alu_result_v5;
+wire [31:0] EXE_alu_result_v6;
+wire [31:0] EXE_alu_result_v7;
+
+wire [31:0] MEM_alu_result_v0;
+wire [31:0] MEM_alu_result_v1;
+wire [31:0] MEM_alu_result_v2;
+wire [31:0] MEM_alu_result_v3;
+wire [31:0] MEM_alu_result_v4;
+wire [31:0] MEM_alu_result_v5;
+wire [31:0] MEM_alu_result_v6;
+wire [31:0] MEM_alu_result_v7;
+
+wire [31:0] WB_alu_result_v0;
+wire [31:0] WB_alu_result_v1;
+wire [31:0] WB_alu_result_v2;
+wire [31:0] WB_alu_result_v3;
+wire [31:0] WB_alu_result_v4;
+wire [31:0] WB_alu_result_v5;
+wire [31:0] WB_alu_result_v6;
+wire [31:0] WB_alu_result_v7;
+
 assign PCSrc = MEM_zero & MEM_branch;
 
 //reset signal for all module (also reset when bootup), except PC
@@ -132,6 +204,15 @@ ID_stage ID_stage(
 	.write_addr(WB_write_addr),
 	.write_data(WB_write_back_data),
 	.instn(ID_instn),
+	.write_data_v0(WB_write_data_v0),
+	.write_data_v1(WB_write_data_v1),
+	.write_data_v2(WB_write_data_v2),
+	.write_data_v3(WB_write_data_v3),
+	.write_data_v4(WB_write_data_v4),
+	.write_data_v5(WB_write_data_v5),
+	.write_data_v6(WB_write_data_v6),
+	.write_data_v7(WB_write_data_v7),
+
 	///////////////////////output//////////////////////
 	.read_data1(ID_read_data1),
 	.read_data2(ID_read_data2),
@@ -163,10 +244,27 @@ ID_stage ID_stage(
 	.beq_enable(beq_enable),
     .peri_web(peri_web),
     .peri_addr(peri_addr),
-    .peri_datao(peri_datao)
+    .peri_datao(peri_datao),
+
+	.read_data_v1_0(ID_read_data_v1_0),
+	.read_data_v1_1(ID_read_data_v1_1),
+	.read_data_v1_2(ID_read_data_v1_2),
+	.read_data_v1_3(ID_read_data_v1_3),
+	.read_data_v1_4(ID_read_data_v1_4),
+	.read_data_v1_5(ID_read_data_v1_5),
+	.read_data_v1_6(ID_read_data_v1_6),
+	.read_data_v1_7(ID_read_data_v1_7),
+	.read_data_v2_0(ID_read_data_v2_0),
+	.read_data_v2_1(ID_read_data_v2_1),
+	.read_data_v2_2(ID_read_data_v2_2),
+	.read_data_v2_3(ID_read_data_v2_3),
+	.read_data_v2_4(ID_read_data_v2_4),
+	.read_data_v2_5(ID_read_data_v2_5),
+	.read_data_v2_6(ID_read_data_v2_6),
+	.read_data_v2_7(ID_read_data_v2_7)
+
+
 );
-
-
 
 ID_EXE ID_EXE(
 	//input
@@ -191,6 +289,9 @@ ID_EXE ID_EXE(
 	.ID_ALUSrc(ID_ALUSrc),
 	.ID_RegWrite(ID_RegWrite),
     .ID_MemtoReg(ID_MemtoReg),
+
+
+
 	//output
 	.EXE_PC(EXE_PC),
 	.EXE_rs_addr(EXE_rs_addr),
@@ -210,6 +311,12 @@ ID_EXE ID_EXE(
 	.EXE_ALUSrc(EXE_ALUSrc),
 	.EXE_RegWrite(EXE_RegWrite),
 	.EXE_MemtoReg(EXE_MemtoReg),
+
+
+
+
+
+
 	// .EXE_MemRead(EXE_MemRead),
 	//beq
 	.state(state),
@@ -231,12 +338,41 @@ EXE_stage EXE_stage(
 	.immd(EXE_immd),
 	.ALUOp(EXE_ALUOp),
     .ALUSrc(EXE_ALUSrc),
+
+	.read_data_v1_0(ID_read_data_v1_0),
+	.read_data_v1_1(ID_read_data_v1_1),
+	.read_data_v1_2(ID_read_data_v1_2),
+	.read_data_v1_3(ID_read_data_v1_3),
+	.read_data_v1_4(ID_read_data_v1_4),
+	.read_data_v1_5(ID_read_data_v1_5),
+	.read_data_v1_6(ID_read_data_v1_6),
+	.read_data_v1_7(ID_read_data_v1_7),
+	.read_data_v2_0(ID_read_data_v2_0),
+	.read_data_v2_1(ID_read_data_v2_1),
+	.read_data_v2_2(ID_read_data_v2_2),
+	.read_data_v2_3(ID_read_data_v2_3),
+	.read_data_v2_4(ID_read_data_v2_4),
+	.read_data_v2_5(ID_read_data_v2_5),
+	.read_data_v2_6(ID_read_data_v2_6),
+	.read_data_v2_7(ID_read_data_v2_7),
+
+
 	//output
 	.alu_result(EXE_alu_result),
 	.alu_overflow(EXE_alu_overflow),
 	.zero(EXE_zero),
 	.PC_out(PC_out),
-	.write_addr(EXE_write_addr)
+	.write_addr(EXE_write_addr),
+
+	.alu_result_v0(EXE_alu_result_v0),
+	.alu_result_v1(EXE_alu_result_v1),
+	.alu_result_v2(EXE_alu_result_v2),
+	.alu_result_v3(EXE_alu_result_v3),
+	.alu_result_v4(EXE_alu_result_v4),
+	.alu_result_v5(EXE_alu_result_v5),
+	.alu_result_v6(EXE_alu_result_v6),
+	.alu_result_v7(EXE_alu_result_v7)
+
 );
 
 EX_MEM EX_MEM(
@@ -255,6 +391,18 @@ EX_MEM EX_MEM(
 	.MemtoReg_i(EXE_MemtoReg),
 	.branch_i(EXE_branch),
 	.read_data2_i(ID_read_data2),
+
+
+	.alu_result_v0_i(EXE_alu_result_v0),
+	.alu_result_v1_i(EXE_alu_result_v1),
+	.alu_result_v2_i(EXE_alu_result_v2),
+	.alu_result_v3_i(EXE_alu_result_v3),
+	.alu_result_v4_i(EXE_alu_result_v4),
+	.alu_result_v5_i(EXE_alu_result_v5),
+	.alu_result_v6_i(EXE_alu_result_v6),
+	.alu_result_v7_i(EXE_alu_result_v7),
+
+
 	// output
 	.RegWrite_o(MEM_RegWrite),
 	.alu_result_o(MEM_alu_result),
@@ -265,7 +413,17 @@ EX_MEM EX_MEM(
   	.zero_o(MEM_zero),
 	.MemtoReg_o(MEM_MemtoReg),
 	.branch_o(MEM_branch),
-	.read_data2_o(MEM_read_data2)
+	.read_data2_o(MEM_read_data2),
+
+	.alu_result_v0_o(MEM_alu_result_v0),
+	.alu_result_v1_o(MEM_alu_result_v1),
+	.alu_result_v2_o(MEM_alu_result_v2),
+	.alu_result_v3_o(MEM_alu_result_v3),
+	.alu_result_v4_o(MEM_alu_result_v4),
+	.alu_result_v5_o(MEM_alu_result_v5),
+	.alu_result_v6_o(MEM_alu_result_v6),
+	.alu_result_v7_o(MEM_alu_result_v7)
+
 );
 
 
@@ -283,6 +441,16 @@ MEM_stage MEM_stage(
 
 MEM_WB_stage MEM_WB_stage(
 	// input
+
+	.alu_result_v0_i(MEM_alu_result_v0),
+	.alu_result_v1_i(MEM_alu_result_v1),
+	.alu_result_v2_i(MEM_alu_result_v2),
+	.alu_result_v3_i(MEM_alu_result_v3),
+	.alu_result_v4_i(MEM_alu_result_v4),
+	.alu_result_v5_i(MEM_alu_result_v5),
+	.alu_result_v6_i(MEM_alu_result_v6),
+	.alu_result_v7_i(MEM_alu_result_v7),
+
 	.clk(clk),
 	.rst_n(rstn_system),
 	.RegWrite_i(MEM_RegWrite),
@@ -295,7 +463,16 @@ MEM_WB_stage MEM_WB_stage(
 	.alu_result_o(WB_alu_result),
 	.read_data_o(WB_read_data),
 	.write_addr_o(WB_write_addr),
-	.MemtoReg_o(WB_MemtoReg)
+	.MemtoReg_o(WB_MemtoReg),
+
+	.alu_result_v0_o(WB_write_data_v0),
+	.alu_result_v1_o(WB_write_data_v1),
+	.alu_result_v2_o(WB_write_data_v2),
+	.alu_result_v3_o(WB_write_data_v3),
+	.alu_result_v4_o(WB_write_data_v4),
+	.alu_result_v5_o(WB_write_data_v5),
+	.alu_result_v6_o(WB_write_data_v6),
+	.alu_result_v7_o(WB_write_data_v7)
 
 );
 
