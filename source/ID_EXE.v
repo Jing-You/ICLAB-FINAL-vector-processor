@@ -20,6 +20,7 @@ module ID_EXE(
 	ID_ALUOp,
 	ID_ALUSrc,
 	next_state,
+	cnt_i,
 	
 	
 	//output
@@ -39,7 +40,8 @@ module ID_EXE(
 	EXE_branch,
 	EXE_ALUOp,
 	EXE_ALUSrc,
-	state
+	state,
+	cnt_o
 );
 
 
@@ -61,6 +63,7 @@ input	ID_branch;
 input	[1:0]ID_ALUOp;
 input	ID_ALUSrc;
 input	[1:0] next_state;
+input   [4:0] cnt_i;
 
 
 output  reg [15:0]EXE_PC;
@@ -81,6 +84,7 @@ output	reg EXE_branch;
 output	reg [1:0]EXE_ALUOp;
 output	reg EXE_ALUSrc;
 output  reg [1:0] state;
+output 	reg [4:0] cnt_o;
 
 
 
@@ -106,6 +110,7 @@ always@(posedge clk) begin
 		EXE_ALUOp <= 2'd0;
 		EXE_ALUSrc <= 1'b0;
 		state <= 0;
+		cnt_o <= 0;
 	end
 	else begin
 		EXE_PC <= ID_PC;
@@ -126,6 +131,7 @@ always@(posedge clk) begin
 		EXE_ALUOp <= ID_ALUOp;
 		EXE_ALUSrc <= ID_ALUSrc;
 		state <= next_state;
+		cnt_o <= cnt_i;
 
 	end
 end

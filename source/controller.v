@@ -138,6 +138,23 @@ case(opcode)
 		RegWrite = 1'b0;
 		MemtoReg = 1'b0;	//don't care
 	end
+	`LW_V: begin
+		RegDst = 1'b1;
+		ALUOp = 2'b10;
+		ALUSrc = 1'b0;
+		branch = 1'b0;
+		RegWrite = 1'b1;
+		MemtoReg = 1'b1;
+	end
+	`SW_V: begin
+		RegDst = 1'b1;	//don't care
+		ALUOp = 2'b10;
+		ALUSrc = 1'b0;
+		branch = 1'b0;
+		MemWrite = 1'b1;
+		RegWrite = 1'b0;
+		MemtoReg = 1'b0;	//don't care
+	end
 	`BEQ: begin
 			RegDst = 1'b0;	//don't care
 			ALUOp = 2'b01;

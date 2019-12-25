@@ -1,5 +1,6 @@
 module alu(
 	//en_exe,
+	cnt,
 	read_data1,
 	read_data2,
 	opcode,
@@ -17,6 +18,7 @@ module alu(
 
 //input en_exe;
 input [5:0]opcode;
+input [4:0] cnt;
 input [4:0]shamt;
 input [5:0]funct;
 input signed[31:0] immd;
@@ -84,6 +86,10 @@ case(ALUOp)
 		end
 		else if(funct==`SUB) begin
 			alu_result_tmp = src1 - src2;
+			zero = 1'b0;
+		end
+		else if(funct==`MULT) begin
+			alu_result_tmp = src1 * src2;
 			zero = 1'b0;
 		end
 		else if(funct==`AND) begin

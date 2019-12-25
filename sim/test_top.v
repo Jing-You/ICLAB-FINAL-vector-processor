@@ -166,16 +166,18 @@ $fdisplay(write_to,"r10 = %d ,the answer is %d\n",top_pipe_U0.top0.ID_stage.regf
 `else
 f_register = $fopen("register_sim.txt");
 write_to = f_register | std_out;
-$fdisplay(write_to,"r1 = %d ,the answer is %d\n",top_pipe_U0.top0.ID_stage.regfile.gpr[1],r1);
-$fdisplay(write_to,"r2 = %d ,the answer is %d\n",top_pipe_U0.top0.ID_stage.regfile.gpr[2],r2);
-$fdisplay(write_to,"r3 = %d ,the answer is %d\n",top_pipe_U0.top0.ID_stage.regfile.gpr[3],r3);
-$fdisplay(write_to,"r4 = %d ,the answer is %d\n",top_pipe_U0.top0.ID_stage.regfile.gpr[4],r4);
-$fdisplay(write_to,"r5 = %d ,the answer is %d\n",top_pipe_U0.top0.ID_stage.regfile.gpr[5],r5);
-$fdisplay(write_to,"r6 = %d ,the answer is %d\n",top_pipe_U0.top0.ID_stage.regfile.gpr[6],r6);
-$fdisplay(write_to,"r7 = %d ,the answer is %d\n",top_pipe_U0.top0.ID_stage.regfile.gpr[7],r7);
-$fdisplay(write_to,"r8 = %d ,the answer is %d\n",top_pipe_U0.top0.ID_stage.regfile.gpr[8],r8);
-$fdisplay(write_to,"r9 = %d ,the answer is %d\n",top_pipe_U0.top0.ID_stage.regfile.gpr[9],r9);
-$fdisplay(write_to,"r10 = %d ,the answer is %d\n",top_pipe_U0.top0.ID_stage.regfile.gpr[10],r10);
+$fdisplay(write_to,"r1 = %d\n",top_pipe_U0.top0.ID_stage.regfile.gpr[1]);
+$fdisplay(write_to,"r2 = %d\n",top_pipe_U0.top0.ID_stage.regfile.gpr[2]);
+$fdisplay(write_to,"r3 = %d\n",top_pipe_U0.top0.ID_stage.regfile.gpr[3]);
+$fdisplay(write_to,"r4 = %d\n",top_pipe_U0.top0.ID_stage.regfile.gpr[4]);
+$fdisplay(write_to,"r5 = %d\n",top_pipe_U0.top0.ID_stage.regfile.gpr[5]);
+$fdisplay(write_to,"r6 = %d\n",top_pipe_U0.top0.ID_stage.regfile.gpr[6]);
+$fdisplay(write_to,"r7 = %d\n",top_pipe_U0.top0.ID_stage.regfile.gpr[7]);
+$fdisplay(write_to,"r8 = %d\n",top_pipe_U0.top0.ID_stage.regfile.gpr[8]);
+$fdisplay(write_to,"r9 = %d\n",top_pipe_U0.top0.ID_stage.regfile.gpr[9]);
+$fdisplay(write_to,"r10 = %d\n",top_pipe_U0.top0.ID_stage.regfile.gpr[10]);
+$fdisplay(write_to,"r11 = %d\n",top_pipe_U0.top0.ID_stage.regfile.gpr[11]);
+$fdisplay(write_to,"r12 = %d\n",top_pipe_U0.top0.ID_stage.regfile.gpr[12]);
 
 $fdisplay(write_to,"d1 = %d\n",top_pipe_U0.top0.MEM_stage.dcache.memory[1]);
 $fdisplay(write_to,"d2 = %d\n",top_pipe_U0.top0.MEM_stage.dcache.memory[2]);
@@ -185,6 +187,8 @@ $fdisplay(write_to,"d5 = %d\n",top_pipe_U0.top0.MEM_stage.dcache.memory[5]);
 $fdisplay(write_to,"d6 = %d\n",top_pipe_U0.top0.MEM_stage.dcache.memory[6]);
 $fdisplay(write_to,"d7 = %d\n",top_pipe_U0.top0.MEM_stage.dcache.memory[7]);
 $fdisplay(write_to,"d8 = %d\n",top_pipe_U0.top0.MEM_stage.dcache.memory[8]);
+$fdisplay(write_to,"d9 = %d\n",top_pipe_U0.top0.MEM_stage.dcache.memory[9]);
+$fdisplay(write_to,"d10 = %d\n",top_pipe_U0.top0.MEM_stage.dcache.memory[10]);
 `endif
 
 $fclose(f_register);

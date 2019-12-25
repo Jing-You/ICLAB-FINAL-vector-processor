@@ -40,6 +40,7 @@ module regfile(
 	read_data_v2_7,
 	VRegWrite,
 	vlen,
+	cnt
 
 );
 
@@ -55,6 +56,7 @@ parameter aw = 5;			//regfile address width
 input				clk;
 input				rst_n;
 input VRegWrite;
+input [4:0] cnt;
 //
 // Port Read 1
 //
@@ -148,7 +150,7 @@ wire [31:0] v2_7 = gpr[31];	// v2[7]
 //test
 
 //SW USE
-assign sw_data = gpr[read_addr2];
+	assign sw_data = gpr[read_addr2];
 //
 always@(posedge clk) begin
 	if(~rst_n) begin
@@ -194,8 +196,8 @@ always@(posedge clk) begin
 	else if(write) begin
 		gpr[write_addr] <= write_data;
 		read_data1 <= gpr[read_addr1];
-		read_data2 <= gpr[read_addr2];
-	
+		if (cnt > 0)  read_data2 <= gpr[read_addr2 + cnt - 1];	// vector SW
+		else read_data2 <= gpr[read_addr2];
 	end
 	else if (VRegWrite) begin
 		case(write_addr)
@@ -233,7 +235,8 @@ always@(posedge clk) begin
 	end
 	else begin
 		read_data1 <= gpr[read_addr1];
-		read_data2 <= gpr[read_addr2];
+		if (cnt > 0)  read_data2 <= gpr[read_addr2 + cnt - 1]; // vector SW
+		else read_data2 <= gpr[read_addr2];
 	end
 end
 
