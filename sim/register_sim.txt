@@ -1,36 +1,47 @@
-r1 =          2 ,the answer is          60
 
-r2 =         22 ,the answer is          70
+r1 =          0
 
-r3 =         20 ,the answer is         240
+r2 =          0
 
-r4 =         22 ,the answer is          35
 
-r5 =          0 ,the answer is         208
+r3 =          0
 
-r6 =         14 ,the answer is          32
+r4 =          0
 
-r7 =         28 ,the answer is         208
+r5 =          3
 
-r8 =          0 ,the answer is         243
+r6 =          7
 
-r9 =         41 ,the answer is         240
+r7 =          4
 
-r10 =         56 ,the answer is          35
+r8 =         15
+
+r9 =         35
+
+r10 =         20
+
+r11 =        300
+
+r12 =          0
 
 d1 =          x
 
 d2 =          x
 
-d3 =         22
+d3 =         15
 
-d4 =          x
+d4 =         35
 
-d5 =          x
+d5 =         20
 
-d6 =          x
+d6 =        300
 
-d7 =          x
+d7 =         15
 
-d8 =          x
+d8 =         35
+
+d9 =         20
+
+d10 =        300
+
 

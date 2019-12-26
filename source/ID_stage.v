@@ -17,7 +17,8 @@ module ID_stage(
 
 
 
-	instn,
+	instn_new,
+
 	///////////////////////output//////////////////////
 	read_data1,
 	read_data2,
@@ -66,7 +67,9 @@ module ID_stage(
 	read_data_v1_4,
 	read_data_v1_5,
 	read_data_v1_6,
-	read_data_v1_7
+	read_data_v1_7,
+	cnt,
+	vlen
 
 );
 
@@ -75,7 +78,7 @@ input	rst_n;
 input	WB_RegWrite;
 input	[4:0]write_addr;
 input	[31:0]write_data;
-input   [31:0]instn;
+input   [31:0]instn_new;
 input 	[1:0] state;
 input	PCSrc;
 input 	[31:0] write_data_v0;
@@ -126,13 +129,24 @@ output [31:0] read_data_v2_4;
 output [31:0] read_data_v2_5;
 output [31:0] read_data_v2_6;
 output [31:0] read_data_v2_7;
+output [31:0] cnt;
+output [31:0] vlen;
 
 wire    [4:0]rt_addr, rs_addr;
 wire    MemWrite;
 //data memory
 wire [31:0] sw_data;
 wire [7:0] data_addr;
+// vector mode
+wire [31:0] vlen;
+reg [31:0] instn_LW_SW;
+reg [31:0] instn;
+reg [4:0] cnt, cnt_n;
+wire [4:0] cnt_offset;
+reg VectorSWLW;
 
+
+assign cnt_offset = cnt - 1;
 
 assign rs_addr = instn[25:21];
 assign rt_addr = instn[20:16];
@@ -143,6 +157,44 @@ assign funct   = instn[5:0];
 assign immd    = {{16{instn[15]}}, instn[15:0]};
 assign data_addr = instn[7:0];
 
+
+always @(*) begin
+	if (VectorSWLW == 1) begin
+		instn = instn_LW_SW;
+	end
+	else begin
+		instn = instn_new;
+	end
+end
+
+// vector LW/SW counter
+always @(*) begin
+	if (opcode == `LW_V || opcode == `SW_V) cnt_n = vlen;
+	else if (cnt > 0) cnt_n = cnt - 1;
+	else cnt_n = cnt;
+end
+always @(posedge clk) begin
+	if (~rst_n) begin
+		cnt <= 0;
+	end
+	else begin
+		cnt <= cnt_n;
+	end
+end
+
+// old instn
+always @(*) begin
+	if (cnt > 0) begin
+		instn_LW_SW = {instn[31], 1'b0, instn[29:26], rs_addr[4:0], rt_addr[4:0], rd_addr[4:0], cnt_offset[4:0], instn[5:0]};
+	end
+	else instn_LW_SW = instn;
+end
+
+// Vector instn control SW/LW
+always @(*) begin
+	if (cnt == 0) VectorSWLW = 0;
+	else VectorSWLW = 1;
+end
 
 
 
@@ -179,11 +231,14 @@ regfile regfile(
 	.read_data_v2_5(read_data_v2_5),
 	.read_data_v2_6(read_data_v2_6),
 	.read_data_v2_7(read_data_v2_7),
+	.cnt(cnt),
 	//.read(),
 	.write(WB_RegWrite),
 	.VRegWrite(WB_VRegWrite),
 	//data memory
-	.sw_data(sw_data)
+	.sw_data(sw_data),
+	// vector length
+	.vlen(vlen)
 );
 
 controller controller(

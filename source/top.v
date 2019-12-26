@@ -91,6 +91,10 @@ wire [1:0] state,next_state;
 wire beq_enable;
 wire [4:0] WB_write_addr;
 
+wire [31:0] vlen;
+wire [4:0] cnt;
+wire [4:0] EXE_cnt;
+
 
 wire [31:0] ID_read_data_v1_0;
 wire [31:0] ID_read_data_v1_1;
@@ -203,7 +207,7 @@ ID_stage ID_stage(
 	.WB_RegWrite(WB_RegWrite),
 	.write_addr(WB_write_addr),
 	.write_data(WB_write_back_data),
-	.instn(ID_instn),
+	.instn_new(ID_instn),
 	.write_data_v0(WB_write_data_v0),
 	.write_data_v1(WB_write_data_v1),
 	.write_data_v2(WB_write_data_v2),
@@ -245,7 +249,6 @@ ID_stage ID_stage(
     .peri_web(peri_web),
     .peri_addr(peri_addr),
     .peri_datao(peri_datao),
-
 	.read_data_v1_0(ID_read_data_v1_0),
 	.read_data_v1_1(ID_read_data_v1_1),
 	.read_data_v1_2(ID_read_data_v1_2),
@@ -261,8 +264,11 @@ ID_stage ID_stage(
 	.read_data_v2_4(ID_read_data_v2_4),
 	.read_data_v2_5(ID_read_data_v2_5),
 	.read_data_v2_6(ID_read_data_v2_6),
-	.read_data_v2_7(ID_read_data_v2_7)
+	.read_data_v2_7(ID_read_data_v2_7),
+	.cnt(cnt),
+	.vlen(vlen)
 
+);
 
 );
 
@@ -289,6 +295,8 @@ ID_EXE ID_EXE(
 	.ID_ALUSrc(ID_ALUSrc),
 	.ID_RegWrite(ID_RegWrite),
     .ID_MemtoReg(ID_MemtoReg),
+	.cnt_i(cnt),
+
 
 
 
@@ -311,6 +319,7 @@ ID_EXE ID_EXE(
 	.EXE_ALUSrc(EXE_ALUSrc),
 	.EXE_RegWrite(EXE_RegWrite),
 	.EXE_MemtoReg(EXE_MemtoReg),
+	.cnt_o(EXE_cnt),
 
 
 
@@ -355,7 +364,8 @@ EXE_stage EXE_stage(
 	.read_data_v2_5(ID_read_data_v2_5),
 	.read_data_v2_6(ID_read_data_v2_6),
 	.read_data_v2_7(ID_read_data_v2_7),
-
+	.cnt(EXE_cnt),
+	.vlen(vlen),
 
 	//output
 	.alu_result(EXE_alu_result),

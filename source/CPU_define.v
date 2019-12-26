@@ -16,6 +16,9 @@
 `define SRL	    6'b00_0010
 `define LW_R	6'b00_0011
 `define SW_R    6'b00_1011
+`define LW_V	6'b01_0011
+`define SW_V    6'b01_1011  
+`define MULT    6'b10_0110
 
 `define ADDI	6'b00_1000
 `define LW	    6'b10_0011
