@@ -18,6 +18,7 @@ module ID_stage(
 
 
 	instn_new,
+
 	///////////////////////output//////////////////////
 	read_data1,
 	read_data2,
@@ -69,6 +70,7 @@ module ID_stage(
 	read_data_v1_7,
 	cnt,
 	vlen
+
 );
 
 input	clk;
@@ -193,6 +195,7 @@ always @(*) begin
 	if (cnt == 0) VectorSWLW = 0;
 	else VectorSWLW = 1;
 end
+
 
 
 regfile regfile(

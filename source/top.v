@@ -249,7 +249,6 @@ ID_stage ID_stage(
     .peri_web(peri_web),
     .peri_addr(peri_addr),
     .peri_datao(peri_datao),
-
 	.read_data_v1_0(ID_read_data_v1_0),
 	.read_data_v1_1(ID_read_data_v1_1),
 	.read_data_v1_2(ID_read_data_v1_2),
@@ -269,6 +268,7 @@ ID_stage ID_stage(
 	.cnt(cnt),
 	.vlen(vlen)
 
+);
 
 );
 
@@ -296,6 +296,7 @@ ID_EXE ID_EXE(
 	.ID_RegWrite(ID_RegWrite),
     .ID_MemtoReg(ID_MemtoReg),
 	.cnt_i(cnt),
+
 
 
 

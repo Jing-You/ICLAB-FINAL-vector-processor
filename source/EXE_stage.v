@@ -36,6 +36,7 @@ module EXE_stage(
 
 
 
+
 	//output
 	write_addr,
 	alu_result,
@@ -92,6 +93,7 @@ input [31:0] read_data_v2_6;
 input [31:0] read_data_v2_7;
 input [4:0]  cnt;
 input [31:0] vlen;
+
 
 output [31:0] alu_result_v0;
 output [31:0] alu_result_v1;

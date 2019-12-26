@@ -233,6 +233,40 @@ always@(posedge clk) begin
 		end
 		endcase
 	end
+	else if (VRegWrite) begin
+		case(write_addr)
+		0: begin
+			gpr[8] <= write_data_v0;
+			gpr[9] <= write_data_v1;
+			gpr[10] <= write_data_v2;
+			gpr[11] <= write_data_v3;
+			gpr[12] <= write_data_v4;
+			gpr[13] <= write_data_v5;
+			gpr[14] <= write_data_v6;
+			gpr[15] <= write_data_v7;
+		end
+		1: begin
+			gpr[16] <= write_data_v0;
+			gpr[17] <= write_data_v1;
+			gpr[18] <= write_data_v2;
+			gpr[19] <= write_data_v3;
+			gpr[20] <= write_data_v4;
+			gpr[21] <= write_data_v5;
+			gpr[22] <= write_data_v6;
+			gpr[23] <= write_data_v7;			
+		end
+		2: begin
+			gpr[24] <= write_data_v0;
+			gpr[25] <= write_data_v1;
+			gpr[26] <= write_data_v2;
+			gpr[27] <= write_data_v3;
+			gpr[28] <= write_data_v4;
+			gpr[29] <= write_data_v5;
+			gpr[30] <= write_data_v6;
+			gpr[31] <= write_data_v7;
+		end
+		endcase
+	end
 	else begin
 		read_data1 <= gpr[read_addr1];
 		if (cnt > 0)  read_data2 <= gpr[read_addr2 + cnt - 1]; // vector SW
