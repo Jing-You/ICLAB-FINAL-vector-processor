@@ -11,10 +11,41 @@ module alu(
 	ALUSrc,
 	alu_result,
 	alu_overflow,
-	zero
+	zero,
+	read_data_v1_0,
+	read_data_v1_1,
+	read_data_v1_2,
+	read_data_v1_3,
+	read_data_v1_4,
+	read_data_v1_5,
+	read_data_v1_6,
+	read_data_v1_7,
+	read_data_v2_0,
+	read_data_v2_1,
+	read_data_v2_2,
+	read_data_v2_3,
+	read_data_v2_4,
+	read_data_v2_5,
+	read_data_v2_6,
+	read_data_v2_7,
+	alu_result_v0,
+	alu_result_v1,
+	alu_result_v2,
+	alu_result_v3,
+	alu_result_v4,
+	alu_result_v5,
+	alu_result_v6,
+	alu_result_v7
+
 );
 
 
+parameter 	ADD_V = 6'b110000, 
+			SUB_V = 6'b110001, 
+			AND_V = 6'b110010, 
+			OR_V  = 6'b110011,
+			XOR_V = 6'b110100,
+			MUL_V = 6'b110101;
 
 //input en_exe;
 input [5:0]opcode;
@@ -32,7 +63,7 @@ output wire signed [31:0] alu_result;
 output reg alu_overflow;			
 output reg zero;						//for branch condition
 
-reg signed [31:0]src1, src2;
+reg signed [31:0] src1, src2;
 reg signed [31:0] alu_result_tmp;
 
 
@@ -40,9 +71,34 @@ reg signed [31:0] alu_result_tmp;
 wire signed [31:0] sub_temp1, sub_temp2, abs_result;
 //lab9 variable which you can change the type if you need//
 
-
-
 //MUX controlled by ALUSrc
+
+
+input [31:0] read_data_v1_0;
+input [31:0] read_data_v1_1;
+input [31:0] read_data_v1_2;
+input [31:0] read_data_v1_3;
+input [31:0] read_data_v1_4;
+input [31:0] read_data_v1_5;
+input [31:0] read_data_v1_6;
+input [31:0] read_data_v1_7;
+input [31:0] read_data_v2_0;
+input [31:0] read_data_v2_1;
+input [31:0] read_data_v2_2;
+input [31:0] read_data_v2_3;
+input [31:0] read_data_v2_4;
+input [31:0] read_data_v2_5;
+input [31:0] read_data_v2_6;
+input [31:0] read_data_v2_7;
+output reg [31:0] alu_result_v0;
+output reg [31:0] alu_result_v1;
+output reg [31:0] alu_result_v2;
+output reg [31:0] alu_result_v3;
+output reg [31:0] alu_result_v4;
+output reg [31:0] alu_result_v5;
+output reg [31:0] alu_result_v6;
+output reg [31:0] alu_result_v7;
+
 always@(*) begin
 	
 	if(ALUSrc==1'b1) begin
@@ -157,7 +213,95 @@ end
 assign sub_temp1 = (funct == `ABS)? (src1-src2) : 0;
 assign abs_result = (sub_temp1[31]==1)? (~sub_temp1+1) : sub_temp1;
 
-    
+always @* begin
+	case(ALUOp)
+	2'b10: begin
+		case (funct)
+			ADD_V : begin
+				alu_result_v0 = read_data_v1_0 + read_data_v2_0;
+				alu_result_v1 = read_data_v1_1 + read_data_v2_1;
+				alu_result_v2 = read_data_v1_2 + read_data_v2_2;
+				alu_result_v3 = read_data_v1_3 + read_data_v2_3;
+				alu_result_v4 = read_data_v1_4 + read_data_v2_4;
+				alu_result_v5 = read_data_v1_5 + read_data_v2_5;
+				alu_result_v6 = read_data_v1_6 + read_data_v2_6;
+				alu_result_v7 = read_data_v1_7 + read_data_v2_7;
+			end
+			SUB_V : begin
+				alu_result_v0 = read_data_v1_0 - read_data_v2_0;
+				alu_result_v1 = read_data_v1_1 - read_data_v2_1;
+				alu_result_v2 = read_data_v1_2 - read_data_v2_2;
+				alu_result_v3 = read_data_v1_3 - read_data_v2_3;
+				alu_result_v4 = read_data_v1_4 - read_data_v2_4;
+				alu_result_v5 = read_data_v1_5 - read_data_v2_5;
+				alu_result_v6 = read_data_v1_6 - read_data_v2_6;
+				alu_result_v7 = read_data_v1_7 - read_data_v2_7;
+			end
+			AND_V : begin
+				alu_result_v0 = read_data_v1_0 & read_data_v2_0;
+				alu_result_v1 = read_data_v1_1 & read_data_v2_1;
+				alu_result_v2 = read_data_v1_2 & read_data_v2_2;
+				alu_result_v3 = read_data_v1_3 & read_data_v2_3;
+				alu_result_v4 = read_data_v1_4 & read_data_v2_4;
+				alu_result_v5 = read_data_v1_5 & read_data_v2_5;
+				alu_result_v6 = read_data_v1_6 & read_data_v2_6;
+				alu_result_v7 = read_data_v1_7 & read_data_v2_7;
+			end
+			OR_V : begin
+				alu_result_v0 = read_data_v1_0 | read_data_v2_0;
+				alu_result_v1 = read_data_v1_1 | read_data_v2_1;
+				alu_result_v2 = read_data_v1_2 | read_data_v2_2;
+				alu_result_v3 = read_data_v1_3 | read_data_v2_3;
+				alu_result_v4 = read_data_v1_4 | read_data_v2_4;
+				alu_result_v5 = read_data_v1_5 | read_data_v2_5;
+				alu_result_v6 = read_data_v1_6 | read_data_v2_6;
+				alu_result_v7 = read_data_v1_7 | read_data_v2_7;
+			end
+			XOR_V : begin
+				alu_result_v0 = read_data_v1_0 ^ read_data_v2_0;
+				alu_result_v1 = read_data_v1_1 ^ read_data_v2_1;
+				alu_result_v2 = read_data_v1_2 ^ read_data_v2_2;
+				alu_result_v3 = read_data_v1_3 ^ read_data_v2_3;
+				alu_result_v4 = read_data_v1_4 ^ read_data_v2_4;
+				alu_result_v5 = read_data_v1_5 ^ read_data_v2_5;
+				alu_result_v6 = read_data_v1_6 ^ read_data_v2_6;
+				alu_result_v7 = read_data_v1_7 ^ read_data_v2_7;
+			end
+			MUL_V : begin
+				alu_result_v0 = read_data_v1_0 * read_data_v2_0;
+				alu_result_v1 = read_data_v1_1 * read_data_v2_1;
+				alu_result_v2 = read_data_v1_2 * read_data_v2_2;
+				alu_result_v3 = read_data_v1_3 * read_data_v2_3;
+				alu_result_v4 = read_data_v1_4 * read_data_v2_4;
+				alu_result_v5 = read_data_v1_5 * read_data_v2_5;
+				alu_result_v6 = read_data_v1_6 * read_data_v2_6;
+				alu_result_v7 = read_data_v1_7 * read_data_v2_7;
+			end
+			default : begin
+				alu_result_v0 = 0;
+				alu_result_v1 = 0;
+				alu_result_v2 = 0;
+				alu_result_v3 = 0;
+				alu_result_v4 = 0;
+				alu_result_v5 = 0;
+				alu_result_v6 = 0;
+				alu_result_v7 = 0;
+			end
+		endcase
+		end
+		default : begin
+			alu_result_v0 = 0;
+			alu_result_v1 = 0;
+			alu_result_v2 = 0;
+			alu_result_v3 = 0;
+			alu_result_v4 = 0;
+			alu_result_v5 = 0;
+			alu_result_v6 = 0;
+			alu_result_v7 = 0;
+		end
+	endcase
+end
+
 endmodule                     
                               
                               

@@ -22,6 +22,7 @@ module EX_MEM(
     input [31:0] alu_result_v5_i,
     input [31:0] alu_result_v6_i,
     input [31:0] alu_result_v7_i,
+    input VRegWrite_i,
 	// output
 	output reg RegWrite_o,
 	output reg [31:0] alu_result_o,
@@ -41,8 +42,8 @@ module EX_MEM(
     output reg [31:0] alu_result_v4_o,
     output reg [31:0] alu_result_v5_o,
     output reg [31:0] alu_result_v6_o,
-    output reg [31:0] alu_result_v7_o
-
+    output reg [31:0] alu_result_v7_o,
+    output reg VRegWrite_o
 
 
 );
@@ -66,6 +67,7 @@ always @(posedge clk) begin
         alu_result_v5_o <= 0;
         alu_result_v6_o <= 0;
         alu_result_v7_o <= 0;
+        VRegWrite_o     <= 0;
     end
     else begin
         RegWrite_o      <= RegWrite_i;
@@ -86,6 +88,8 @@ always @(posedge clk) begin
         alu_result_v5_o <= alu_result_v5_i;
         alu_result_v6_o <= alu_result_v6_i;
         alu_result_v7_o <= alu_result_v7_i;
+        VRegWrite_o     <= VRegWrite_i;
+
     end
 end
 

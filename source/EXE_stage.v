@@ -135,7 +135,31 @@ alu alu(
 	//output
 	.alu_result(alu_result),
 	.alu_overflow(alu_overflow),
-	.zero(zero)
+	.zero(zero),
+	.read_data_v1_0(read_data_v1_0),
+	.read_data_v1_1(read_data_v1_1),
+	.read_data_v1_2(read_data_v1_2),
+	.read_data_v1_3(read_data_v1_3),
+	.read_data_v1_4(read_data_v1_4),
+	.read_data_v1_5(read_data_v1_5),
+	.read_data_v1_6(read_data_v1_6),
+	.read_data_v1_7(read_data_v1_7),
+	.read_data_v2_0(read_data_v2_0),
+	.read_data_v2_1(read_data_v2_1),
+	.read_data_v2_2(read_data_v2_2),
+	.read_data_v2_3(read_data_v2_3),
+	.read_data_v2_4(read_data_v2_4),
+	.read_data_v2_5(read_data_v2_5),
+	.read_data_v2_6(read_data_v2_6),
+	.read_data_v2_7(read_data_v2_7),
+	.alu_result_v0(alu_result_v0),
+	.alu_result_v1(alu_result_v1),
+	.alu_result_v2(alu_result_v2),
+	.alu_result_v3(alu_result_v3),
+	.alu_result_v4(alu_result_v4),
+	.alu_result_v5(alu_result_v5),
+	.alu_result_v6(alu_result_v6),
+	.alu_result_v7(alu_result_v7)
 );
 
 

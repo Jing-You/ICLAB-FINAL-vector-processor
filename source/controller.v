@@ -19,7 +19,8 @@ module controller(
 	PCSrc,
 	state,
 	beq_enable,
-	next_state
+	next_state,
+	VRegWrite
 );
 
 
@@ -44,6 +45,7 @@ output reg branch;
 output reg MemWrite;		
 output reg RegWrite;
 output reg MemtoReg;
+output reg VRegWrite;
 //BEQ output
 output reg [1:0] next_state;
 output reg beq_enable;
@@ -103,6 +105,17 @@ case(opcode)
 		branch = 1'b0;
 		RegWrite = 1'b1;
 		MemtoReg = 1'b0;
+		VRegWrite = 0;
+	end
+	`RVtype: begin
+		RegDst = 1'b1;
+		ALUOp = 2'b10;
+		ALUSrc = 1'b0;
+		branch = 1'b0;
+		RegWrite = 1'b0;
+		MemtoReg = 1'b0;
+		VRegWrite = 1;
+
 	end
 	`LW: begin
 		RegDst = 1'b0;
@@ -111,6 +124,7 @@ case(opcode)
 		branch = 1'b0;
 		RegWrite = 1'b1;
 		MemtoReg = 1'b1;
+		VRegWrite = 0;
 	end
 	`SW: begin
 		RegDst = 1'b0;	//don't care
@@ -120,6 +134,7 @@ case(opcode)
 		MemWrite = 1'b1;
 		RegWrite = 1'b0;
 		MemtoReg = 1'b0;	//don't care
+		VRegWrite = 0;
 	end
 	`LW_R: begin
 		RegDst = 1'b1;
@@ -128,6 +143,7 @@ case(opcode)
 		branch = 1'b0;
 		RegWrite = 1'b1;
 		MemtoReg = 1'b1;
+		VRegWrite = 0;
 	end
 	`SW_R: begin
 		RegDst = 1'b1;	//don't care
@@ -137,6 +153,7 @@ case(opcode)
 		MemWrite = 1'b1;
 		RegWrite = 1'b0;
 		MemtoReg = 1'b0;	//don't care
+		VRegWrite = 0;
 	end
 	`LW_V: begin
 		RegDst = 1'b1;
@@ -145,6 +162,7 @@ case(opcode)
 		branch = 1'b0;
 		RegWrite = 1'b1;
 		MemtoReg = 1'b1;
+		VRegWrite = 0;
 	end
 	`SW_V: begin
 		RegDst = 1'b1;	//don't care
@@ -154,40 +172,44 @@ case(opcode)
 		MemWrite = 1'b1;
 		RegWrite = 1'b0;
 		MemtoReg = 1'b0;	//don't care
+		VRegWrite = 0;
 	end
 	`BEQ: begin
-			RegDst = 1'b0;	//don't care
-			ALUOp = 2'b01;
-			ALUSrc = 1'b0;
-			branch = 1'b1;
-			RegWrite = 1'b0;
-			MemtoReg = 1'b0;	//don't care
+		RegDst = 1'b0;	//don't care
+		ALUOp = 2'b01;
+		ALUSrc = 1'b0;
+		branch = 1'b1;
+		RegWrite = 1'b0;
+		MemtoReg = 1'b0;	//don't care
+		VRegWrite = 0;
 	end
 	`ADDI: begin
-			RegDst = 1'b0;
-			ALUOp = 2'b00;
-			ALUSrc = 1'b1;
-			branch = 1'b0;
-			RegWrite = 1'b1;
-			MemtoReg = 1'b0;
-		
+		RegDst = 1'b0;
+		ALUOp = 2'b00;
+		ALUSrc = 1'b1;
+		branch = 1'b0;
+		RegWrite = 1'b1;
+		MemtoReg = 1'b0;
+		VRegWrite = 0;
 	end
 	`SET: begin
-			RegDst = 1'b0;
-			ALUOp = 2'b00;
-			ALUSrc = 1'b1;
-			branch = 1'b0;
-			RegWrite = 1'b1;
-			MemtoReg = 1'b0;
+		RegDst = 1'b0;
+		ALUOp = 2'b00;
+		ALUSrc = 1'b1;
+		branch = 1'b0;
+		RegWrite = 1'b1;
+		MemtoReg = 1'b0;
+		VRegWrite = 0;
 		
 	end
 	default:begin
-			RegDst = 1'b0;
-			ALUOp = 2'b00;
-			ALUSrc = 1'b0;
-			branch = 1'b0;
-			RegWrite = 1'b0;
-			MemtoReg = 1'b0;
+		RegDst = 1'b0;
+		ALUOp = 2'b00;
+		ALUSrc = 1'b0;
+		branch = 1'b0;
+		RegWrite = 1'b0;
+		MemtoReg = 1'b0;
+		VRegWrite = 0;
 	end
 	endcase
 

@@ -3,6 +3,8 @@ module ID_stage(
 	clk,
 	rst_n,
 	WB_RegWrite,
+	WB_VRegWrite,
+
 	write_addr,
 	write_data,
 
@@ -14,7 +16,6 @@ module ID_stage(
 	write_data_v5,
 	write_data_v6,
 	write_data_v7,
-
 
 
 	instn_new,
@@ -43,6 +44,7 @@ module ID_stage(
 	//Write-back stage control lines
 	RegWrite,
 	MemtoReg,
+	VRegWrite,
 	//BEQ
 	PCSrc,
 	state,
@@ -76,6 +78,7 @@ module ID_stage(
 input	clk;
 input	rst_n;
 input	WB_RegWrite;
+input	WB_VRegWrite;
 input	[4:0]write_addr;
 input	[31:0]write_data;
 input   [31:0]instn_new;
@@ -131,7 +134,7 @@ output [31:0] read_data_v2_6;
 output [31:0] read_data_v2_7;
 output [31:0] cnt;
 output [31:0] vlen;
-
+output VRegWrite;
 wire    [4:0]rt_addr, rs_addr;
 wire    MemWrite;
 //data memory
@@ -144,7 +147,6 @@ reg [31:0] instn;
 reg [4:0] cnt, cnt_n;
 wire [4:0] cnt_offset;
 reg VectorSWLW;
-
 
 assign cnt_offset = cnt - 1;
 
@@ -258,12 +260,12 @@ controller controller(
 	//Write-back stage control lines
 	.RegWrite(RegWrite),
 	.MemtoReg(MemtoReg),
+	.VRegWrite(VRegWrite),
 	//beq
 	.PCSrc(PCSrc),
 	.state(state),
 	.next_state(next_state),
 	.beq_enable(beq_enable)
-
 );
 
 

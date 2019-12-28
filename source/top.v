@@ -205,6 +205,7 @@ ID_stage ID_stage(
 	.clk(clk),
 	.rst_n(rstn_system),
 	.WB_RegWrite(WB_RegWrite),
+	.WB_VRegWrite(WB_VRegWrite),
 	.write_addr(WB_write_addr),
 	.write_data(WB_write_back_data),
 	.instn_new(ID_instn),
@@ -241,6 +242,7 @@ ID_stage ID_stage(
 	//Write-back stage control lines
 	.RegWrite(ID_RegWrite),
 	.MemtoReg(ID_MemtoReg),
+	.VRegWrite(ID_VRegWrite),
 	//beq
 	.PCSrc(PCSrc),
 	.state(state),
@@ -270,8 +272,6 @@ ID_stage ID_stage(
 
 );
 
-);
-
 ID_EXE ID_EXE(
 	//input
 	.clk(clk),
@@ -284,6 +284,7 @@ ID_EXE ID_EXE(
 	.ID_shamt(ID_shamt),
 	.ID_funct(ID_funct),
 	.ID_immd(ID_immd),
+	.ID_VRegWrite(ID_VRegWrite),	
 	//.ID_read_data1(ID_read_data1),
 	//.ID_read_data2(ID_read_data2),
     //.ID_read(ID_read),
@@ -310,7 +311,7 @@ ID_EXE ID_EXE(
 	.EXE_immd(EXE_immd),
 	//.EXE_read(),
 	.EXE_write(EXE_MemWrite),
-
+	.EXE_VRegWrite(EXE_VRegWrite),	
 	//.EXE_read_data1(EXE_read_data1),
 	//.EXE_read_data2(EXE_read_data2),
 	.EXE_RegDst(EXE_RegDst),
@@ -409,7 +410,7 @@ EX_MEM EX_MEM(
 	.alu_result_v6_i(EXE_alu_result_v6),
 	.alu_result_v7_i(EXE_alu_result_v7),
 
-
+	.VRegWrite_i(EXE_VRegWrite),	
 	// output
 	.RegWrite_o(MEM_RegWrite),
 	.alu_result_o(MEM_alu_result),
@@ -420,6 +421,7 @@ EX_MEM EX_MEM(
   	.zero_o(MEM_zero),
 	.MemtoReg_o(MEM_MemtoReg),
 	.branch_o(MEM_branch),
+	.VRegWrite_o(MEM_VRegWrite),	
 	.read_data2_o(MEM_read_data2),
 
 	.alu_result_v0_o(MEM_alu_result_v0),
@@ -457,7 +459,7 @@ MEM_WB_stage MEM_WB_stage(
 	.alu_result_v5_i(MEM_alu_result_v5),
 	.alu_result_v6_i(MEM_alu_result_v6),
 	.alu_result_v7_i(MEM_alu_result_v7),
-
+	.VRegWrite_i(MEM_VRegWrite),	
 	.clk(clk),
 	.rst_n(rstn_system),
 	.RegWrite_i(MEM_RegWrite),
@@ -471,7 +473,7 @@ MEM_WB_stage MEM_WB_stage(
 	.read_data_o(WB_read_data),
 	.write_addr_o(WB_write_addr),
 	.MemtoReg_o(WB_MemtoReg),
-
+	.VRegWrite_o(WB_VRegWrite),	
 	.alu_result_v0_o(WB_write_data_v0),
 	.alu_result_v1_o(WB_write_data_v1),
 	.alu_result_v2_o(WB_write_data_v2),

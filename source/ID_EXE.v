@@ -21,8 +21,7 @@ module ID_EXE(
 	ID_ALUSrc,
 	next_state,
 	cnt_i,
-	
-	
+	ID_VRegWrite,	
 	//output
 	EXE_PC,
 	EXE_opcode,
@@ -34,6 +33,8 @@ module ID_EXE(
 	EXE_immd,
 	EXE_RegWrite,
 	EXE_MemtoReg,
+	EXE_VRegWrite,	
+
 	//EXE_read,
 	EXE_write,
 	EXE_RegDst,
@@ -64,7 +65,7 @@ input	[1:0]ID_ALUOp;
 input	ID_ALUSrc;
 input	[1:0] next_state;
 input   [4:0] cnt_i;
-
+input 	ID_VRegWrite;
 
 output  reg [15:0]EXE_PC;
 output  reg [5:0]EXE_opcode;
@@ -77,6 +78,7 @@ output  reg [31:0]EXE_immd;
 output  reg EXE_RegDst;
 output	reg EXE_RegWrite;
 output	reg EXE_MemtoReg;
+output  reg EXE_VRegWrite;
 //output	reg EXE_read;
 output	reg EXE_write;
 
@@ -111,6 +113,7 @@ always@(posedge clk) begin
 		EXE_ALUSrc <= 1'b0;
 		state <= 0;
 		cnt_o <= 0;
+		EXE_VRegWrite <= 0;
 	end
 	else begin
 		EXE_PC <= ID_PC;
@@ -126,7 +129,7 @@ always@(posedge clk) begin
 		EXE_MemtoReg <= ID_MemtoReg;
 		//EXE_read <= ID_read;
 		EXE_write <= ID_write;
-
+		EXE_VRegWrite <= ID_VRegWrite;
 		EXE_branch <= ID_branch;
 		EXE_ALUOp <= ID_ALUOp;
 		EXE_ALUSrc <= ID_ALUSrc;
