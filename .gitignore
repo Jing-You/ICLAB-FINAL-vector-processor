@@ -14,3 +14,5 @@
 /ncverilog.history
 sim/ncverilog.log
 sim/novas_dump.log
+**/logs
+*.log
