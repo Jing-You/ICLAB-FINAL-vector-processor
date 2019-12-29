@@ -119,25 +119,25 @@ argv[3]=test_top.v
 argv[4]=../source/*.v
 argv[5]=+access+r
 121 profile - 100
-          CPU/Mem usage: 0.050 sys,  0.020 user,  235.63M sys,  0.00M vm
+          CPU/Mem usage: 0.040 sys,  0.030 user,  235.63M sys,  0.00M vm
 122 VC callback profile - scalar:0 vector:0
-123 Sun Dec 29 22:09:14 2019
+123 Sun Dec 29 22:11:16 2019
 124 pliAppInit
 125 pliAppMiscSet: New Sim Round
 126 LIBSSCORE=found /usr/cad/spring_soft/verdi/2012.01/share/PLI/IUS/LINUX64/libsscore_ius111.so through $LD_LIBRARY_PATH setting.
 127 argv[0]: lab7_presim.fsdb
 128 Catch signal 11. Stack trace follows:
-#0  0x00007f0afbffdc30 in __read_nocancel () at /lib64/libc.so.6
-#1  0x00007f0afbf8c5a0 in __GI__IO_file_underflow () at /lib64/libc.so.6
-#2  0x00007f0afbf8d52e in __GI__IO_default_uflow () at /lib64/libc.so.6
-#3  0x00007f0afbf814d4 in __GI__IO_getline_info () at /lib64/libc.so.6
-#4  0x00007f0afbf803d6 in fgets () at /lib64/libc.so.6
-#5  0x00007f0af1c4d9f3 in ndpGetCallStack () at /usr/cad/spring_soft/verdi/2012.01/share/PLI/IUS/LINUX64/libsscore_ius111.so
-#6  0x00007f0af1c7aa20 in pliAppDbg_SigHandler () at /usr/cad/spring_soft/verdi/2012.01/share/PLI/IUS/LINUX64/libsscore_ius111.so
-#7  0x00007f0af1c4d4f6 in catchSignalCB () at /usr/cad/spring_soft/verdi/2012.01/share/PLI/IUS/LINUX64/libsscore_ius111.so
-#8  0x00007f0afc2e5370 in <signal handler called> () at /lib64/libpthread.so.0
-#9  0x00000000035254a9 in  ()
-#10 0x00000000035254a0 in  ()
+#0  0x00007f032498bc30 in __read_nocancel () at /lib64/libc.so.6
+#1  0x00007f032491a5a0 in __GI__IO_file_underflow () at /lib64/libc.so.6
+#2  0x00007f032491b52e in __GI__IO_default_uflow () at /lib64/libc.so.6
+#3  0x00007f032490f4d4 in __GI__IO_getline_info () at /lib64/libc.so.6
+#4  0x00007f032490e3d6 in fgets () at /lib64/libc.so.6
+#5  0x00007f031a5db9f3 in ndpGetCallStack () at /usr/cad/spring_soft/verdi/2012.01/share/PLI/IUS/LINUX64/libsscore_ius111.so
+#6  0x00007f031a608a20 in pliAppDbg_SigHandler () at /usr/cad/spring_soft/verdi/2012.01/share/PLI/IUS/LINUX64/libsscore_ius111.so
+#7  0x00007f031a5db4f6 in catchSignalCB () at /usr/cad/spring_soft/verdi/2012.01/share/PLI/IUS/LINUX64/libsscore_ius111.so
+#8  0x00007f0324c73370 in <signal handler called> () at /lib64/libpthread.so.0
+#9  0x0000000004cf24a9 in  ()
+#10 0x0000000004cf24a0 in  ()
 #11 0x0000000000000000 in  ()
 129 Novas FSDB Dumper for IUS, Release 2012.01, Linux x86_64/64bit, 01/12/2012
 130 Copyright (C) 1996 - 2012 by SpringSoft, Inc.
@@ -154,21 +154,21 @@ argv[5]=+access+r
 141 *Novas* : Begin traversing the scopes, layer (0).
 142 *Novas* : End of traversing.
 143 fsdbDumpvars traverse var: profile - 
-          CPU/Mem usage: 0.060 sys,  0.040 user,  255.97M sys,  0.00M vm
-                   incr: 0.010 sys,  0.010 user,  7.91M sys,  0.00M vm
-                   accu: 0.010 sys,  0.010 user,  7.91M sys,  0.00M vm
-              accu incr: 0.010 sys,  0.010 user,  7.91M sys,  0.00M vm
+          CPU/Mem usage: 0.050 sys,  0.050 user,  255.97M sys,  0.00M vm
+                   incr: 0.000 sys,  0.020 user,  7.91M sys,  0.00M vm
+                   accu: 0.000 sys,  0.020 user,  7.91M sys,  0.00M vm
+              accu incr: 0.000 sys,  0.020 user,  7.91M sys,  0.00M vm
 
           Count usage: 582 var,  338 idcode,  338 callback
                  incr: 582 var,  338 idcode,  338 callback
                  accu: 582 var,  338 idcode,  338 callback
             accu incr: 582 var,  338 idcode,  338 callback
 144 VC callback profile - scalar:0 vector:0
-145 Sun Dec 29 22:09:15 2019
+145 Sun Dec 29 22:11:16 2019
 146 fsdbDumpvars: profile - 
-          CPU/Mem usage: 0.060 sys,  0.040 user,  257.02M sys,  0.00M vm
+          CPU/Mem usage: 0.050 sys,  0.050 user,  257.02M sys,  0.00M vm
                    incr: 0.000 sys,  0.000 user,  1.05M sys,  0.00M vm
-                   accu: 0.010 sys,  0.010 user,  8.96M sys,  0.00M vm
+                   accu: 0.000 sys,  0.020 user,  8.96M sys,  0.00M vm
               accu incr: 0.000 sys,  0.000 user,  1.05M sys,  0.00M vm
 
           Count usage: 582 var,  338 idcode,  338 callback
@@ -176,9 +176,9 @@ argv[5]=+access+r
                  accu: 582 var,  338 idcode,  338 callback
             accu incr: 0 var,  0 idcode,  0 callback
 147 VC callback profile - scalar:75 vector:263
-148 Sun Dec 29 22:09:15 2019
+148 Sun Dec 29 22:11:16 2019
 149 End of simulation at 10610000
 150 VC callback profile - scalar:3259 vector:13101
-151 Sun Dec 29 22:09:15 2019
+151 Sun Dec 29 22:11:16 2019
 152 SimExit
 153 Sim process exit

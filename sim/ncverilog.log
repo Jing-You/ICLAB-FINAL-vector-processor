@@ -1,5 +1,5 @@
 ncverilog(64): 15.20-s039: (c) Copyright 1995-2017 Cadence Design Systems, Inc.
-TOOL:	ncverilog	15.20-s039: Started on Dec 29, 2019 at 22:09:14 CST
+TOOL:	ncverilog	15.20-s039: Started on Dec 29, 2019 at 22:11:15 CST
 ncverilog
 	-f sim_pre.f
 		test_top.v
@@ -72,4 +72,4 @@ d10 =          x
 Simulation complete via $finish(1) at time 10610 NS + 0
 ./test_top.v:139 #(PERIOD*300) $finish;
 ncsim> exit
-TOOL:	ncverilog	15.20-s039: Exiting on Dec 29, 2019 at 22:09:15 CST  (total: 00:00:01)
+TOOL:	ncverilog	15.20-s039: Exiting on Dec 29, 2019 at 22:11:16 CST  (total: 00:00:01)
