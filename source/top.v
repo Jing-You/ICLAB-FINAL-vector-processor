@@ -114,23 +114,6 @@ wire [31:0] ID_read_data_v2_6;
 wire [31:0] ID_read_data_v2_7;
 
 
-wire [31:0] EXE_read_data_v2_0;
-wire [31:0] EXE_read_data_v2_1;
-wire [31:0] EXE_read_data_v2_2;
-wire [31:0] EXE_read_data_v2_3;
-wire [31:0] EXE_read_data_v2_4;
-wire [31:0] EXE_read_data_v2_5;
-wire [31:0] EXE_read_data_v2_6;
-wire [31:0] EXE_read_data_v2_7;
-wire [31:0] EXE_read_data_v1_0;
-wire [31:0] EXE_read_data_v1_1;
-wire [31:0] EXE_read_data_v1_2;
-wire [31:0] EXE_read_data_v1_3;
-wire [31:0] EXE_read_data_v1_4;
-wire [31:0] EXE_read_data_v1_5;
-wire [31:0] EXE_read_data_v1_6;
-wire [31:0] EXE_read_data_v1_7;
-
 wire [31:0] WB_write_data_v0;
 wire [31:0] WB_write_data_v1;
 wire [31:0] WB_write_data_v2;

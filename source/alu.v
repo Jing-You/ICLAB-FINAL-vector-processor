@@ -99,6 +99,15 @@ output reg [31:0] alu_result_v5;
 output reg [31:0] alu_result_v6;
 output reg [31:0] alu_result_v7;
 
+reg [31:0] src2_0;
+reg [31:0] src2_1;
+reg [31:0] src2_2;
+reg [31:0] src2_3;
+reg [31:0] src2_4;
+reg [31:0] src2_5;
+reg [31:0] src2_6;
+reg [31:0] src2_7;
+
 always@(*) begin
 	
 	if(ALUSrc==1'b1) begin
@@ -114,6 +123,28 @@ always@(*) begin
 	src1  = read_data1;				//Rs
 end
 
+always@(*) begin
+	if (ALUOp == 2'b10) begin
+		src2_0 = read_data_v2_0;
+		src2_1 = read_data_v2_1;
+		src2_2 = read_data_v2_2;
+		src2_3 = read_data_v2_3;
+		src2_4 = read_data_v2_4;
+		src2_5 = read_data_v2_5;
+		src2_6 = read_data_v2_6;
+		src2_7 = read_data_v2_7;
+	end
+	else begin
+		src2_0 = src2;
+		src2_1 = src2;
+		src2_2 = src2;
+		src2_3 = src2;
+		src2_4 = src2;
+		src2_5 = src2;
+		src2_6 = src2;
+		src2_7 = src2;		
+	end
+end
 
 always@(*)begin 
 case(ALUOp)	 
@@ -214,80 +245,66 @@ assign sub_temp1 = (funct == `ABS)? (src1-src2) : 0;
 assign abs_result = (sub_temp1[31]==1)? (~sub_temp1+1) : sub_temp1;
 
 always @* begin
-	case(ALUOp)
-	2'b10: begin
-		case (funct)
-			ADD_V : begin
-				alu_result_v0 = read_data_v1_0 + read_data_v2_0;
-				alu_result_v1 = read_data_v1_1 + read_data_v2_1;
-				alu_result_v2 = read_data_v1_2 + read_data_v2_2;
-				alu_result_v3 = read_data_v1_3 + read_data_v2_3;
-				alu_result_v4 = read_data_v1_4 + read_data_v2_4;
-				alu_result_v5 = read_data_v1_5 + read_data_v2_5;
-				alu_result_v6 = read_data_v1_6 + read_data_v2_6;
-				alu_result_v7 = read_data_v1_7 + read_data_v2_7;
-			end
-			SUB_V : begin
-				alu_result_v0 = read_data_v1_0 - read_data_v2_0;
-				alu_result_v1 = read_data_v1_1 - read_data_v2_1;
-				alu_result_v2 = read_data_v1_2 - read_data_v2_2;
-				alu_result_v3 = read_data_v1_3 - read_data_v2_3;
-				alu_result_v4 = read_data_v1_4 - read_data_v2_4;
-				alu_result_v5 = read_data_v1_5 - read_data_v2_5;
-				alu_result_v6 = read_data_v1_6 - read_data_v2_6;
-				alu_result_v7 = read_data_v1_7 - read_data_v2_7;
-			end
-			AND_V : begin
-				alu_result_v0 = read_data_v1_0 & read_data_v2_0;
-				alu_result_v1 = read_data_v1_1 & read_data_v2_1;
-				alu_result_v2 = read_data_v1_2 & read_data_v2_2;
-				alu_result_v3 = read_data_v1_3 & read_data_v2_3;
-				alu_result_v4 = read_data_v1_4 & read_data_v2_4;
-				alu_result_v5 = read_data_v1_5 & read_data_v2_5;
-				alu_result_v6 = read_data_v1_6 & read_data_v2_6;
-				alu_result_v7 = read_data_v1_7 & read_data_v2_7;
-			end
-			OR_V : begin
-				alu_result_v0 = read_data_v1_0 | read_data_v2_0;
-				alu_result_v1 = read_data_v1_1 | read_data_v2_1;
-				alu_result_v2 = read_data_v1_2 | read_data_v2_2;
-				alu_result_v3 = read_data_v1_3 | read_data_v2_3;
-				alu_result_v4 = read_data_v1_4 | read_data_v2_4;
-				alu_result_v5 = read_data_v1_5 | read_data_v2_5;
-				alu_result_v6 = read_data_v1_6 | read_data_v2_6;
-				alu_result_v7 = read_data_v1_7 | read_data_v2_7;
-			end
-			XOR_V : begin
-				alu_result_v0 = read_data_v1_0 ^ read_data_v2_0;
-				alu_result_v1 = read_data_v1_1 ^ read_data_v2_1;
-				alu_result_v2 = read_data_v1_2 ^ read_data_v2_2;
-				alu_result_v3 = read_data_v1_3 ^ read_data_v2_3;
-				alu_result_v4 = read_data_v1_4 ^ read_data_v2_4;
-				alu_result_v5 = read_data_v1_5 ^ read_data_v2_5;
-				alu_result_v6 = read_data_v1_6 ^ read_data_v2_6;
-				alu_result_v7 = read_data_v1_7 ^ read_data_v2_7;
-			end
-			MUL_V : begin
-				alu_result_v0 = read_data_v1_0 * read_data_v2_0;
-				alu_result_v1 = read_data_v1_1 * read_data_v2_1;
-				alu_result_v2 = read_data_v1_2 * read_data_v2_2;
-				alu_result_v3 = read_data_v1_3 * read_data_v2_3;
-				alu_result_v4 = read_data_v1_4 * read_data_v2_4;
-				alu_result_v5 = read_data_v1_5 * read_data_v2_5;
-				alu_result_v6 = read_data_v1_6 * read_data_v2_6;
-				alu_result_v7 = read_data_v1_7 * read_data_v2_7;
-			end
-			default : begin
-				alu_result_v0 = 0;
-				alu_result_v1 = 0;
-				alu_result_v2 = 0;
-				alu_result_v3 = 0;
-				alu_result_v4 = 0;
-				alu_result_v5 = 0;
-				alu_result_v6 = 0;
-				alu_result_v7 = 0;
-			end
-		endcase
+	case (funct)
+		ADD_V : begin
+			alu_result_v0 = read_data_v1_0 + src2_0;
+			alu_result_v1 = read_data_v1_1 + src2_1;
+			alu_result_v2 = read_data_v1_2 + src2_2;
+			alu_result_v3 = read_data_v1_3 + src2_3;
+			alu_result_v4 = read_data_v1_4 + src2_4;
+			alu_result_v5 = read_data_v1_5 + src2_5;
+			alu_result_v6 = read_data_v1_6 + src2_6;
+			alu_result_v7 = read_data_v1_7 + src2_7;
+		end
+		SUB_V : begin
+			alu_result_v0 = read_data_v1_0 - src2_0;
+			alu_result_v1 = read_data_v1_1 - src2_1;
+			alu_result_v2 = read_data_v1_2 - src2_2;
+			alu_result_v3 = read_data_v1_3 - src2_3;
+			alu_result_v4 = read_data_v1_4 - src2_4;
+			alu_result_v5 = read_data_v1_5 - src2_5;
+			alu_result_v6 = read_data_v1_6 - src2_6;
+			alu_result_v7 = read_data_v1_7 - src2_7;
+		end
+		AND_V : begin
+			alu_result_v0 = read_data_v1_0 & src2_0;
+			alu_result_v1 = read_data_v1_1 & src2_1;
+			alu_result_v2 = read_data_v1_2 & src2_2;
+			alu_result_v3 = read_data_v1_3 & src2_3;
+			alu_result_v4 = read_data_v1_4 & src2_4;
+			alu_result_v5 = read_data_v1_5 & src2_5;
+			alu_result_v6 = read_data_v1_6 & src2_6;
+			alu_result_v7 = read_data_v1_7 & src2_7;
+		end
+		OR_V : begin
+			alu_result_v0 = read_data_v1_0 | src2_0;
+			alu_result_v1 = read_data_v1_1 | src2_1;
+			alu_result_v2 = read_data_v1_2 | src2_2;
+			alu_result_v3 = read_data_v1_3 | src2_3;
+			alu_result_v4 = read_data_v1_4 | src2_4;
+			alu_result_v5 = read_data_v1_5 | src2_5;
+			alu_result_v6 = read_data_v1_6 | src2_6;
+			alu_result_v7 = read_data_v1_7 | src2_7;
+		end
+		XOR_V : begin
+			alu_result_v0 = read_data_v1_0 ^ src2_0;
+			alu_result_v1 = read_data_v1_1 ^ src2_1;
+			alu_result_v2 = read_data_v1_2 ^ src2_2;
+			alu_result_v3 = read_data_v1_3 ^ src2_3;
+			alu_result_v4 = read_data_v1_4 ^ src2_4;
+			alu_result_v5 = read_data_v1_5 ^ src2_5;
+			alu_result_v6 = read_data_v1_6 ^ src2_6;
+			alu_result_v7 = read_data_v1_7 ^ src2_7;
+		end
+		MUL_V : begin
+			alu_result_v0 = read_data_v1_0 * src2_0;
+			alu_result_v1 = read_data_v1_1 * src2_1;
+			alu_result_v2 = read_data_v1_2 * src2_2;
+			alu_result_v3 = read_data_v1_3 * src2_3;
+			alu_result_v4 = read_data_v1_4 * src2_4;
+			alu_result_v5 = read_data_v1_5 * src2_5;
+			alu_result_v6 = read_data_v1_6 * src2_6;
+			alu_result_v7 = read_data_v1_7 * src2_7;
 		end
 		default : begin
 			alu_result_v0 = 0;

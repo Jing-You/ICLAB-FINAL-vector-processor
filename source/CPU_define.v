@@ -26,7 +26,8 @@
 `define BEQ	    6'b00_0100
 `define SET	    6'b00_0001
 
-`define RVtype   6'b10_0000
+`define RVVtype   6'b10_0000
+`define RVStype   6'b11_0000
 
 
 

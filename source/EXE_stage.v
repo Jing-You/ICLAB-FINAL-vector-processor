@@ -109,6 +109,7 @@ always@(*) begin
 		if (cnt > 0)  write_addr = rd_addr + cnt - 1;	// vector LW
 		else write_addr = rd_addr;
 	end
+	// else if (V)
 	else begin
 		write_addr = rt_addr;
 	end

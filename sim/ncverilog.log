@@ -1,69 +1,10 @@
 ncverilog(64): 15.20-s039: (c) Copyright 1995-2017 Cadence Design Systems, Inc.
-TOOL:	ncverilog	15.20-s039: Started on Dec 29, 2019 at 01:53:55 CST
+TOOL:	ncverilog	15.20-s039: Started on Dec 29, 2019 at 21:57:38 CST
 ncverilog
 	-f sim_pre.f
 		test_top.v
 		../source/*.v
 		+access+r
-Recompiling... reason: file '../source/CPU_define.v' is newer than expected.
-	expected: Thu Dec 26 17:31:35 2019
-	actual:   Sat Dec 28 21:48:14 2019
-file: test_top.v
-show_register_value();
-                    |
-ncvlog: *W,TMTPAR (test_top.v,137|20): A task enable with no arguments must not include an empty set of parentheses [10.2.2 (IEEE Std 1364-2005)].  The compiler has ignored the parentheses.  Use 'nchelp ncvlog TMTPAR'  for further information.
-file: ../source/ID_stage.v
-	module worklib.ID_stage:v
-		errors: 0, warnings: 0
-		Caching library 'worklib' ....... Done
-	Elaborating the design hierarchy:
-ID_EXE ID_EXE(
-            |
-ncelab: *W,CUVWSP (../source/top.v,275|12): 1 output port was not connected:
-ncelab: (../source/ID_EXE.v,27): EXE_opcode
-
-alu alu(
-      |
-ncelab: *W,CUVWSI (../source/EXE_stage.v,124|6): 1 input port was not connected:
-ncelab: (../source/alu.v,6): opcode
-
-EX_MEM EX_MEM(
-            |
-ncelab: *W,CUVWSI (../source/top.v,389|12): 1 input port was not connected:
-ncelab: (../source/EX_MEM.v,8): wirte_enable
-
-	Building instance overlay tables: .................... Done
-	Generating native compiled code:
-		worklib.EXE_stage:v <0x79f5fa76>
-			streams:   3, words:   946
-		worklib.EX_MEM:v <0x1f346385>
-			streams:   3, words:  5220
-		worklib.ID_EXE:v <0x24460646>
-			streams:   3, words:  4998
-		worklib.ID_stage:v <0x00645885>
-			streams:  10, words:  3787
-		worklib.MEM_WB_stage:v <0x126c3c75>
-			streams:   3, words:  3817
-		worklib.alu:v <0x06f0a49f>
-			streams:   8, words: 17129
-		worklib.controller:v <0x6013de93>
-			streams:   3, words:  9347
-		worklib.top:v <0x43c4ffb8>
-			streams:   0, words:     0
-	Building instance specific data structures.
-	Loading native compiled code:     .................... Done
-	Design hierarchy summary:
-		                 Instances  Unique
-		Modules:                18      17
-		Registers:             148     145
-		Scalar wires:           42       -
-		Vectored wires:        163       -
-		Always blocks:          32      30
-		Initial blocks:          5       5
-		Cont. assignments:      43      53
-		Pseudo assignments:      5       5
-		Simulation timescale:  1ps
-	Writing initial simulation snapshot: worklib.test_top:v
 Loading snapshot worklib.test_top:v .................... Done
 *Novas* Loading libsscore_ius111.so
 ncsim> source /usr/cad/cadence/INCISIV/cur/tools/inca/files/ncsimrc
@@ -79,19 +20,18 @@ Copyright (C) 1996 - 2012 by SpringSoft, Inc.
 *Novas* : Create FSDB file 'lab7_presim.fsdb'
 *Novas* : Begin traversing the scopes, layer (0).
 *Novas* : End of traversing.
-ncsim: *W,RMEMAR: $readmem warning: address incremented out of range. Too many data words read
-	at line 1 of file "instruction.txt". Current address: 45, address range: [0:44].
+ncsim: *W,RMEMAB: $readmem warning: words in file "instruction.txt" less than that given by address bounds.
             File: ./test_top.v, line = 57, pos = 31
            Scope: test_top
             Time: 0 FS + 0
 
-r1 =          0
+r1 =         15
 
-r2 =          0
+r2 =        300
 
-r3 =          0
+r3 =         20
 
-r4 =          0
+r4 =         35
 
 r5 =          3
 
@@ -99,13 +39,13 @@ r6 =          7
 
 r7 =          4
 
-r8 =         15
+r8 =          0
 
-r9 =         35
+r9 =          0
 
-r10 =         20
+r10 =          0
 
-r11 =        300
+r11 =          0
 
 r12 =          0
 
@@ -121,15 +61,15 @@ d5 =         20
 
 d6 =        300
 
-d7 =         15
+d7 =          x
 
-d8 =         35
+d8 =          x
 
-d9 =         20
+d9 =          x
 
-d10 =        300
+d10 =          x
 
-Simulation complete via $finish(1) at time 1910 NS + 0
-./test_top.v:139 #(PERIOD) $finish;
+Simulation complete via $finish(1) at time 10610 NS + 0
+./test_top.v:139 #(PERIOD*300) $finish;
 ncsim> exit
-TOOL:	ncverilog	15.20-s039: Exiting on Dec 29, 2019 at 01:53:58 CST  (total: 00:00:03)
+TOOL:	ncverilog	15.20-s039: Exiting on Dec 29, 2019 at 21:57:38 CST  (total: 00:00:00)

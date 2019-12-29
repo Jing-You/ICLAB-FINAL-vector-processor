@@ -47,7 +47,7 @@ initial begin
 `endif
 end
 
-parameter BOOT_CODE_SIZE = 45;
+parameter BOOT_CODE_SIZE = 200;
 
 reg [31:0] mem [0:BOOT_CODE_SIZE-1];
 
@@ -132,11 +132,11 @@ d8=0;
 #(PERIOD) r8 = r9 | r10;
 #(PERIOD) r5 = r8 - r10;
 #(PERIOD) r7 = r8 - r10;
-#(PERIOD*20);
+#(PERIOD);
 
 show_register_value();
 
-#(PERIOD) $finish;
+#(PERIOD*300) $finish;
 end
 
 

@@ -107,7 +107,7 @@ case(opcode)
 		MemtoReg = 1'b0;
 		VRegWrite = 0;
 	end
-	`RVtype: begin
+	`RVVtype: begin
 		RegDst = 1'b1;
 		ALUOp = 2'b10;
 		ALUSrc = 1'b0;
@@ -115,7 +115,15 @@ case(opcode)
 		RegWrite = 1'b0;
 		MemtoReg = 1'b0;
 		VRegWrite = 1;
-
+	end
+	`RVStype: begin
+		RegDst = 1'b1;
+		ALUOp = 2'b11;
+		ALUSrc = 1'b0;
+		branch = 1'b0;
+		RegWrite = 1'b0;
+		MemtoReg = 1'b0;
+		VRegWrite = 1;
 	end
 	`LW: begin
 		RegDst = 1'b0;
