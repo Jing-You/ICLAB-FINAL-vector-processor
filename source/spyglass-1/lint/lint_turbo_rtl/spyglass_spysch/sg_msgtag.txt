@@ -1,0 +1,43 @@
+-1 "DetectTopDesignUnits" 2
+"RULEGROUP"
+["Design Read"]
+"BUILTIN"
+"1"
+-1 "ElabSummary" 2
+"RULEGROUP"
+["Design Read"]
+"BUILTIN"
+"1"
+-1 "PragmaComments-ML" 3
+"TEMPLATE"
+["lint/lint_turbo_rtl"]
+"RULE_ORDER"
+[17]
+"RULEGROUP"
+["morelint"]
+-1 "RegInputOutput-ML" 3
+"TEMPLATE"
+["lint/lint_turbo_rtl"]
+"RULE_ORDER"
+[63]
+"RULEGROUP"
+["morelint"]
+-1 "ReportPortInfo-ML" 3
+"TEMPLATE"
+["lint/lint_turbo_rtl"]
+"RULE_ORDER"
+[42]
+"RULEGROUP"
+["morelint"]
+-1 "W528" 3
+"TEMPLATE"
+["lint/lint_turbo_rtl"]
+"RULE_ORDER"
+[94]
+"RULEGROUP"
+["lint/Lint_Elab_Rules","lint/Usage"]
+-1 "checkCMD_unset_option" 2
+"RULEGROUP"
+["Command-line read"]
+"BUILTIN"
+"1"

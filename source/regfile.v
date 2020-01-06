@@ -10,7 +10,7 @@ module regfile(
 	//read,
 	write,
 	//sw
-	sw_data,
+	// sw_data,
 
 	write_data_v0,
 	write_data_v1,
@@ -56,7 +56,7 @@ parameter aw = 5;			//regfile address width
 input				clk;
 input				rst_n;
 input VRegWrite;
-input [4:0] cnt;
+input [31:0] cnt;
 //
 // Port Read 1
 //
@@ -103,28 +103,21 @@ input 					write;
 input	[aw-1:0]		write_addr;
 input	[dw-1:0]		write_data;
 //Port Data Memory
-output [dw-1:0] sw_data;
+// output [dw-1:0] sw_data;
 output [31:0] vlen;
 
 reg [dw-1:0]gpr[31:0];	//declare 32 32-bit general purpose register (gpr)
 //test
-wire [31:0] r1;
-wire [31:0] r2;
-wire [31:0] r3;
-wire [31:0] r4;
-wire [31:0] r5;
-wire [31:0] r6;
 
-assign r1 = gpr[1];
-assign r2 = gpr[2];
-assign r3 = gpr[3];
-assign r4 = gpr[4];
-assign r5 = gpr[5];
-assign r6 = gpr[6];
-assign vlen = gpr[7];
-
+wire [31:0] r1 = gpr[1];
+wire [31:0] r2 = gpr[2];
+wire [31:0] r3 = gpr[3];
+wire [31:0] r4 = gpr[4];
+wire [31:0] r5 = gpr[5];
+wire [31:0] r6 = gpr[6];
+wire [31:0] vlen = gpr[7];
 wire [31:0] v0_0 = gpr[8]; 	// v0[0]
-wire [31:0] v0_1 = gpr[9];		// v0[1] 
+wire [31:0] v0_1 = gpr[9];	// v0[1] 
 wire [31:0] v0_2 = gpr[10];	// v0[2]
 wire [31:0] v0_3 = gpr[11];	// v0[3]
 wire [31:0] v0_4 = gpr[12];	// v0[4]
@@ -150,7 +143,7 @@ wire [31:0] v2_7 = gpr[31];	// v2[7]
 //test
 
 //SW USE
-	assign sw_data = gpr[read_addr2];
+	// assign sw_data = gpr[read_addr2];
 //
 always@(posedge clk) begin
 	if(~rst_n) begin
@@ -203,66 +196,55 @@ always@(posedge clk) begin
 		case(write_addr)
 		0: begin
 			gpr[8] <= write_data_v0;
-			gpr[9] <= write_data_v1;
+			if (2 <= vlen)
+				gpr[9] <= write_data_v1;
+			if (3 <= vlen)
+	
 			gpr[10] <= write_data_v2;
-			gpr[11] <= write_data_v3;
-			gpr[12] <= write_data_v4;
-			gpr[13] <= write_data_v5;
-			gpr[14] <= write_data_v6;
-			gpr[15] <= write_data_v7;
+			if (4 <= vlen)
+				gpr[11] <= write_data_v3;
+			if (5 <= vlen)
+				gpr[12] <= write_data_v4;
+			if (6 <= vlen)
+				gpr[13] <= write_data_v5;
+			if (7 <= vlen)
+				gpr[14] <= write_data_v6;
+			if (8 <= vlen)
+				gpr[15] <= write_data_v7;
 		end
 		1: begin
 			gpr[16] <= write_data_v0;
+			if (2 <= vlen)
 			gpr[17] <= write_data_v1;
+			if (3 <= vlen)
 			gpr[18] <= write_data_v2;
+			if (4 <= vlen)
 			gpr[19] <= write_data_v3;
+			if (5 <= vlen)
 			gpr[20] <= write_data_v4;
+			if (6 <= vlen)
 			gpr[21] <= write_data_v5;
+			if (7 <= vlen)
 			gpr[22] <= write_data_v6;
+			if (8 <= vlen)
 			gpr[23] <= write_data_v7;			
 		end
 		2: begin
+			if (1 <= vlen)
 			gpr[24] <= write_data_v0;
+			if (2 <= vlen)
 			gpr[25] <= write_data_v1;
+			if (3 <= vlen)
 			gpr[26] <= write_data_v2;
+			if (4 <= vlen)
 			gpr[27] <= write_data_v3;
+			if (5 <= vlen)
 			gpr[28] <= write_data_v4;
+			if (6 <= vlen)
 			gpr[29] <= write_data_v5;
+			if (7 <= vlen)
 			gpr[30] <= write_data_v6;
-			gpr[31] <= write_data_v7;
-		end
-		endcase
-	end
-	else if (VRegWrite) begin
-		case(write_addr)
-		0: begin
-			gpr[8] <= write_data_v0;
-			gpr[9] <= write_data_v1;
-			gpr[10] <= write_data_v2;
-			gpr[11] <= write_data_v3;
-			gpr[12] <= write_data_v4;
-			gpr[13] <= write_data_v5;
-			gpr[14] <= write_data_v6;
-			gpr[15] <= write_data_v7;
-		end
-		1: begin
-			gpr[16] <= write_data_v0;
-			gpr[17] <= write_data_v1;
-			gpr[18] <= write_data_v2;
-			gpr[19] <= write_data_v3;
-			gpr[20] <= write_data_v4;
-			gpr[21] <= write_data_v5;
-			gpr[22] <= write_data_v6;
-			gpr[23] <= write_data_v7;			
-		end
-		2: begin
-			gpr[24] <= write_data_v0;
-			gpr[25] <= write_data_v1;
-			gpr[26] <= write_data_v2;
-			gpr[27] <= write_data_v3;
-			gpr[28] <= write_data_v4;
-			gpr[29] <= write_data_v5;
-			gpr[30] <= write_data_v6;
+			if (8 <= vlen)
 			gpr[31] <= write_data_v7;
 		end
 		endcase

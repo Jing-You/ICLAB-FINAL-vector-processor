@@ -1,0 +1,448 @@
+ 
+****************************************
+Report : area
+Design : top_pipe
+Version: O-2018.06
+Date   : Tue Jan  7 00:25:46 2020
+****************************************
+
+Library(s) Used:
+
+    saed32hvt_ss0p95v125c (File: /usr/cadtool/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95v125c.db)
+
+Number of ports:                         6595
+Number of nets:                         39497
+Number of cells:                        29035
+Number of combinational cells:          25344
+Number of sequential cells:              3479
+Number of macros/black boxes:               0
+Number of buf/inv:                       5646
+Number of references:                       3
+
+Combinational area:              65638.024517
+Buf/Inv area:                     7187.446491
+Noncombinational area:           18913.396295
+Macro/Black Box area:                0.000000
+Net Interconnect area:           20452.890513
+
+Total cell area:                 84551.420811
+Total area:                     105004.311325
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area            Local cell area
+                                  -------------------  ------------------------------ 
+Hierarchical cell                 Absolute    Percent  Combi-      Noncombi-   Black-
+                                  Total       Total    national    national    boxes   Design
+--------------------------------  ----------  -------  ----------  ----------  ------  -----------------------------------------
+top_pipe                          84551.4208    100.0     41.9338     13.2155  0.0000  top_pipe
+top0                              84496.2716     99.9      9.9116      0.0000  0.0000  top
+top0/EXE_stage                    54231.0251     64.1    190.3539      0.0000  0.0000  EXE_stage
+top0/EXE_stage/alu                54040.6713     63.9  54040.6713      0.0000  0.0000  alu
+top0/EX_MEM                        2612.8544      3.1     55.4034   2557.4510  0.0000  EX_MEM
+top0/ID_EXE                         844.5205      1.0     19.0608    825.4597  0.0000  ID_EXE
+top0/ID_stage                     23836.6741     28.2    686.1888    448.0559  0.0000  ID_stage
+top0/ID_stage/clk_gate_cnt_reg        8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_ID_stage_mydesign_0
+top0/ID_stage/clk_gate_cnt_reg_0      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_ID_stage_mydesign_7
+top0/ID_stage/clk_gate_cnt_reg_1      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_ID_stage_mydesign_6
+top0/ID_stage/clk_gate_cnt_reg_2      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_ID_stage_mydesign_5
+top0/ID_stage/clk_gate_instn_LW_SW_reg
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_ID_stage_mydesign_4
+top0/ID_stage/clk_gate_instn_LW_SW_reg_0
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_ID_stage_mydesign_3
+top0/ID_stage/clk_gate_instn_LW_SW_reg_1
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_ID_stage_mydesign_2
+top0/ID_stage/clk_gate_instn_LW_SW_reg_2
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_ID_stage_mydesign_1
+top0/ID_stage/controller             71.6686      0.1     71.6686      0.0000  0.0000  controller
+top0/ID_stage/regfile             22563.6668     26.7   9593.4278  11401.9164  0.0000  regfile
+top0/ID_stage/regfile/clk_gate_gpr_reg_0_
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_63
+top0/ID_stage/regfile/clk_gate_gpr_reg_0__0
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_62
+top0/ID_stage/regfile/clk_gate_gpr_reg_0__1
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_61
+top0/ID_stage/regfile/clk_gate_gpr_reg_0__2
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_60
+top0/ID_stage/regfile/clk_gate_gpr_reg_10_
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_103
+top0/ID_stage/regfile/clk_gate_gpr_reg_10__0
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_102
+top0/ID_stage/regfile/clk_gate_gpr_reg_10__1
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_101
+top0/ID_stage/regfile/clk_gate_gpr_reg_10__2
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_100
+top0/ID_stage/regfile/clk_gate_gpr_reg_11_
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_107
+top0/ID_stage/regfile/clk_gate_gpr_reg_11__0
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_106
+top0/ID_stage/regfile/clk_gate_gpr_reg_11__1
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_105
+top0/ID_stage/regfile/clk_gate_gpr_reg_11__2
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_104
+top0/ID_stage/regfile/clk_gate_gpr_reg_12_
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_111
+top0/ID_stage/regfile/clk_gate_gpr_reg_12__0
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_110
+top0/ID_stage/regfile/clk_gate_gpr_reg_12__1
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_109
+top0/ID_stage/regfile/clk_gate_gpr_reg_12__2
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_108
+top0/ID_stage/regfile/clk_gate_gpr_reg_13_
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_115
+top0/ID_stage/regfile/clk_gate_gpr_reg_13__0
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_114
+top0/ID_stage/regfile/clk_gate_gpr_reg_13__1
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_113
+top0/ID_stage/regfile/clk_gate_gpr_reg_13__2
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_112
+top0/ID_stage/regfile/clk_gate_gpr_reg_14_
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_119
+top0/ID_stage/regfile/clk_gate_gpr_reg_14__0
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_118
+top0/ID_stage/regfile/clk_gate_gpr_reg_14__1
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_117
+top0/ID_stage/regfile/clk_gate_gpr_reg_14__2
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_116
+top0/ID_stage/regfile/clk_gate_gpr_reg_15_
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_123
+top0/ID_stage/regfile/clk_gate_gpr_reg_15__0
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_122
+top0/ID_stage/regfile/clk_gate_gpr_reg_15__1
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_121
+top0/ID_stage/regfile/clk_gate_gpr_reg_15__2
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_120
+top0/ID_stage/regfile/clk_gate_gpr_reg_16_
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_127
+top0/ID_stage/regfile/clk_gate_gpr_reg_16__0
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_126
+top0/ID_stage/regfile/clk_gate_gpr_reg_16__1
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_125
+top0/ID_stage/regfile/clk_gate_gpr_reg_16__2
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_124
+top0/ID_stage/regfile/clk_gate_gpr_reg_17_
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_131
+top0/ID_stage/regfile/clk_gate_gpr_reg_17__0
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_130
+top0/ID_stage/regfile/clk_gate_gpr_reg_17__1
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_129
+top0/ID_stage/regfile/clk_gate_gpr_reg_17__2
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_128
+top0/ID_stage/regfile/clk_gate_gpr_reg_18_
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_135
+top0/ID_stage/regfile/clk_gate_gpr_reg_18__0
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_134
+top0/ID_stage/regfile/clk_gate_gpr_reg_18__1
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_133
+top0/ID_stage/regfile/clk_gate_gpr_reg_18__2
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_132
+top0/ID_stage/regfile/clk_gate_gpr_reg_19_
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_139
+top0/ID_stage/regfile/clk_gate_gpr_reg_19__0
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_138
+top0/ID_stage/regfile/clk_gate_gpr_reg_19__1
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_137
+top0/ID_stage/regfile/clk_gate_gpr_reg_19__2
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_136
+top0/ID_stage/regfile/clk_gate_gpr_reg_1_
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_67
+top0/ID_stage/regfile/clk_gate_gpr_reg_1__0
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_66
+top0/ID_stage/regfile/clk_gate_gpr_reg_1__1
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_65
+top0/ID_stage/regfile/clk_gate_gpr_reg_1__2
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_64
+top0/ID_stage/regfile/clk_gate_gpr_reg_20_
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_143
+top0/ID_stage/regfile/clk_gate_gpr_reg_20__0
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_142
+top0/ID_stage/regfile/clk_gate_gpr_reg_20__1
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_141
+top0/ID_stage/regfile/clk_gate_gpr_reg_20__2
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_140
+top0/ID_stage/regfile/clk_gate_gpr_reg_21_
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_147
+top0/ID_stage/regfile/clk_gate_gpr_reg_21__0
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_146
+top0/ID_stage/regfile/clk_gate_gpr_reg_21__1
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_145
+top0/ID_stage/regfile/clk_gate_gpr_reg_21__2
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_144
+top0/ID_stage/regfile/clk_gate_gpr_reg_22_
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_151
+top0/ID_stage/regfile/clk_gate_gpr_reg_22__0
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_150
+top0/ID_stage/regfile/clk_gate_gpr_reg_22__1
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_149
+top0/ID_stage/regfile/clk_gate_gpr_reg_22__2
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_148
+top0/ID_stage/regfile/clk_gate_gpr_reg_23_
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_155
+top0/ID_stage/regfile/clk_gate_gpr_reg_23__0
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_154
+top0/ID_stage/regfile/clk_gate_gpr_reg_23__1
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_153
+top0/ID_stage/regfile/clk_gate_gpr_reg_23__2
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_152
+top0/ID_stage/regfile/clk_gate_gpr_reg_24_
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_159
+top0/ID_stage/regfile/clk_gate_gpr_reg_24__0
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_158
+top0/ID_stage/regfile/clk_gate_gpr_reg_24__1
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_157
+top0/ID_stage/regfile/clk_gate_gpr_reg_24__2
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_156
+top0/ID_stage/regfile/clk_gate_gpr_reg_25_
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_163
+top0/ID_stage/regfile/clk_gate_gpr_reg_25__0
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_162
+top0/ID_stage/regfile/clk_gate_gpr_reg_25__1
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_161
+top0/ID_stage/regfile/clk_gate_gpr_reg_25__2
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_160
+top0/ID_stage/regfile/clk_gate_gpr_reg_26_
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_167
+top0/ID_stage/regfile/clk_gate_gpr_reg_26__0
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_166
+top0/ID_stage/regfile/clk_gate_gpr_reg_26__1
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_165
+top0/ID_stage/regfile/clk_gate_gpr_reg_26__2
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_164
+top0/ID_stage/regfile/clk_gate_gpr_reg_27_
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_171
+top0/ID_stage/regfile/clk_gate_gpr_reg_27__0
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_170
+top0/ID_stage/regfile/clk_gate_gpr_reg_27__1
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_169
+top0/ID_stage/regfile/clk_gate_gpr_reg_27__2
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_168
+top0/ID_stage/regfile/clk_gate_gpr_reg_28_
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_175
+top0/ID_stage/regfile/clk_gate_gpr_reg_28__0
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_174
+top0/ID_stage/regfile/clk_gate_gpr_reg_28__1
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_173
+top0/ID_stage/regfile/clk_gate_gpr_reg_28__2
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_172
+top0/ID_stage/regfile/clk_gate_gpr_reg_29_
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_179
+top0/ID_stage/regfile/clk_gate_gpr_reg_29__0
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_178
+top0/ID_stage/regfile/clk_gate_gpr_reg_29__1
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_177
+top0/ID_stage/regfile/clk_gate_gpr_reg_29__2
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_176
+top0/ID_stage/regfile/clk_gate_gpr_reg_2_
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_71
+top0/ID_stage/regfile/clk_gate_gpr_reg_2__0
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_70
+top0/ID_stage/regfile/clk_gate_gpr_reg_2__1
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_69
+top0/ID_stage/regfile/clk_gate_gpr_reg_2__2
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_68
+top0/ID_stage/regfile/clk_gate_gpr_reg_30_
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_183
+top0/ID_stage/regfile/clk_gate_gpr_reg_30__0
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_182
+top0/ID_stage/regfile/clk_gate_gpr_reg_30__1
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_181
+top0/ID_stage/regfile/clk_gate_gpr_reg_30__2
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_180
+top0/ID_stage/regfile/clk_gate_gpr_reg_31_
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_0
+top0/ID_stage/regfile/clk_gate_gpr_reg_31__0
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_186
+top0/ID_stage/regfile/clk_gate_gpr_reg_31__1
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_185
+top0/ID_stage/regfile/clk_gate_gpr_reg_31__2
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_184
+top0/ID_stage/regfile/clk_gate_gpr_reg_3_
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_75
+top0/ID_stage/regfile/clk_gate_gpr_reg_3__0
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_74
+top0/ID_stage/regfile/clk_gate_gpr_reg_3__1
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_73
+top0/ID_stage/regfile/clk_gate_gpr_reg_3__2
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_72
+top0/ID_stage/regfile/clk_gate_gpr_reg_4_
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_79
+top0/ID_stage/regfile/clk_gate_gpr_reg_4__0
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_78
+top0/ID_stage/regfile/clk_gate_gpr_reg_4__1
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_77
+top0/ID_stage/regfile/clk_gate_gpr_reg_4__2
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_76
+top0/ID_stage/regfile/clk_gate_gpr_reg_5_
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_83
+top0/ID_stage/regfile/clk_gate_gpr_reg_5__0
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_82
+top0/ID_stage/regfile/clk_gate_gpr_reg_5__1
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_81
+top0/ID_stage/regfile/clk_gate_gpr_reg_5__2
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_80
+top0/ID_stage/regfile/clk_gate_gpr_reg_6_
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_87
+top0/ID_stage/regfile/clk_gate_gpr_reg_6__0
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_86
+top0/ID_stage/regfile/clk_gate_gpr_reg_6__1
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_85
+top0/ID_stage/regfile/clk_gate_gpr_reg_6__2
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_84
+top0/ID_stage/regfile/clk_gate_gpr_reg_7_
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_91
+top0/ID_stage/regfile/clk_gate_gpr_reg_7__0
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_90
+top0/ID_stage/regfile/clk_gate_gpr_reg_7__1
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_89
+top0/ID_stage/regfile/clk_gate_gpr_reg_7__2
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_88
+top0/ID_stage/regfile/clk_gate_gpr_reg_8_
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_95
+top0/ID_stage/regfile/clk_gate_gpr_reg_8__0
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_94
+top0/ID_stage/regfile/clk_gate_gpr_reg_8__1
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_93
+top0/ID_stage/regfile/clk_gate_gpr_reg_8__2
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_92
+top0/ID_stage/regfile/clk_gate_gpr_reg_9_
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_99
+top0/ID_stage/regfile/clk_gate_gpr_reg_9__0
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_98
+top0/ID_stage/regfile/clk_gate_gpr_reg_9__1
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_97
+top0/ID_stage/regfile/clk_gate_gpr_reg_9__2
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_96
+top0/ID_stage/regfile/clk_gate_read_data1_reg
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_59
+top0/ID_stage/regfile/clk_gate_read_data1_reg_0
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_58
+top0/ID_stage/regfile/clk_gate_read_data1_reg_1
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_57
+top0/ID_stage/regfile/clk_gate_read_data1_reg_2
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_56
+top0/ID_stage/regfile/clk_gate_read_data2_reg
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_55
+top0/ID_stage/regfile/clk_gate_read_data2_reg_0
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_54
+top0/ID_stage/regfile/clk_gate_read_data2_reg_1
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_53
+top0/ID_stage/regfile/clk_gate_read_data_v1_0_reg
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_36
+top0/ID_stage/regfile/clk_gate_read_data_v1_0_reg_0
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_35
+top0/ID_stage/regfile/clk_gate_read_data_v1_0_reg_1
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_34
+top0/ID_stage/regfile/clk_gate_read_data_v1_0_reg_2
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_33
+top0/ID_stage/regfile/clk_gate_read_data_v1_1_reg
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_32
+top0/ID_stage/regfile/clk_gate_read_data_v1_1_reg_0
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_31
+top0/ID_stage/regfile/clk_gate_read_data_v1_1_reg_1
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_30
+top0/ID_stage/regfile/clk_gate_read_data_v1_2_reg
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_29
+top0/ID_stage/regfile/clk_gate_read_data_v1_2_reg_0
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_28
+top0/ID_stage/regfile/clk_gate_read_data_v1_2_reg_1
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_27
+top0/ID_stage/regfile/clk_gate_read_data_v1_3_reg
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_52
+top0/ID_stage/regfile/clk_gate_read_data_v1_3_reg_0
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_51
+top0/ID_stage/regfile/clk_gate_read_data_v1_3_reg_1
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_50
+top0/ID_stage/regfile/clk_gate_read_data_v1_3_reg_2
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_49
+top0/ID_stage/regfile/clk_gate_read_data_v1_4_reg
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_48
+top0/ID_stage/regfile/clk_gate_read_data_v1_4_reg_0
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_47
+top0/ID_stage/regfile/clk_gate_read_data_v1_4_reg_1
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_46
+top0/ID_stage/regfile/clk_gate_read_data_v1_5_reg
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_45
+top0/ID_stage/regfile/clk_gate_read_data_v1_5_reg_0
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_44
+top0/ID_stage/regfile/clk_gate_read_data_v1_5_reg_1
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_43
+top0/ID_stage/regfile/clk_gate_read_data_v1_6_reg
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_42
+top0/ID_stage/regfile/clk_gate_read_data_v1_6_reg_0
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_41
+top0/ID_stage/regfile/clk_gate_read_data_v1_6_reg_1
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_40
+top0/ID_stage/regfile/clk_gate_read_data_v1_7_reg
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_39
+top0/ID_stage/regfile/clk_gate_read_data_v1_7_reg_0
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_38
+top0/ID_stage/regfile/clk_gate_read_data_v1_7_reg_1
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_37
+top0/ID_stage/regfile/clk_gate_read_data_v2_0_reg
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_10
+top0/ID_stage/regfile/clk_gate_read_data_v2_0_reg_0
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_9
+top0/ID_stage/regfile/clk_gate_read_data_v2_0_reg_1
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_8
+top0/ID_stage/regfile/clk_gate_read_data_v2_0_reg_2
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_7
+top0/ID_stage/regfile/clk_gate_read_data_v2_1_reg
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_6
+top0/ID_stage/regfile/clk_gate_read_data_v2_1_reg_0
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_5
+top0/ID_stage/regfile/clk_gate_read_data_v2_1_reg_1
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_4
+top0/ID_stage/regfile/clk_gate_read_data_v2_2_reg
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_3
+top0/ID_stage/regfile/clk_gate_read_data_v2_2_reg_0
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_2
+top0/ID_stage/regfile/clk_gate_read_data_v2_2_reg_1
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_1
+top0/ID_stage/regfile/clk_gate_read_data_v2_3_reg
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_26
+top0/ID_stage/regfile/clk_gate_read_data_v2_3_reg_0
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_25
+top0/ID_stage/regfile/clk_gate_read_data_v2_3_reg_1
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_24
+top0/ID_stage/regfile/clk_gate_read_data_v2_3_reg_2
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_23
+top0/ID_stage/regfile/clk_gate_read_data_v2_4_reg
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_22
+top0/ID_stage/regfile/clk_gate_read_data_v2_4_reg_0
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_21
+top0/ID_stage/regfile/clk_gate_read_data_v2_4_reg_1
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_20
+top0/ID_stage/regfile/clk_gate_read_data_v2_5_reg
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_19
+top0/ID_stage/regfile/clk_gate_read_data_v2_5_reg_0
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_18
+top0/ID_stage/regfile/clk_gate_read_data_v2_5_reg_1
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_17
+top0/ID_stage/regfile/clk_gate_read_data_v2_6_reg
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_16
+top0/ID_stage/regfile/clk_gate_read_data_v2_6_reg_0
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_15
+top0/ID_stage/regfile/clk_gate_read_data_v2_6_reg_1
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_14
+top0/ID_stage/regfile/clk_gate_read_data_v2_7_reg
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_13
+top0/ID_stage/regfile/clk_gate_read_data_v2_7_reg_0
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_12
+top0/ID_stage/regfile/clk_gate_read_data_v2_7_reg_1
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_regfile_mydesign_11
+top0/IF_ID                          381.9784      0.5     11.4365    353.7684  0.0000  IF_ID
+top0/IF_ID/clk_gate_ID_PC_reg         8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_IF_ID_mydesign_0
+top0/IF_ID/clk_gate_ID_PC_reg_0       8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_IF_ID_mydesign_1
+top0/IF_stage                       261.5142      0.3      0.0000      0.0000  0.0000  IF_stage
+top0/IF_stage/PC                    261.5142      0.3    124.2764    120.4643  0.0000  PC
+top0/IF_stage/PC/clk_gate_PC_out_reg
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_PC_mydesign_0
+top0/IF_stage/PC/clk_gate_PC_out_reg_0
+                                      8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_PC_mydesign_1
+top0/MEM_WB_stage                  2227.5721      2.6     46.0001   2181.5720  0.0000  MEM_WB_stage
+top0/WB_stage                        90.2211      0.1     90.2211      0.0000  0.0000  WB_stage
+--------------------------------  ----------  -------  ----------  ----------  ------  -----------------------------------------
+Total                                                  65638.0245  18913.3963  0.0000
+
+1

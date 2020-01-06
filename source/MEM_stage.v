@@ -25,7 +25,7 @@ dsram dcache(
 .out(dsram_out)
 );
 */
-
+/*
 wire dcache_web = MemWrite ? 1'b0 : 1'b1;
 
 dsram dcache(
@@ -35,5 +35,5 @@ dsram dcache(
 .in(write_data),
 .out(mem_read_data)
 );
-
+*/
 endmodule

@@ -1,7 +1,7 @@
 `include "../source/CPU_define.v"
 module test_top;
 
-parameter PERIOD = 20;
+parameter PERIOD = 10;
 parameter WORD = 255;
 //input
 reg clk;
@@ -20,30 +20,73 @@ wire  peri_web;
 wire [15:0] peri_addr;
 wire [15:0] peri_datao;
 
-top_pipe top_pipe_U0(
+// MEM_stage
+wire [31:0] MEM_alu_result;
+wire [31:0] MEM_write_data;
+wire [31:0] mem_read_data;
+wire  MEM_MemWrite;
+
+// IF_icache
+wire [15:0] IF_PC;
+wire PC_run;
+wire [31:0] instn;
+
+top_pipe top_pipe(
 .clk(clk),
 .rst_n(rst_n),
 .boot_up(boot_up),
-.boot_addr(boot_addr),
-.boot_datai(boot_datai),
-.boot_web(boot_web),
+// .boot_addr(boot_addr),
+// .boot_datai(boot_datai),
+// .boot_web(boot_web),
 
 .peri_web(peri_web),
 .peri_addr(peri_addr),
-.peri_datao(peri_datao)
+.peri_datao(peri_datao),
 
+// MEM_stage
+.MEM_alu_result(MEM_alu_result),
+.MEM_write_data(MEM_write_data),
+.mem_read_data(mem_read_data),
+.MEM_MemWrite(MEM_MemWrite),
+// IF_icache
+.IF_PC(IF_PC),
+.PC_run(PC_run),
+.instn(instn)
 );
 
+// MEM_stage
+wire dcache_web = MEM_MemWrite ? 1'b0 : 1'b1;
+
+dsram dcache(
+.addr(MEM_alu_result[7:0]),
+.clk(clk),
+.en_wr(dcache_web),
+.in(MEM_write_data),
+.out(mem_read_data)
+);
+
+wire [7:0] ins_addr;
+assign ins_addr = IF_PC[9:2];
+wire icache_en_wr = PC_run ? 1'b1 : boot_web;
+wire [7:0] icache_addr = PC_run ? ins_addr : boot_addr;
+
+dsram icache(
+	.clk(clk),
+    .en_wr(icache_en_wr),
+ 	.addr(icache_addr),
+	.in(boot_datai),
+	.out(instn)
+);
 
 
 initial begin
 `ifdef GATESIM
-	$fsdbDumpfile("lab7_gatesim.fsdb");
-	$fsdbDumpvars;
-	$sdf_annotate("../syn/netlist/top_pipe_syn.sdf",top_pipe_U0);
+	// $fsdbDumpfile("gatesim.fsdb");
+	// $fsdbDumpvars;
+	$sdf_annotate("../syn/netlist/top_pipe_syn.sdf",top_pipe);
 `else
-	$fsdbDumpfile("lab7_presim.fsdb");
-	$fsdbDumpvars;
+	// $fsdbDumpfile("presim.fsdb");
+	// $fsdbDumpvars;
 `endif
 end
 
@@ -149,46 +192,56 @@ begin
 `ifdef GATESIM
 f_register = $fopen("register_gate.txt");
 write_to = f_register | std_out;
-$fdisplay(write_to,"r1 = %d ,the answer is %d\n",top_pipe_U0.top0.ID_stage.regfile.r1,r1);
-$fdisplay(write_to,"r2 = %d ,the answer is %d\n",top_pipe_U0.top0.ID_stage.regfile.r2,r2);
-$fdisplay(write_to,"r3 = %d ,the answer is %d\n",top_pipe_U0.top0.ID_stage.regfile.r3,r3);
-$fdisplay(write_to,"r4 = %d ,the answer is %d\n",top_pipe_U0.top0.ID_stage.regfile.r4,r4);
-$fdisplay(write_to,"r5 = %d ,the answer is %d\n",top_pipe_U0.top0.ID_stage.regfile.r5,r5);
-$fdisplay(write_to,"r6 = %d ,the answer is %d\n",top_pipe_U0.top0.ID_stage.regfile.r6,r6);
-$fdisplay(write_to,"r7 = %d ,the answer is %d\n",top_pipe_U0.top0.ID_stage.regfile.r7,r7);
-$fdisplay(write_to,"r8 = %d ,the answer is %d\n",top_pipe_U0.top0.ID_stage.regfile.r8,r8);
-$fdisplay(write_to,"r9 = %d ,the answer is %d\n",top_pipe_U0.top0.ID_stage.regfile.r9,r9);
-$fdisplay(write_to,"r10 = %d ,the answer is %d\n",top_pipe_U0.top0.ID_stage.regfile.r10,r10);
-// $fdisplay(write_to,"d2 = %d ,the answer is %d\n",top_pipe_U0.top0.ID_stage.dcache.memory[3*32-1:2*32],d2);
-// $fdisplay(write_to,"d4 = %d ,the answer is %d\n",top_pipe_U0.top0.ID_stage.dcache.memory[5*32-1:4*32],d4);
-// $fdisplay(write_to,"d6 = %d ,the answer is %d\n",top_pipe_U0.top0.ID_stage.dcache.memory[7*32-1:6*32],d6);
-// $fdisplay(write_to,"d8 = %d ,the answer is %d\n",top_pipe_U0.top0.ID_stage.dcache.memory[9*32-1:8*32],d8);
+$fdisplay(write_to,"r1 = %d\n",top_pipe.top0.ID_stage.regfile.r1);
+$fdisplay(write_to,"r2 = %d\n",top_pipe.top0.ID_stage.regfile.r2);
+$fdisplay(write_to,"r3 = %d\n",top_pipe.top0.ID_stage.regfile.r3);
+$fdisplay(write_to,"r4 = %d\n",top_pipe.top0.ID_stage.regfile.r4);
+$fdisplay(write_to,"r5 = %d\n",top_pipe.top0.ID_stage.regfile.r5);
+$fdisplay(write_to,"r6 = %d\n",top_pipe.top0.ID_stage.regfile.r6);
+$fdisplay(write_to,"r7 = %d\n",top_pipe.top0.ID_stage.regfile.vlen);
+$fdisplay(write_to,"r8 = %d\n",top_pipe.top0.ID_stage.regfile.v0_0);
+$fdisplay(write_to,"r9 = %d\n",top_pipe.top0.ID_stage.regfile.v0_1);
+$fdisplay(write_to,"r10 = %d\n",top_pipe.top0.ID_stage.regfile.v0_2);
+$fdisplay(write_to,"r11 = %d\n",top_pipe.top0.ID_stage.regfile.v0_3);
+$fdisplay(write_to,"r12 = %d\n",top_pipe.top0.ID_stage.regfile.v0_4);
+
+$fdisplay(write_to,"d1 = %d\n",dcache.memory[1]);
+$fdisplay(write_to,"d2 = %d\n",dcache.memory[2]);
+$fdisplay(write_to,"d3 = %d\n",dcache.memory[3]);
+$fdisplay(write_to,"d4 = %d\n",dcache.memory[4]);
+$fdisplay(write_to,"d5 = %d\n",dcache.memory[5]);
+$fdisplay(write_to,"d6 = %d\n",dcache.memory[6]);
+$fdisplay(write_to,"d7 = %d\n",dcache.memory[7]);
+$fdisplay(write_to,"d8 = %d\n",dcache.memory[8]);
+$fdisplay(write_to,"d9 = %d\n",dcache.memory[9]);
+$fdisplay(write_to,"d10 = %d\n",dcache.memory[10]);
+
 `else
 f_register = $fopen("register_sim.txt");
 write_to = f_register | std_out;
-$fdisplay(write_to,"r1 = %d\n",top_pipe_U0.top0.ID_stage.regfile.gpr[1]);
-$fdisplay(write_to,"r2 = %d\n",top_pipe_U0.top0.ID_stage.regfile.gpr[2]);
-$fdisplay(write_to,"r3 = %d\n",top_pipe_U0.top0.ID_stage.regfile.gpr[3]);
-$fdisplay(write_to,"r4 = %d\n",top_pipe_U0.top0.ID_stage.regfile.gpr[4]);
-$fdisplay(write_to,"r5 = %d\n",top_pipe_U0.top0.ID_stage.regfile.gpr[5]);
-$fdisplay(write_to,"r6 = %d\n",top_pipe_U0.top0.ID_stage.regfile.gpr[6]);
-$fdisplay(write_to,"r7 = %d\n",top_pipe_U0.top0.ID_stage.regfile.gpr[7]);
-$fdisplay(write_to,"r8 = %d\n",top_pipe_U0.top0.ID_stage.regfile.gpr[8]);
-$fdisplay(write_to,"r9 = %d\n",top_pipe_U0.top0.ID_stage.regfile.gpr[9]);
-$fdisplay(write_to,"r10 = %d\n",top_pipe_U0.top0.ID_stage.regfile.gpr[10]);
-$fdisplay(write_to,"r11 = %d\n",top_pipe_U0.top0.ID_stage.regfile.gpr[11]);
-$fdisplay(write_to,"r12 = %d\n",top_pipe_U0.top0.ID_stage.regfile.gpr[12]);
+$fdisplay(write_to,"r1 = %d\n",top_pipe.top0.ID_stage.regfile.gpr[1]);
+$fdisplay(write_to,"r2 = %d\n",top_pipe.top0.ID_stage.regfile.gpr[2]);
+$fdisplay(write_to,"r3 = %d\n",top_pipe.top0.ID_stage.regfile.gpr[3]);
+$fdisplay(write_to,"r4 = %d\n",top_pipe.top0.ID_stage.regfile.gpr[4]);
+$fdisplay(write_to,"r5 = %d\n",top_pipe.top0.ID_stage.regfile.gpr[5]);
+$fdisplay(write_to,"r6 = %d\n",top_pipe.top0.ID_stage.regfile.gpr[6]);
+$fdisplay(write_to,"r7 = %d\n",top_pipe.top0.ID_stage.regfile.gpr[7]);
+$fdisplay(write_to,"r8 = %d\n",top_pipe.top0.ID_stage.regfile.gpr[8]);
+$fdisplay(write_to,"r9 = %d\n",top_pipe.top0.ID_stage.regfile.gpr[9]);
+$fdisplay(write_to,"r10 = %d\n",top_pipe.top0.ID_stage.regfile.gpr[10]);
+$fdisplay(write_to,"r11 = %d\n",top_pipe.top0.ID_stage.regfile.gpr[11]);
+$fdisplay(write_to,"r12 = %d\n",top_pipe.top0.ID_stage.regfile.gpr[12]);
 
-$fdisplay(write_to,"d1 = %d\n",top_pipe_U0.top0.MEM_stage.dcache.memory[1]);
-$fdisplay(write_to,"d2 = %d\n",top_pipe_U0.top0.MEM_stage.dcache.memory[2]);
-$fdisplay(write_to,"d3 = %d\n",top_pipe_U0.top0.MEM_stage.dcache.memory[3]);
-$fdisplay(write_to,"d4 = %d\n",top_pipe_U0.top0.MEM_stage.dcache.memory[4]);
-$fdisplay(write_to,"d5 = %d\n",top_pipe_U0.top0.MEM_stage.dcache.memory[5]);
-$fdisplay(write_to,"d6 = %d\n",top_pipe_U0.top0.MEM_stage.dcache.memory[6]);
-$fdisplay(write_to,"d7 = %d\n",top_pipe_U0.top0.MEM_stage.dcache.memory[7]);
-$fdisplay(write_to,"d8 = %d\n",top_pipe_U0.top0.MEM_stage.dcache.memory[8]);
-$fdisplay(write_to,"d9 = %d\n",top_pipe_U0.top0.MEM_stage.dcache.memory[9]);
-$fdisplay(write_to,"d10 = %d\n",top_pipe_U0.top0.MEM_stage.dcache.memory[10]);
+$fdisplay(write_to,"d1 = %d\n",dcache.memory[1]);
+$fdisplay(write_to,"d2 = %d\n",dcache.memory[2]);
+$fdisplay(write_to,"d3 = %d\n",dcache.memory[3]);
+$fdisplay(write_to,"d4 = %d\n",dcache.memory[4]);
+$fdisplay(write_to,"d5 = %d\n",dcache.memory[5]);
+$fdisplay(write_to,"d6 = %d\n",dcache.memory[6]);
+$fdisplay(write_to,"d7 = %d\n",dcache.memory[7]);
+$fdisplay(write_to,"d8 = %d\n",dcache.memory[8]);
+$fdisplay(write_to,"d9 = %d\n",dcache.memory[9]);
+$fdisplay(write_to,"d10 = %d\n",dcache.memory[10]);
 `endif
 
 $fclose(f_register);
