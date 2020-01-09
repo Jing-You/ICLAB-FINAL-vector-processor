@@ -404,3 +404,4 @@ s403(07Jan2020:00:21:29):  ncverilog -f sim_pre.f
 s404(07Jan2020:00:26:37):  ncverilog -f sim_gate.f 
 s405(07Jan2020:00:27:12):  ncverilog -f sim_gate.f 
 s406(07Jan2020:00:27:52):  ncverilog -f sim_gate.f 
+s407(09Jan2020:18:38:53):  ncverilog -f sim_pre.f 

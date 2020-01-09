@@ -2,16 +2,15 @@
 ****************************************
 check_design summary:
 Version:     O-2018.06
-Date:        Tue Jan  7 00:18:36 2020
+Date:        Thu Jan  9 18:59:08 2020
 ****************************************
 
                    Name                                            Total
 --------------------------------------------------------------------------------
-Inputs/Outputs                                                    129
+Inputs/Outputs                                                     64
     Unconnected ports (LINT-28)                                    26
     Feedthrough (LINT-29)                                           6
-    Shorted outputs (LINT-31)                                      64
-    Constant outputs (LINT-52)                                     33
+    Shorted outputs (LINT-31)                                      32
 
 Cells                                                              23
     Cells do not drive (LINT-1)                                    23
@@ -104,69 +103,4 @@ Warning: In design 'ID_stage', output port 'funct[3]' is connected directly to o
 Warning: In design 'ID_stage', output port 'funct[2]' is connected directly to output port 'immd[2]'. (LINT-31)
 Warning: In design 'ID_stage', output port 'funct[1]' is connected directly to output port 'immd[1]'. (LINT-31)
 Warning: In design 'ID_stage', output port 'funct[0]' is connected directly to output port 'immd[0]'. (LINT-31)
-Warning: In design 'ID_stage', output port 'peri_web' is connected directly to output port 'peri_datao[0]'. (LINT-31)
-Warning: In design 'ID_stage', output port 'peri_web' is connected directly to output port 'peri_datao[1]'. (LINT-31)
-Warning: In design 'ID_stage', output port 'peri_web' is connected directly to output port 'peri_datao[2]'. (LINT-31)
-Warning: In design 'ID_stage', output port 'peri_web' is connected directly to output port 'peri_datao[3]'. (LINT-31)
-Warning: In design 'ID_stage', output port 'peri_web' is connected directly to output port 'peri_datao[4]'. (LINT-31)
-Warning: In design 'ID_stage', output port 'peri_web' is connected directly to output port 'peri_datao[5]'. (LINT-31)
-Warning: In design 'ID_stage', output port 'peri_web' is connected directly to output port 'peri_datao[6]'. (LINT-31)
-Warning: In design 'ID_stage', output port 'peri_web' is connected directly to output port 'peri_datao[7]'. (LINT-31)
-Warning: In design 'ID_stage', output port 'peri_web' is connected directly to output port 'peri_datao[8]'. (LINT-31)
-Warning: In design 'ID_stage', output port 'peri_web' is connected directly to output port 'peri_datao[9]'. (LINT-31)
-Warning: In design 'ID_stage', output port 'peri_web' is connected directly to output port 'peri_datao[10]'. (LINT-31)
-Warning: In design 'ID_stage', output port 'peri_web' is connected directly to output port 'peri_datao[11]'. (LINT-31)
-Warning: In design 'ID_stage', output port 'peri_web' is connected directly to output port 'peri_datao[12]'. (LINT-31)
-Warning: In design 'ID_stage', output port 'peri_web' is connected directly to output port 'peri_datao[13]'. (LINT-31)
-Warning: In design 'ID_stage', output port 'peri_web' is connected directly to output port 'peri_datao[14]'. (LINT-31)
-Warning: In design 'ID_stage', output port 'peri_web' is connected directly to output port 'peri_datao[15]'. (LINT-31)
-Warning: In design 'ID_stage', output port 'peri_web' is connected directly to output port 'peri_addr[0]'. (LINT-31)
-Warning: In design 'ID_stage', output port 'peri_web' is connected directly to output port 'peri_addr[1]'. (LINT-31)
-Warning: In design 'ID_stage', output port 'peri_web' is connected directly to output port 'peri_addr[2]'. (LINT-31)
-Warning: In design 'ID_stage', output port 'peri_web' is connected directly to output port 'peri_addr[3]'. (LINT-31)
-Warning: In design 'ID_stage', output port 'peri_web' is connected directly to output port 'peri_addr[4]'. (LINT-31)
-Warning: In design 'ID_stage', output port 'peri_web' is connected directly to output port 'peri_addr[5]'. (LINT-31)
-Warning: In design 'ID_stage', output port 'peri_web' is connected directly to output port 'peri_addr[6]'. (LINT-31)
-Warning: In design 'ID_stage', output port 'peri_web' is connected directly to output port 'peri_addr[7]'. (LINT-31)
-Warning: In design 'ID_stage', output port 'peri_web' is connected directly to output port 'peri_addr[8]'. (LINT-31)
-Warning: In design 'ID_stage', output port 'peri_web' is connected directly to output port 'peri_addr[9]'. (LINT-31)
-Warning: In design 'ID_stage', output port 'peri_web' is connected directly to output port 'peri_addr[10]'. (LINT-31)
-Warning: In design 'ID_stage', output port 'peri_web' is connected directly to output port 'peri_addr[11]'. (LINT-31)
-Warning: In design 'ID_stage', output port 'peri_web' is connected directly to output port 'peri_addr[12]'. (LINT-31)
-Warning: In design 'ID_stage', output port 'peri_web' is connected directly to output port 'peri_addr[13]'. (LINT-31)
-Warning: In design 'ID_stage', output port 'peri_web' is connected directly to output port 'peri_addr[14]'. (LINT-31)
-Warning: In design 'ID_stage', output port 'peri_web' is connected directly to output port 'peri_addr[15]'. (LINT-31)
-Warning: In design 'ID_stage', output port 'peri_web' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'ID_stage', output port 'peri_addr[15]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'ID_stage', output port 'peri_addr[14]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'ID_stage', output port 'peri_addr[13]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'ID_stage', output port 'peri_addr[12]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'ID_stage', output port 'peri_addr[11]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'ID_stage', output port 'peri_addr[10]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'ID_stage', output port 'peri_addr[9]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'ID_stage', output port 'peri_addr[8]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'ID_stage', output port 'peri_addr[7]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'ID_stage', output port 'peri_addr[6]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'ID_stage', output port 'peri_addr[5]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'ID_stage', output port 'peri_addr[4]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'ID_stage', output port 'peri_addr[3]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'ID_stage', output port 'peri_addr[2]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'ID_stage', output port 'peri_addr[1]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'ID_stage', output port 'peri_addr[0]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'ID_stage', output port 'peri_datao[15]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'ID_stage', output port 'peri_datao[14]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'ID_stage', output port 'peri_datao[13]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'ID_stage', output port 'peri_datao[12]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'ID_stage', output port 'peri_datao[11]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'ID_stage', output port 'peri_datao[10]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'ID_stage', output port 'peri_datao[9]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'ID_stage', output port 'peri_datao[8]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'ID_stage', output port 'peri_datao[7]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'ID_stage', output port 'peri_datao[6]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'ID_stage', output port 'peri_datao[5]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'ID_stage', output port 'peri_datao[4]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'ID_stage', output port 'peri_datao[3]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'ID_stage', output port 'peri_datao[2]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'ID_stage', output port 'peri_datao[1]' is connected directly to 'logic 0'. (LINT-52)
-Warning: In design 'ID_stage', output port 'peri_datao[0]' is connected directly to 'logic 0'. (LINT-52)
 1

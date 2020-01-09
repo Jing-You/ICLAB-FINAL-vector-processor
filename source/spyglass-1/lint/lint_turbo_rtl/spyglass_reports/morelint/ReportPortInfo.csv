@@ -2,9 +2,6 @@ Module Name,Module Type,Port Name,Direction,Width,Index,Comment Source,Comment
 top_pipe,Top_Level,clk,INPUT,1,-,port definition,input (icache input)
 top_pipe,Top_Level,rst_n,INPUT,1,-,port definition,input (icache input)
 top_pipe,Top_Level,boot_up,INPUT,1,-,module port,input (icache input)
-top_pipe,Top_Level,peri_web,OUTPUT,1,-,module port,output (peripheral write)
-top_pipe,Top_Level,peri_addr,OUTPUT,16,[15:0],-,-
-top_pipe,Top_Level,peri_datao,OUTPUT,16,[15:0],-,-
 top_pipe,Top_Level,MEM_alu_result,OUTPUT,32,[31:0],module port,MEM_stage
 top_pipe,Top_Level,MEM_write_data,OUTPUT,32,[31:0],-,-
 top_pipe,Top_Level,mem_read_data,INPUT,32,[31:0],-,-

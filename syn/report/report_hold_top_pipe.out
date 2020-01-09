@@ -6,7 +6,7 @@ Report : timing
         -max_paths 4
 Design : top_pipe
 Version: O-2018.06
-Date   : Tue Jan  7 00:25:46 2020
+Date   : Thu Jan  9 19:06:24 2020
 ****************************************
 
  # A fanout number of 1000 was used for high fanout net computations.
@@ -28,25 +28,25 @@ Wire Load Model Mode: enclosed
 
   Point                                                   Incr       Path
   --------------------------------------------------------------------------
-  clock clk' (rise edge)                                  2.50       2.50
-  clock network delay (ideal)                             0.00       2.50
+  clock clk' (rise edge)                                  1.90       1.90
+  clock network delay (ideal)                             0.00       1.90
   top0/ID_stage/clk_gate_cnt_reg/latch/CLK (LATCHX1_HVT)
-                                                          0.00       2.50 r
+                                                          0.00       1.90 r
   top0/ID_stage/clk_gate_cnt_reg/latch/Q (LATCHX1_HVT)
-                                                          0.11       2.61 f
+                                                          0.11       2.01 f
   top0/ID_stage/clk_gate_cnt_reg/main_gate/A1 (AND2X1_HVT)
-                                                          0.00       2.61 f
-  data arrival time                                                  2.61
+                                                          0.00       2.01 f
+  data arrival time                                                  2.01
 
-  clock clk (fall edge)                                   2.50       2.50
-  clock network delay (ideal)                             0.00       2.50
+  clock clk (fall edge)                                   1.90       1.90
+  clock network delay (ideal)                             0.00       1.90
   top0/ID_stage/clk_gate_cnt_reg/main_gate/A2 (AND2X1_HVT)
-                                                          0.00       2.50 f
-  clock gating hold time                                  0.00       2.50
-  data required time                                                 2.50
+                                                          0.00       1.90 f
+  clock gating hold time                                  0.00       1.90
+  data required time                                                 1.90
   --------------------------------------------------------------------------
-  data required time                                                 2.50
-  data arrival time                                                 -2.61
+  data required time                                                 1.90
+  data arrival time                                                 -2.01
   --------------------------------------------------------------------------
   slack (MET)                                                        0.11
 
@@ -65,25 +65,25 @@ Wire Load Model Mode: enclosed
 
   Point                                                   Incr       Path
   --------------------------------------------------------------------------
-  clock clk' (rise edge)                                  2.50       2.50
-  clock network delay (ideal)                             0.00       2.50
+  clock clk' (rise edge)                                  1.90       1.90
+  clock network delay (ideal)                             0.00       1.90
   top0/ID_stage/clk_gate_cnt_reg_0/latch/CLK (LATCHX1_HVT)
-                                                          0.00       2.50 r
+                                                          0.00       1.90 r
   top0/ID_stage/clk_gate_cnt_reg_0/latch/Q (LATCHX1_HVT)
-                                                          0.11       2.61 f
+                                                          0.11       2.01 f
   top0/ID_stage/clk_gate_cnt_reg_0/main_gate/A1 (AND2X1_HVT)
-                                                          0.00       2.61 f
-  data arrival time                                                  2.61
+                                                          0.00       2.01 f
+  data arrival time                                                  2.01
 
-  clock clk (fall edge)                                   2.50       2.50
-  clock network delay (ideal)                             0.00       2.50
+  clock clk (fall edge)                                   1.90       1.90
+  clock network delay (ideal)                             0.00       1.90
   top0/ID_stage/clk_gate_cnt_reg_0/main_gate/A2 (AND2X1_HVT)
-                                                          0.00       2.50 f
-  clock gating hold time                                  0.00       2.50
-  data required time                                                 2.50
+                                                          0.00       1.90 f
+  clock gating hold time                                  0.00       1.90
+  data required time                                                 1.90
   --------------------------------------------------------------------------
-  data required time                                                 2.50
-  data arrival time                                                 -2.61
+  data required time                                                 1.90
+  data arrival time                                                 -2.01
   --------------------------------------------------------------------------
   slack (MET)                                                        0.11
 
@@ -102,25 +102,25 @@ Wire Load Model Mode: enclosed
 
   Point                                                   Incr       Path
   --------------------------------------------------------------------------
-  clock clk' (rise edge)                                  2.50       2.50
-  clock network delay (ideal)                             0.00       2.50
+  clock clk' (rise edge)                                  1.90       1.90
+  clock network delay (ideal)                             0.00       1.90
   top0/ID_stage/clk_gate_cnt_reg_1/latch/CLK (LATCHX1_HVT)
-                                                          0.00       2.50 r
+                                                          0.00       1.90 r
   top0/ID_stage/clk_gate_cnt_reg_1/latch/Q (LATCHX1_HVT)
-                                                          0.11       2.61 f
+                                                          0.11       2.01 f
   top0/ID_stage/clk_gate_cnt_reg_1/main_gate/A1 (AND2X1_HVT)
-                                                          0.00       2.61 f
-  data arrival time                                                  2.61
+                                                          0.00       2.01 f
+  data arrival time                                                  2.01
 
-  clock clk (fall edge)                                   2.50       2.50
-  clock network delay (ideal)                             0.00       2.50
+  clock clk (fall edge)                                   1.90       1.90
+  clock network delay (ideal)                             0.00       1.90
   top0/ID_stage/clk_gate_cnt_reg_1/main_gate/A2 (AND2X1_HVT)
-                                                          0.00       2.50 f
-  clock gating hold time                                  0.00       2.50
-  data required time                                                 2.50
+                                                          0.00       1.90 f
+  clock gating hold time                                  0.00       1.90
+  data required time                                                 1.90
   --------------------------------------------------------------------------
-  data required time                                                 2.50
-  data arrival time                                                 -2.61
+  data required time                                                 1.90
+  data arrival time                                                 -2.01
   --------------------------------------------------------------------------
   slack (MET)                                                        0.11
 
@@ -139,25 +139,25 @@ Wire Load Model Mode: enclosed
 
   Point                                                   Incr       Path
   --------------------------------------------------------------------------
-  clock clk' (rise edge)                                  2.50       2.50
-  clock network delay (ideal)                             0.00       2.50
+  clock clk' (rise edge)                                  1.90       1.90
+  clock network delay (ideal)                             0.00       1.90
   top0/ID_stage/clk_gate_cnt_reg_2/latch/CLK (LATCHX1_HVT)
-                                                          0.00       2.50 r
+                                                          0.00       1.90 r
   top0/ID_stage/clk_gate_cnt_reg_2/latch/Q (LATCHX1_HVT)
-                                                          0.11       2.61 f
+                                                          0.11       2.01 f
   top0/ID_stage/clk_gate_cnt_reg_2/main_gate/A1 (AND2X1_HVT)
-                                                          0.00       2.61 f
-  data arrival time                                                  2.61
+                                                          0.00       2.01 f
+  data arrival time                                                  2.01
 
-  clock clk (fall edge)                                   2.50       2.50
-  clock network delay (ideal)                             0.00       2.50
+  clock clk (fall edge)                                   1.90       1.90
+  clock network delay (ideal)                             0.00       1.90
   top0/ID_stage/clk_gate_cnt_reg_2/main_gate/A2 (AND2X1_HVT)
-                                                          0.00       2.50 f
-  clock gating hold time                                  0.00       2.50
-  data required time                                                 2.50
+                                                          0.00       1.90 f
+  clock gating hold time                                  0.00       1.90
+  data required time                                                 1.90
   --------------------------------------------------------------------------
-  data required time                                                 2.50
-  data arrival time                                                 -2.61
+  data required time                                                 1.90
+  data arrival time                                                 -2.01
   --------------------------------------------------------------------------
   slack (MET)                                                        0.11
 

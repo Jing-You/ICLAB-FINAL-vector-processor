@@ -1,4 +1,4 @@
-SpyGlass run started at 12:18:40 AM on Jan 07 2020 
+SpyGlass run started at 06:39:22 PM on Jan 09 2020 
 
 SpyGlass Predictive Analyzer(R) - Version SpyGlass_vO-2018.09-SP2
 Last compiled on Mar  2 2019
@@ -167,10 +167,10 @@ Generating auto_verify report from './spyglass-1/lint/lint_functional_rtl/spygla
 Policy specific data (reports) are present in the directory './spyglass-1/lint/lint_functional_rtl/spyglass_reports'.
 
 SpyGlass critical reports for the current run are present in directory './spyglass-1/consolidated_reports/lint_lint_functional_rtl/'.
-##SGDEBUG [PEAK_MEMORY]: 1638548 KB for entire run at 'SDC2SGDCPARSEW_1.Init' stage
-##SGDEBUG [VMPEAK_MEMORY]: 1675532 KB for entire run
-##SGDEBUG [BENCHMARK_ABSOLUTE]: Rule checking aborted: 2 sec, 2.54 sec, 799508 KB, 1638484 KB
-##SGDEBUG [BENCHMARK_INCR]: Rule checking aborted: 2 sec, 2.54 sec, 799508 KB, 1638484 KB
+##SGDEBUG [PEAK_MEMORY]: 1638480 KB for entire run at 'SDC2SGDCPARSEW_1.Init' stage
+##SGDEBUG [VMPEAK_MEMORY]: 1675464 KB for entire run
+##SGDEBUG [BENCHMARK_ABSOLUTE]: Rule checking aborted: 3 sec, 2.75 sec, 799444 KB, 1638416 KB
+##SGDEBUG [BENCHMARK_INCR]: Rule checking aborted: 3 sec, 2.75 sec, 799444 KB, 1638416 KB
 
 
 =====================================================================================
@@ -410,6 +410,6 @@ Results Summary:
 ---------------------------------------------------------------------------------------------------
  
 SpyGlass Exit Code 7 (Rule-checking terminated due to FATAL errors - usage or run error)
-SpyGlass total run-time is 0:0:3 (3 secs)
-SpyGlass total cpu-time is 2 secs
-SpyGlass run completed at 00:19:23 AM on Jan 07 2020
+SpyGlass total run-time is 0:0:2 (2 secs)
+SpyGlass total cpu-time is 3 secs
+SpyGlass run completed at 06:40:04 PM on Jan 09 2020

@@ -1,4 +1,4 @@
-SpyGlass run started at 12:18:40 AM on Jan 07 2020 
+SpyGlass run started at 06:39:22 PM on Jan 09 2020 
 
 SpyGlass Predictive Analyzer(R) - Version SpyGlass_vO-2018.09-SP2
 Last compiled on Mar  2 2019
@@ -2024,7 +2024,7 @@ Checking Rule SGDC_abstract_port15 (Rule 46 of total 333) .... done (Time = 0.00
 Checking Rule SGDC_abstract_port18 (Rule 47 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule sdc_init_rule (Rule 48 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule CMD_ignorelibs01 (Rule 49 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule ReportRuleNotRun (Rule 50 of total 333) .... done (Time = 0.02s, Memory = 0.0K)
+Checking Rule ReportRuleNotRun (Rule 50 of total 333) .... done (Time = 0.01s, Memory = 0.0K)
 Checking Rule STARC05-2.3.1.2c (Rule 51 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule W442a (Rule 52 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule W442b (Rule 53 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
@@ -2043,8 +2043,8 @@ Checking Rule Av_sanity01 (Rule 65 of total 333) .... done (Time = 0.00s, Memory
 Checking Rule STARC05-2.1.6.5 (Rule 66 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule ReportStopSummary (Rule 67 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule ReportIgnoreSummary (Rule 68 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
-##SGDEBUG [BENCHMARK_ABSOLUTE]: Analysis started: 4 sec, 4.93 sec, 733956 KB, 1609844 KB
-##SGDEBUG [BENCHMARK_INCR]: Analysis started: 4 sec, 4.93 sec, 733956 KB, 1609844 KB
+##SGDEBUG [BENCHMARK_ABSOLUTE]: Analysis started: 5 sec, 4.41 sec, 733892 KB, 1609776 KB
+##SGDEBUG [BENCHMARK_INCR]: Analysis started: 5 sec, 4.41 sec, 733892 KB, 1609776 KB
  Analyzing source file "top_pipe.v" ....
  Analyzing source file "top.v" ....
  Analyzing source file "CPU_define.v" ....
@@ -2060,17 +2060,17 @@ Checking Rule ReportIgnoreSummary (Rule 68 of total 333) .... done (Time = 0.00s
  Analyzing source file "EX_MEM.v" ....
  Analyzing source file "MEM_WB_stage.v" ....
  Analyzing source file "WB_stage.v" ....
-##SGDEBUG [BENCHMARK_ABSOLUTE]: Analysis finished: 4 sec, 4.99 sec, 733956 KB, 1609844 KB
-##SGDEBUG [BENCHMARK_INCR]: Analysis finished: 0 sec, 0.07 sec, 0 KB, 0 KB
-##SGDEBUG [BENCHMARK_ABSOLUTE]: Elaboration started: 4 sec, 4.99 sec, 733956 KB, 1609844 KB
+##SGDEBUG [BENCHMARK_ABSOLUTE]: Analysis finished: 5 sec, 4.43 sec, 733892 KB, 1609776 KB
+##SGDEBUG [BENCHMARK_INCR]: Analysis finished: 0 sec, 0.02 sec, 0 KB, 0 KB
+##SGDEBUG [BENCHMARK_ABSOLUTE]: Elaboration started: 5 sec, 4.43 sec, 733892 KB, 1609776 KB
 ##SGDEBUG [BENCHMARK_INCR]: Elaboration started: 0 sec, 0.00 sec, 0 KB, 0 KB
  Elaborating Top Verilog Design Unit 'top_pipe' .....
  done
-##SGDEBUG [BENCHMARK_ABSOLUTE]: Elaboration finished: 4 sec, 4.99 sec, 733956 KB, 1609844 KB
+##SGDEBUG [BENCHMARK_ABSOLUTE]: Elaboration finished: 5 sec, 4.43 sec, 733892 KB, 1609776 KB
 ##SGDEBUG [BENCHMARK_INCR]: Elaboration finished: 0 sec, 0.00 sec, 0 KB, 0 KB
-##SGDEBUG [BENCHMARK_ABSOLUTE]: RTL Semantic Checker started: 4 sec, 4.99 sec, 733956 KB, 1609844 KB
+##SGDEBUG [BENCHMARK_ABSOLUTE]: RTL Semantic Checker started: 5 sec, 4.43 sec, 733892 KB, 1609776 KB
 ##SGDEBUG [BENCHMARK_INCR]: RTL Semantic Checker started: 0 sec, 0.00 sec, 0 KB, 0 KB
-##SGDEBUG [BENCHMARK_ABSOLUTE]: RTL Semantic Checker finished: 4 sec, 5.00 sec, 733956 KB, 1609844 KB
+##SGDEBUG [BENCHMARK_ABSOLUTE]: RTL Semantic Checker finished: 5 sec, 4.43 sec, 733892 KB, 1609776 KB
 ##SGDEBUG [BENCHMARK_INCR]: RTL Semantic Checker finished: 0 sec, 0.00 sec, 0 KB, 0 KB
 Checking Rule ElabSummary (Rule 69 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule ReportCheckDataSummary (Rule 70 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
@@ -2096,15 +2096,15 @@ Checking Rule HdlLibDuCheck (Rule 83 of total 333) .... done (Time = 0.00s, Memo
 Checking Rule RtlDesignInfo (Rule 84 of total 333)
 ##SGDEBUG [BENCHMARK_DATA]: Number of RTL Design Units = 14
 ##SGDEBUG: RTL statistics for Verilog design units:
-##SGDEBUG[BENCHMARK_DATA]: RTL Ports = 328 6090 232
-##SGDEBUG[BENCHMARK_DATA]: RTL Insts = 29
-##SGDEBUG[BENCHMARK_DATA]: RTL Nets = 169 3775 138
-##SGDEBUG[BENCHMARK_DATA]: RTL Terms = 347 5908 225
+##SGDEBUG[BENCHMARK_DATA]: RTL Ports = 319 5991 226
+##SGDEBUG[BENCHMARK_DATA]: RTL Insts = 26
+##SGDEBUG[BENCHMARK_DATA]: RTL Nets = 166 3742 136
+##SGDEBUG[BENCHMARK_DATA]: RTL Terms = 335 5842 221
 
 ##SGDEBUG: NOTE: Following estimated data is applicable for structural designs only.
 ##SGDEBUG:     In case of RTL designs, this data may differ significantly from the actual figure.
 ##SGDEBUG[BENCHMARK_DATA]: Estimated Flat Insts = 9
-##SGDEBUG[BENCHMARK_DATA]: Estimated Flat Nets = 2331
+##SGDEBUG[BENCHMARK_DATA]: Estimated Flat Nets = 2298
 ##SGDEBUG[BENCHMARK_DATA]: Estimated Flat Terms = 3660
 ##SGDEBUG[BENCHMARK_DATA]: Estimated Flat Paths = 5
  .... done (Time = 0.00s, Memory = 0.0K)
@@ -2420,7 +2420,7 @@ Checking ELABDU Rules for designUnit IF_ID
     Checking Rule W496a (Rule 145 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W19 (Rule 146 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W66 (Rule 147 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W116 (Rule 148 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule W116 (Rule 148 of total 333) .... done (Time = 0.01s, Memory = 0.0K)
     Checking Rule W123 (Rule 149 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W156 (Rule 150 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W215 (Rule 151 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
@@ -2471,7 +2471,7 @@ Checking ELABDU Rules for designUnit ID_stage
     Checking Rule STARC05-2.2.3.3 (Rule 134 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule STARC05-2.3.1.6 (Rule 135 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule STARC05-2.10.2.3 (Rule 136 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule STARC05-2.10.3.2a (Rule 137 of total 333) .... done (Time = 0.01s, Memory = 0.0K)
+    Checking Rule STARC05-2.10.3.2a (Rule 137 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule STARC05-2.11.3.1 (Rule 138 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule STARC05-2.1.3.1 (Rule 139 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule STARC05-2.10.1.4a (Rule 140 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
@@ -2494,7 +2494,7 @@ Checking ELABDU Rules for designUnit ID_stage
     Checking Rule W337 (Rule 157 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W352 (Rule 158 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W362 (Rule 159 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W415a (Rule 160 of total 333) .... done (Time = 0.01s, Memory = 0.0K)
+    Checking Rule W415a (Rule 160 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W486 (Rule 161 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W499 (Rule 162 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W502 (Rule 163 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
@@ -2538,7 +2538,7 @@ Checking ELABDU Rules for designUnit regfile
     Checking Rule STARC05-2.1.3.1 (Rule 139 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule STARC05-2.10.1.4a (Rule 140 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule STARC05-2.10.1.4b (Rule 141 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule sim_race02 (Rule 142 of total 333) .... done (Time = 0.01s, Memory = 0.0K)
+    Checking Rule sim_race02 (Rule 142 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W110 (Rule 143 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W122 (Rule 144 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W496a (Rule 145 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
@@ -2596,7 +2596,7 @@ Checking ELABDU Rules for designUnit controller
     Checking Rule STARC05-2.3.1.6 (Rule 135 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule STARC05-2.10.2.3 (Rule 136 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule STARC05-2.10.3.2a (Rule 137 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule STARC05-2.11.3.1 (Rule 138 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule STARC05-2.11.3.1 (Rule 138 of total 333) .... done (Time = 0.01s, Memory = 0.0K)
     Checking Rule STARC05-2.1.3.1 (Rule 139 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule STARC05-2.10.1.4a (Rule 140 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule STARC05-2.10.1.4b (Rule 141 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
@@ -2730,7 +2730,7 @@ Checking ELABDU Rules for designUnit EXE_stage
     Checking Rule W496a (Rule 145 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W19 (Rule 146 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W66 (Rule 147 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W116 (Rule 148 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule W116 (Rule 148 of total 333) .... done (Time = 0.01s, Memory = 0.0K)
     Checking Rule W123 (Rule 149 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W156 (Rule 150 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W215 (Rule 151 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
@@ -2793,7 +2793,7 @@ Checking ELABDU Rules for designUnit alu
     Checking Rule W19 (Rule 146 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W66 (Rule 147 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W116 (Rule 148 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W123 (Rule 149 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule W123 (Rule 149 of total 333) .... done (Time = 0.01s, Memory = 0.0K)
     Checking Rule W156 (Rule 150 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W215 (Rule 151 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W216 (Rule 152 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
@@ -2820,7 +2820,7 @@ Checking ELABDU Rules for designUnit alu
     Checking Rule W398 (Rule 173 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W424 (Rule 174 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W467 (Rule 175 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W505 (Rule 176 of total 333) .... done (Time = 0.01s, Memory = 0.0K)
+    Checking Rule W505 (Rule 176 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W505 (Rule 177 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W528 (Rule 178 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W528 (Rule 179 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
@@ -2868,7 +2868,7 @@ Checking ELABDU Rules for designUnit EX_MEM
     Checking Rule W362 (Rule 159 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W415a (Rule 160 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W486 (Rule 161 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W499 (Rule 162 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule W499 (Rule 162 of total 333) .... done (Time = 0.01s, Memory = 0.0K)
     Checking Rule W502 (Rule 163 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W116 (Rule 164 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W122 (Rule 165 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
@@ -3081,7 +3081,7 @@ Checking ELABDU Rules for designUnit top
     Checking Rule _width_expr03_mismatch_prereq (Rule 216 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule _dontcare_mismatch_prereq (Rule 217 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule _case_default_redundant_prereq (Rule 218 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule _case_default_missing_prereq (Rule 219 of total 333) .... done (Time = 0.01s, Memory = 0.0K)
+    Checking Rule _case_default_missing_prereq (Rule 219 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule _formallint_preReq (Rule 220 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule _avAddSynthNet (Rule 221 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
 Checking ELABDU Rules for designUnit IF_stage
@@ -3264,7 +3264,7 @@ Checking ELABDU Rules for designUnit controller
     Checking Rule _signunsign01_prereq (Rule 213 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule _width05_prereq (Rule 214 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule _width_expr02_mismatch_prereq (Rule 215 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule _width_expr03_mismatch_prereq (Rule 216 of total 333) .... done (Time = 0.01s, Memory = 0.0K)
+    Checking Rule _width_expr03_mismatch_prereq (Rule 216 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule _dontcare_mismatch_prereq (Rule 217 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule _case_default_redundant_prereq (Rule 218 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule _case_default_missing_prereq (Rule 219 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
@@ -3456,8 +3456,8 @@ Checking ELABDU Rules for designUnit WB_stage
     Checking Rule _case_default_missing_prereq (Rule 219 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule _formallint_preReq (Rule 220 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule _avAddSynthNet (Rule 221 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
-##SGDEBUG [BENCHMARK_ABSOLUTE]: RTL Lexical Checker started: 6 sec, 6.72 sec, 733956 KB, 1609844 KB
-##SGDEBUG [BENCHMARK_INCR]: RTL Lexical Checker started: 2 sec, 1.73 sec, 0 KB, 0 KB
+##SGDEBUG [BENCHMARK_ABSOLUTE]: RTL Lexical Checker started: 6 sec, 5.86 sec, 733892 KB, 1609776 KB
+##SGDEBUG [BENCHMARK_INCR]: RTL Lexical Checker started: 1 sec, 1.42 sec, 0 KB, 0 KB
 Checking Lexical Rules for file CPU_define.v
     Checking Rule Av_complexity_req01 (Rule 222 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Lexical Rules for file top_pipe.v
@@ -3488,52 +3488,52 @@ Checking Lexical Rules for file MEM_WB_stage.v
     Checking Rule Av_complexity_req01 (Rule 222 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Lexical Rules for file WB_stage.v
     Checking Rule Av_complexity_req01 (Rule 222 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
-##SGDEBUG [BENCHMARK_ABSOLUTE]: RTL Lexical Checker finished: 6 sec, 6.80 sec, 733956 KB, 1609844 KB
-##SGDEBUG [BENCHMARK_INCR]: RTL Lexical Checker finished: 0 sec, 0.08 sec, 0 KB, 0 KB
-##SGDEBUG [BENCHMARK_ABSOLUTE]: Synthesis started: 6 sec, 6.82 sec, 733956 KB, 1609844 KB
+##SGDEBUG [BENCHMARK_ABSOLUTE]: RTL Lexical Checker finished: 6 sec, 5.89 sec, 733892 KB, 1609776 KB
+##SGDEBUG [BENCHMARK_INCR]: RTL Lexical Checker finished: 0 sec, 0.04 sec, 0 KB, 0 KB
+##SGDEBUG [BENCHMARK_ABSOLUTE]: Synthesis started: 6 sec, 5.91 sec, 733892 KB, 1609776 KB
 ##SGDEBUG [BENCHMARK_INCR]: Synthesis started: 0 sec, 0.02 sec, 0 KB, 0 KB
  Synthesizing module: WB_stage (elaborated name: WB_stage) ... (Module 1 of total 14)  done 
-     (Memory Used = 65552.0K(incr), 799508.0K(tot), Cpu Time = 0.00s(incr))
+     (Memory Used = 65552.0K(incr), 799444.0K(tot), Cpu Time = 0.01s(incr))
  Synthesizing module: MEM_WB_stage (elaborated name: MEM_WB_stage) ... (Module 2 of total 14)  done 
-     (Memory Used = 0.0K(incr), 799508.0K(tot), Cpu Time = 0.02s(incr))
+     (Memory Used = 0.0K(incr), 799444.0K(tot), Cpu Time = 0.02s(incr))
  Synthesizing module: EX_MEM (elaborated name: EX_MEM) ... (Module 3 of total 14)  done 
-     (Memory Used = 0.0K(incr), 799508.0K(tot), Cpu Time = 0.04s(incr))
+     (Memory Used = 0.0K(incr), 799444.0K(tot), Cpu Time = 0.03s(incr))
  Synthesizing module: alu (elaborated name: alu) ... (Module 4 of total 14)  done 
-     (Memory Used = 0.0K(incr), 799508.0K(tot), Cpu Time = 0.07s(incr))
+     (Memory Used = 0.0K(incr), 799444.0K(tot), Cpu Time = 0.07s(incr))
  Synthesizing module: EXE_stage (elaborated name: EXE_stage) ... (Module 5 of total 14)  done 
-     (Memory Used = 0.0K(incr), 799508.0K(tot), Cpu Time = 0.00s(incr))
+     (Memory Used = 0.0K(incr), 799444.0K(tot), Cpu Time = 0.00s(incr))
  Synthesizing module: ID_EXE (elaborated name: ID_EXE) ... (Module 6 of total 14)  done 
-     (Memory Used = 0.0K(incr), 799508.0K(tot), Cpu Time = 0.01s(incr))
+     (Memory Used = 0.0K(incr), 799444.0K(tot), Cpu Time = 0.00s(incr))
  Synthesizing module: controller (elaborated name: controller) ... (Module 7 of total 14)  done 
-     (Memory Used = 0.0K(incr), 799508.0K(tot), Cpu Time = 0.01s(incr))
+     (Memory Used = 0.0K(incr), 799444.0K(tot), Cpu Time = 0.00s(incr))
  Synthesizing module: regfile (elaborated name: regfile) ... (Module 8 of total 14)  done 
-     (Memory Used = 0.0K(incr), 799508.0K(tot), Cpu Time = 0.32s(incr))
+     (Memory Used = 0.0K(incr), 799444.0K(tot), Cpu Time = 0.35s(incr))
  Synthesizing module: ID_stage (elaborated name: ID_stage) ... (Module 9 of total 14)  done 
-     (Memory Used = 0.0K(incr), 799508.0K(tot), Cpu Time = 0.02s(incr))
+     (Memory Used = 0.0K(incr), 799444.0K(tot), Cpu Time = 0.02s(incr))
  Synthesizing module: IF_ID (elaborated name: IF_ID) ... (Module 10 of total 14)  done 
-     (Memory Used = 0.0K(incr), 799508.0K(tot), Cpu Time = 0.00s(incr))
+     (Memory Used = 0.0K(incr), 799444.0K(tot), Cpu Time = 0.01s(incr))
  Synthesizing module: PC (elaborated name: PC) ... (Module 11 of total 14)  done 
-     (Memory Used = 0.0K(incr), 799508.0K(tot), Cpu Time = 0.00s(incr))
+     (Memory Used = 0.0K(incr), 799444.0K(tot), Cpu Time = 0.00s(incr))
  Synthesizing module: IF_stage (elaborated name: IF_stage) ... (Module 12 of total 14)  done 
-     (Memory Used = 0.0K(incr), 799508.0K(tot), Cpu Time = 0.00s(incr))
+     (Memory Used = 0.0K(incr), 799444.0K(tot), Cpu Time = 0.00s(incr))
  Synthesizing module: top (elaborated name: top) ... (Module 13 of total 14)  done 
-     (Memory Used = 0.0K(incr), 799508.0K(tot), Cpu Time = 0.01s(incr))
+     (Memory Used = 0.0K(incr), 799444.0K(tot), Cpu Time = 0.01s(incr))
  Synthesizing module: top_pipe (elaborated name: top_pipe) ... (Module 14 of total 14)  done 
-     (Memory Used = 0.0K(incr), 799508.0K(tot), Cpu Time = 0.01s(incr))
+     (Memory Used = 0.0K(incr), 799444.0K(tot), Cpu Time = 0.01s(incr))
  Synthesis completed.
-##SGDEBUG [BENCHMARK_ABSOLUTE]: Synthesis completed: 6 sec, 7.37 sec, 799508 KB, 1675396 KB
-##SGDEBUG [BENCHMARK_INCR]: Synthesis completed: 0 sec, 0.55 sec, 65552 KB, 65552 KB
+##SGDEBUG [BENCHMARK_ABSOLUTE]: Synthesis completed: 7 sec, 6.48 sec, 799444 KB, 1675328 KB
+##SGDEBUG [BENCHMARK_INCR]: Synthesis completed: 1 sec, 0.57 sec, 65552 KB, 65552 KB
 Checking Rule InferBlackBox (Rule 223 of total 333) .... done (Time = 0.01s, Memory = 0.0K)
 ##SGDEBUG [BENCHMARK_DATA]: Number of NOM Modules = 14
-##SGDEBUG [BENCHMARK_DATA]: Number of NOM Instances = 8445
-##SGDEBUG [BENCHMARK_DATA]: Number of NOM Nets = 16342
-##SGDEBUG [BENCHMARK_DATA]: Number of NOM Terminals = 48408
-##SGDEBUG [BENCHMARK_DATA]: Number of NOM Instances per Module (max and avg) = 4162, 603
-##SGDEBUG [BENCHMARK_ABSOLUTE]: Saving NOM started: 6 sec, 7.39 sec, 799508 KB, 1675396 KB
+##SGDEBUG [BENCHMARK_DATA]: Number of NOM Instances = 8379
+##SGDEBUG [BENCHMARK_DATA]: Number of NOM Nets = 16202
+##SGDEBUG [BENCHMARK_DATA]: Number of NOM Terminals = 48173
+##SGDEBUG [BENCHMARK_DATA]: Number of NOM Instances per Module (max and avg) = 4162, 598
+##SGDEBUG [BENCHMARK_ABSOLUTE]: Saving NOM started: 7 sec, 6.50 sec, 799444 KB, 1675328 KB
 ##SGDEBUG [BENCHMARK_INCR]: Saving NOM started: 0 sec, 0.02 sec, 0 KB, 0 KB
-##SGDEBUG [BENCHMARK_ABSOLUTE]: Saving NOM completed: 6 sec, 7.43 sec, 799508 KB, 1675524 KB
-##SGDEBUG [BENCHMARK_INCR]: Saving NOM completed: 0 sec, 0.04 sec, 0 KB, 128 KB
-     (Memory Used = 0.0K(incr), 799508.0K(tot), Cpu Time = 0.05s(incr))
+##SGDEBUG [BENCHMARK_ABSOLUTE]: Saving NOM completed: 7 sec, 6.55 sec, 799444 KB, 1675456 KB
+##SGDEBUG [BENCHMARK_INCR]: Saving NOM completed: 0 sec, 0.05 sec, 0 KB, 128 KB
+     (Memory Used = 0.0K(incr), 799444.0K(tot), Cpu Time = 0.04s(incr))
 Checking Rule SGDC_waive37 (Rule 224 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_waive24 (Rule 225 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_waive25 (Rule 226 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
@@ -3780,32 +3780,32 @@ Checking Rule Av_complexity_req02 (Rule 255 of total 333) .... done (Time = 0.00
 Checking Rule ReportUngroup (Rule 256 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule LINT_portReten (Rule 257 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_abstract_port21 (Rule 258 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule InferLatch (Rule 259 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule UndrivenInTerm-ML (Rule 260 of total 333) .... done (Time = 0.25s, Memory = 0.0K)
+Checking Rule InferLatch (Rule 259 of total 333) .... done (Time = 0.01s, Memory = 0.0K)
+Checking Rule UndrivenInTerm-ML (Rule 260 of total 333) .... done (Time = 0.24s, Memory = 0.0K)
 Checking Rule Av_casereq03 (Rule 261 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_fsm_setup01 (Rule 262 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule Av_PortRetention (Rule 263 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
-##SGDEBUG [BENCHMARK_ABSOLUTE]: VS rule checking finished...: 7 sec, 7.75 sec, 799508 KB, 1675396 KB
-##SGDEBUG [BENCHMARK_INCR]: VS rule checking finished...: 1 sec, 0.32 sec, 0 KB, -128 KB
-##SGDEBUG [BENCHMARK_ABSOLUTE]: Elab View Deletion Finished: 7 sec, 7.77 sec, 799508 KB, 1675396 KB
+##SGDEBUG [BENCHMARK_ABSOLUTE]: VS rule checking finished...: 7 sec, 6.86 sec, 799444 KB, 1675328 KB
+##SGDEBUG [BENCHMARK_INCR]: VS rule checking finished...: 0 sec, 0.31 sec, 0 KB, -128 KB
+##SGDEBUG [BENCHMARK_ABSOLUTE]: Elab View Deletion Finished: 7 sec, 6.87 sec, 799444 KB, 1675328 KB
 ##SGDEBUG [BENCHMARK_INCR]: Elab View Deletion Finished: 0 sec, 0.01 sec, 0 KB, 0 KB
-##SGDEBUG [BENCHMARK_ABSOLUTE]: After deleting RTL view: 7 sec, 7.77 sec, 799508 KB, 1675396 KB
+##SGDEBUG [BENCHMARK_ABSOLUTE]: After deleting RTL view: 7 sec, 6.87 sec, 799444 KB, 1675328 KB
 ##SGDEBUG [BENCHMARK_INCR]: After deleting RTL view: 0 sec, 0.00 sec, 0 KB, 0 KB
-##SGDEBUG [BENCHMARK_ABSOLUTE]: Flattening started: 7 sec, 7.78 sec, 799508 KB, 1675396 KB
+##SGDEBUG [BENCHMARK_ABSOLUTE]: Flattening started: 7 sec, 6.88 sec, 799444 KB, 1675328 KB
 ##SGDEBUG [BENCHMARK_INCR]: Flattening started: 0 sec, 0.00 sec, 0 KB, 0 KB
  Flattening top_pipe (.lib instances separately flattened) ....
-     (Memory Used = 0.0K(incr), 799508.0K(tot), Cpu Time = 0.13s(incr))
+     (Memory Used = 0.0K(incr), 799444.0K(tot), Cpu Time = 0.12s(incr))
  Flattening completed
-##SGDEBUG [BENCHMARK_DATA]: Number of Flat Instances = 8432
-##SGDEBUG [BENCHMARK_DATA]: Number of Flat Nets = 10006
-##SGDEBUG [BENCHMARK_DATA]: Number of Flat Terms = 40247
+##SGDEBUG [BENCHMARK_DATA]: Number of Flat Instances = 8366
+##SGDEBUG [BENCHMARK_DATA]: Number of Flat Nets = 9940
+##SGDEBUG [BENCHMARK_DATA]: Number of Flat Terms = 40082
 ##SGDEBUG [BENCHMARK_DATA]: Number of Flat Paths = 14
-##SGDEBUG [BENCHMARK_DATA]: Number of Flat Ports = 189
+##SGDEBUG [BENCHMARK_DATA]: Number of Flat Ports = 154
 ##SGDEBUG [BENCHMARK_DATA]: Number of Black-Box Instances = 0
 ##SGDEBUG [BENCHMARK_DATA]: Number of Lib Instances = 0
 ##SGDEBUG [BENCHMARK_DATA]: Number of ILM Instances = 0
-##SGDEBUG [BENCHMARK_ABSOLUTE]: Flattening finished: 7 sec, 7.90 sec, 799508 KB, 1675396 KB
-##SGDEBUG [BENCHMARK_INCR]: Flattening finished: 0 sec, 0.13 sec, 0 KB, 0 KB
+##SGDEBUG [BENCHMARK_ABSOLUTE]: Flattening finished: 7 sec, 7.00 sec, 799444 KB, 1675328 KB
+##SGDEBUG [BENCHMARK_INCR]: Flattening finished: 0 sec, 0.12 sec, 0 KB, 0 KB
 Checking Rule SGDC_set_case_analysis_LC (Rule 264 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule Av_IpblockTaggedNet (Rule 265 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule BufClock (Rule 266 of total 333) .... done (Time = 0.05s, Memory = 0.0K)
@@ -3813,11 +3813,11 @@ Checking Rule CombLoop (Rule 267 of total 333) .... done (Time = 0.05s, Memory =
 Checking Rule STARC05-2.5.1.2 (Rule 268 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule STARC05-1.3.1.3 (Rule 269 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule STARC05-1.4.3.4 (Rule 270 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule FlopClockConstant (Rule 271 of total 333) .... done (Time = 0.01s, Memory = 0.0K)
+Checking Rule FlopClockConstant (Rule 271 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule FlopSRConst (Rule 272 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule FlopEConst (Rule 273 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule checkPinConnectedToSupply (Rule 274 of total 333) .... done (Time = 0.01s, Memory = 0.0K)
-Checking Rule W392 (Rule 275 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule FlopEConst (Rule 273 of total 333) .... done (Time = 0.01s, Memory = 0.0K)
+Checking Rule checkPinConnectedToSupply (Rule 274 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule W392 (Rule 275 of total 333) .... done (Time = 0.01s, Memory = 0.0K)
 Checking Rule W415 (Rule 276 of total 333) .... done (Time = 0.01s, Memory = 0.0K)
 Checking Rule LatchFeedback (Rule 277 of total 333) .... done (Time = 0.04s, Memory = 0.0K)
 Checking Rule Av_initseq01 (Rule 278 of total 333) .... done (Time = 0.00s, Memory = 0.0K)
@@ -3840,10 +3840,10 @@ Checking Rule ReportCheckDataSummary (Rule 70 of total 333) .... done (Time = 0.
 Applying user specified and internally generated waivers on violation database .... done (Time = 0.05s)
 
 Generating data for Console...
-##SGDEBUG [PEAK_MEMORY]: 1675460 KB for entire run at 'Saving NOM completed' stage
-##SGDEBUG [VMPEAK_MEMORY]: 1675532 KB for entire run
-##SGDEBUG [BENCHMARK_ABSOLUTE]: Rule checking finished: 7 sec, 8.44 sec, 799508 KB, 1675332 KB
-##SGDEBUG [BENCHMARK_INCR]: Rule checking finished: 0 sec, 0.54 sec, 0 KB, -64 KB
+##SGDEBUG [PEAK_MEMORY]: 1675392 KB for entire run at 'Saving NOM completed' stage
+##SGDEBUG [VMPEAK_MEMORY]: 1675464 KB for entire run
+##SGDEBUG [BENCHMARK_ABSOLUTE]: Rule checking finished: 7 sec, 7.43 sec, 799444 KB, 1675264 KB
+##SGDEBUG [BENCHMARK_INCR]: Rule checking finished: 0 sec, 0.43 sec, 0 KB, -64 KB
 
 
 =====================================================================================
@@ -5847,6 +5847,6 @@ Results Summary:
 ---------------------------------------------------------------------------------------------------
  
 SpyGlass Exit Code 0 (Rule-checking completed with warnings)
-SpyGlass total run-time is 0:0:9 (9 secs)
-SpyGlass total cpu-time is 7 secs
-SpyGlass run completed at 00:19:16 AM on Jan 07 2020
+SpyGlass total run-time is 0:0:8 (8 secs)
+SpyGlass total cpu-time is 8 secs
+SpyGlass run completed at 06:39:58 PM on Jan 09 2020

@@ -21,12 +21,12 @@ HOME=/home/m107/m107061552
 PATH=/usr/cad/cadence/INCISIV/cur/tools/bin/64bit:/usr/cad/synopsys/icc/cur/amd64/syn/bin:/usr/lib64/qt-3.3/bin:/home/m107/m107061552/perl5/bin:/usr/cad/synopsys/hspice/cur/hspice/bin:/usr/cad/synopsys/hspice/cur/hspice/GNU/linux64/gcc/bin:/usr/cad/synopsys/hspice/cur/hspice/linux64:/usr/bin:/usr/ucb/bin:/usr/bin/:/usr/cad/cadence/EDI/cur/tools/celtic/bin:/usr/cad/cadence/EDI/cur/tools/plato/bin:/usr/cad/cadence/EDI/cur/tools/dfII/bin:/usr/cad/cadence/EDI/cur/tools/fe/bin:/usr/cad/cadence/EDI/cur/tools/cdsdoc/bin:/usr/cad/cadence/EDI/cur/tools/bin:/usr/cad/cadence/EDI/cur//tools/tlfUtil/bin:/usr/cadtool/silvaco/bin:/usr/cadtool/jeroo/Jeroo.jar/:/usr/cadtool/mentor/tessent/cur/bin:/usr/cad/synopsys/sold/cur:/usr/cad/synopsys/processor_designer/cur/PD/linux/bin:/usr/cadtool/matlab/bin:/usr/cadtool/git/bin:/usr/cad/synopsys/finesim/cur/bin:/usr/cadtool/eclipse_2012/eclipse/:/usr/cad/synopsys/verdi/cur/bin:/usr/cad/synopsys/verdi/cur/nLint/bin:/usr/cad/synopsys/vcs-mx/cur/bin:/usr/cad/synopsys/vcs-mx/cur/linux/bin:/usr/cad/synopsys/vcs-mx/cur/linux/util:/usr/cad/synopsys/vcs-mx/cur/linux/flexlm:/usr/cad/synopsys/vcs/cur/bin:/usr/cad/synopsys/vcs/cur/linux/bin:/usr/cad/synopsys/vcs/cur/linux/util:/usr/cad/synopsys/vcs/cur/linux/flexlm:/usr/cad/synopsys/tmax/cur/bin:/usr/bin/X11:/usr/cad/synopsys/coreconsultant/cur/bin:/usr/cad/synopsys/synthesis/cur/amd64/syn/bin:/usr/cad/synopsys/lc/cur/bin:/usr/cadtool/cad/synopsys/spyglass/cur/SPYGLASS_HOME/bin:/usr/bin/X11:/usr/cad/synopsys/primetime/cur/amd64/syn/bin:/usr/bin/X11:/usr/cad/synopsys/primerail/cur/amd64/syn/bin:/usr/cad/synopsys/nanosim/cur/bin:/usr/cad/synopsys/nanosim/cur/linux/ns/bin:/usr/cad/synopsys/milkyway/cur/bin/AMD.64:/usr/cadtool/cad/synopsys/laker/cur/bin:/usr/cad/synopsys/icc2/cur/bin:/usr/cad/synopsys/icc/vH-2013.03-SP1/amd64/syn/bin:/usr/cad/synopsys/hsimplus/cur/hsimplus/bin:/usr/cad/synopsys/hercules/cur/bin/AMD.64:/usr/cad/synopsys/customexplorer/cur/bin:/usr/bin/X11:/usr/cadtool/cad/synopsys/coreconsultant/cur/bin:/usr/cad/mentor/Questa_Sim/cur/questasim/bin:/usr/cad/mentor/modelsim/cur/bin:/usr/cad/mentor/calibre/cur/bin:/usr/mentor/calibre/aoi_cal_2017.4_19.14/bin:/usr/cadtool/BRAINS/cur/bin:/usr/cadtool/cadence/STRATUS/cur/tools/bin:/usr/cad/cadence/INCISIV/cur/tools/bin:/usr/cad/cadence/INCISIV/cur/tools/vtools/vfault/bin:/usr/cad/cadence/INCISIV/cur/tools/dfII/bin:/usr/cadence/IC/cur/tools/dfII/bin:/usr/cadence/IC/cur/tools/dracula/bin:/usr/cadence/IC/cur/tools/bin:/usr/cad/cadence/IC/IC_06.17.709/tools/dfII/bin:/usr/cad/cadence/IC/IC_06.17.709/tools/dracula/bin:/usr/cad/cadence/IC/IC_06.17.709/tools/bin:/usr/cad/cadence/ETS/cur/tools/bin:/usr/cad/cadence/CTOS/cur/tools/bin:/usr/cadtool/cadence/CONFRML/cur/./bin:/usr/cadtool/cadence/CONFRML/cur/tools/bin:/usr/cad/cadence/ASSURA/cur/tools/assura/bin:/usr/cad/cadence/ASSURA/cur/tools/dsm/bin:/usr/cad/cadence/ASSURA/cur/tools/bin:/usr/cad/cadence/ASSURA/cur/tools/dfII/bin:/usr/bin/X11:/usr/cad/synopsys/primetime/cur/linux/syn/bin:/usr/local/bin:/usr/bin:/usr/cadtool/cad/synopsys/synthesis/lc/cur/bin:/usr/cadtool/cad/synopsys/synthesis/lc/cur/admin/install/lc/bin/:/usr/cadtool/cad/synopsys/dw_home/cur/bin:/usr/cadtool/Acrobat5/bin:/usr/local/sbin:/usr/sbin
 MAIL=/var/spool/mail/m107061552
 SHELL=/usr/bin/tcsh
-SSH_CLIENT=140.114.24.33 50332 22
-SSH_CONNECTION=140.114.24.33 50332 140.114.24.121 22
-SSH_TTY=/dev/pts/7
+SSH_CLIENT=140.114.24.33 41622 22
+SSH_CONNECTION=140.114.24.33 41622 140.114.24.121 22
+SSH_TTY=/dev/pts/10
 TERM=xterm
 DISPLAY=localhost:15.0
-XDG_SESSION_ID=46433
+XDG_SESSION_ID=47422
 XDG_RUNTIME_DIR=/run/user/32446
 HOSTTYPE=x86_64-linux
 VENDOR=unknown
@@ -37,7 +37,7 @@ PWD=/home/m107/m107061552/ICLAB/ICLAB-FINAL-vector-processor/sim
 GROUP=m107
 HOST=ws47
 REMOTEHOST=bigbird
-LM_LICENSE_FILE=1717@lsnctu:26585@lsnctu:5280@lscic:5280@lsncu:5280@lsntu:5219@lsnctu:5280@lsnchu:
+LM_LICENSE_FILE=1717@lsnctu:26585@lsnctu:5280@lscic:5280@lsnchu:5280@lscic:5219@lsnctu:5280@lsncku:
 PRIMETIME=/usr/cad/synopsys/primetime/cur
 ASSURAHOME=/usr/cad/cadence/ASSURA/cur
 LD_LIBRARY_PATH=/usr/cad/spring_soft/verdi/2012.01/share/PLI/IUS/LINUX64
@@ -114,32 +114,29 @@ TCL_LIBRARY=/usr/cad/cadence/INCISIV/cur/tools/inca/files/tcl/library
 Runtime command line arguments:
 argv[0]=ncverilog
 argv[1]=-f
-argv[2]=sim_gate.f
+argv[2]=sim_pre.f
 argv[3]=test_top.v
 argv[4]=dsram.v
-argv[5]=../syn/netlist/top_pipe_syn.v
-argv[6]=-v
-argv[7]=/usr/cadtool/cad/synopsys/SAED32_EDK/lib/stdcell_hvt/verilog/saed32nm_hvt.v
-argv[8]=+define+GATESIM
-argv[9]=+access+r
-125 profile - 100
-          CPU/Mem usage: 0.110 sys,  0.050 user,  269.01M sys,  0.00M vm
-126 VC callback profile - scalar:0 vector:0
-127 Tue Jan  7 00:28:00 2020
-128 pliAppInit
-129 pliAppMiscSet: New Sim Round
-130 LIBSSCORE=found /usr/cad/spring_soft/verdi/2012.01/share/PLI/IUS/LINUX64/libsscore_ius111.so through $LD_LIBRARY_PATH setting.
-131 Catch signal 11. Stack trace follows:
-#0  0x00007f885bbb7c30 in __read_nocancel () at /lib64/libc.so.6
-#1  0x00007f885bb465a0 in __GI__IO_file_underflow () at /lib64/libc.so.6
-#2  0x00007f885bb4752e in __GI__IO_default_uflow () at /lib64/libc.so.6
-#3  0x00007f885bb3b4d4 in __GI__IO_getline_info () at /lib64/libc.so.6
-#4  0x00007f885bb3a3d6 in fgets () at /lib64/libc.so.6
-#5  0x00007f884fa9b9f3 in ndpGetCallStack () at /usr/cad/spring_soft/verdi/2012.01/share/PLI/IUS/LINUX64/libsscore_ius111.so
-#6  0x00007f884fac8a20 in pliAppDbg_SigHandler () at /usr/cad/spring_soft/verdi/2012.01/share/PLI/IUS/LINUX64/libsscore_ius111.so
-#7  0x00007f884fa9b4f6 in catchSignalCB () at /usr/cad/spring_soft/verdi/2012.01/share/PLI/IUS/LINUX64/libsscore_ius111.so
-#8  0x00007f885be9f370 in <signal handler called> () at /lib64/libpthread.so.0
-#9  0x000000000493c491 in  ()
-#10 0x000000000493c488 in  ()
+argv[5]=../source/*.v
+argv[6]=+access+r
+122 profile - 100
+          CPU/Mem usage: 0.050 sys,  0.030 user,  235.74M sys,  0.00M vm
+123 VC callback profile - scalar:0 vector:0
+124 Thu Jan  9 18:38:55 2020
+125 pliAppInit
+126 pliAppMiscSet: New Sim Round
+127 LIBSSCORE=found /usr/cad/spring_soft/verdi/2012.01/share/PLI/IUS/LINUX64/libsscore_ius111.so through $LD_LIBRARY_PATH setting.
+128 Catch signal 11. Stack trace follows:
+#0  0x00007f7957a29c30 in __read_nocancel () at /lib64/libc.so.6
+#1  0x00007f79579b85a0 in __GI__IO_file_underflow () at /lib64/libc.so.6
+#2  0x00007f79579b952e in __GI__IO_default_uflow () at /lib64/libc.so.6
+#3  0x00007f79579ad4d4 in __GI__IO_getline_info () at /lib64/libc.so.6
+#4  0x00007f79579ac3d6 in fgets () at /lib64/libc.so.6
+#5  0x00007f794d6799f3 in ndpGetCallStack () at /usr/cad/spring_soft/verdi/2012.01/share/PLI/IUS/LINUX64/libsscore_ius111.so
+#6  0x00007f794d6a6a20 in pliAppDbg_SigHandler () at /usr/cad/spring_soft/verdi/2012.01/share/PLI/IUS/LINUX64/libsscore_ius111.so
+#7  0x00007f794d6794f6 in catchSignalCB () at /usr/cad/spring_soft/verdi/2012.01/share/PLI/IUS/LINUX64/libsscore_ius111.so
+#8  0x00007f7957d11370 in <signal handler called> () at /lib64/libpthread.so.0
+#9  0x0000000004322215 in  ()
+#10 0x0000000004322210 in  ()
 #11 0x0000000000000000 in  ()
-132 Sim process exit
+129 Sim process exit

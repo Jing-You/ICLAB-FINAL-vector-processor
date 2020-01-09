@@ -6,7 +6,7 @@ Report : timing
         -max_paths 1
 Design : top_pipe
 Version: O-2018.06
-Date   : Tue Jan  7 00:25:46 2020
+Date   : Thu Jan  9 19:06:24 2020
 ****************************************
 
  # A fanout number of 1000 was used for high fanout net computations.
@@ -25,84 +25,62 @@ Wire Load Model Mode: enclosed
   ------------------------------------------------
   ID_stage           35000                 saed32hvt_ss0p95v125c
   top                140000                saed32hvt_ss0p95v125c
-  controller         ForQA                 saed32hvt_ss0p95v125c
 
   Point                                                   Incr       Path
   --------------------------------------------------------------------------
   clock clk (rise edge)                                 0.0000     0.0000
   clock network delay (ideal)                           0.0000     0.0000
   top0/ID_stage/cnt_reg_0_/CLK (DFFSSRX1_HVT)           0.0000     0.0000 r
-  top0/ID_stage/cnt_reg_0_/Q (DFFSSRX1_HVT)             0.2369     0.2369 r
-  top0/ID_stage/U7/Y (OR2X1_HVT)                        0.1028     0.3397 r
-  top0/ID_stage/U95/Y (OR2X1_HVT)                       0.0824     0.4221 r
-  top0/ID_stage/U17/Y (OR2X1_HVT)                       0.0850     0.5071 r
-  top0/ID_stage/U136/Y (OR2X1_HVT)                      0.0818     0.5889 r
-  top0/ID_stage/U6/Y (OR2X1_HVT)                        0.0874     0.6763 r
-  top0/ID_stage/U113/Y (OR2X1_HVT)                      0.0841     0.7604 r
-  top0/ID_stage/U137/Y (OR2X1_HVT)                      0.0895     0.8499 r
-  top0/ID_stage/U138/Y (OR2X1_HVT)                      0.0820     0.9320 r
-  top0/ID_stage/U139/Y (OR2X1_HVT)                      0.0816     1.0136 r
-  top0/ID_stage/U140/Y (OR2X1_HVT)                      0.0817     1.0953 r
-  top0/ID_stage/U141/Y (OR2X1_HVT)                      0.0819     1.1772 r
-  top0/ID_stage/U3/Y (OR2X1_HVT)                        0.0916     1.2688 r
-  top0/ID_stage/U111/Y (OR2X1_HVT)                      0.0868     1.3555 r
-  top0/ID_stage/U5/Y (OR2X1_HVT)                        0.0941     1.4497 r
-  top0/ID_stage/U21/Y (OR2X1_HVT)                       0.0850     1.5346 r
-  top0/ID_stage/U142/Y (OR2X1_HVT)                      0.0810     1.6157 r
-  top0/ID_stage/U143/Y (OR2X1_HVT)                      0.0813     1.6969 r
-  top0/ID_stage/U144/Y (OR2X1_HVT)                      0.0819     1.7788 r
-  top0/ID_stage/U145/Y (OR2X1_HVT)                      0.0819     1.8607 r
-  top0/ID_stage/U146/Y (OR2X1_HVT)                      0.0819     1.9426 r
-  top0/ID_stage/U147/Y (OR2X1_HVT)                      0.0819     2.0245 r
-  top0/ID_stage/U148/Y (OR2X1_HVT)                      0.0819     2.1064 r
-  top0/ID_stage/U149/Y (OR2X1_HVT)                      0.0819     2.1883 r
-  top0/ID_stage/U15/Y (NOR2X0_HVT)                      0.1254     2.3138 f
-  top0/ID_stage/U23/Y (INVX2_HVT)                       0.0504     2.3642 r
-  top0/ID_stage/U11/Y (INVX2_HVT)                       0.0433     2.4075 f
-  top0/ID_stage/U91/Y (INVX1_HVT)                       0.0626     2.4701 r
-  top0/ID_stage/U258/Y (MUX21X1_HVT)                    0.1352     2.6052 r
-  top0/ID_stage/controller/instn_28_ (controller)       0.0000     2.6052 r
-  top0/ID_stage/controller/U6/Y (INVX0_HVT)             0.0409     2.6462 f
-  top0/ID_stage/controller/U13/Y (INVX0_HVT)            0.0429     2.6891 r
-  top0/ID_stage/controller/opcode[2] (controller)       0.0000     2.6891 r
-  top0/ID_stage/U28/Y (INVX0_HVT)                       0.0337     2.7228 f
-  top0/ID_stage/U180/Y (NAND2X0_HVT)                    0.0416     2.7644 r
-  top0/ID_stage/U27/Y (OR2X2_HVT)                       0.1060     2.8704 r
-  top0/ID_stage/U10/Y (INVX1_HVT)                       0.0527     2.9232 f
-  top0/ID_stage/U9/Y (INVX1_HVT)                        0.0551     2.9782 r
-  top0/ID_stage/U30/Y (INVX0_HVT)                       0.0926     3.0708 f
-  top0/ID_stage/U271/Y (NAND2X0_HVT)                    0.0861     3.1569 r
-  top0/ID_stage/U294/Y (OA21X1_HVT)                     0.1064     3.2634 r
-  top0/ID_stage/U296/Y (AND2X1_HVT)                     0.0790     3.3424 r
-  top0/ID_stage/U298/Y (AND2X1_HVT)                     0.0839     3.4263 r
-  top0/ID_stage/U300/Y (NAND2X0_HVT)                    0.0660     3.4923 f
-  top0/ID_stage/U108/Y (NOR3X0_HVT)                     0.1243     3.6166 r
-  top0/ID_stage/U321/Y (NAND2X0_HVT)                    0.0499     3.6665 f
+  top0/ID_stage/cnt_reg_0_/Q (DFFSSRX1_HVT)             0.2518     0.2518 f
+  top0/ID_stage/U149/Y (OR2X1_HVT)                      0.0859     0.3378 f
+  top0/ID_stage/U213/Y (INVX0_HVT)                      0.0366     0.3744 r
+  top0/ID_stage/U214/Y (NAND2X0_HVT)                    0.0676     0.4420 f
+  top0/ID_stage/U223/Y (NOR2X0_HVT)                     0.1270     0.5690 r
+  top0/ID_stage/U249/Y (NAND2X0_HVT)                    0.0879     0.6569 f
+  top0/ID_stage/U250/Y (OR2X1_HVT)                      0.0856     0.7425 f
+  top0/ID_stage/U251/Y (OR2X1_HVT)                      0.0798     0.8223 f
+  top0/ID_stage/U252/Y (OR2X1_HVT)                      0.0874     0.9097 f
+  top0/ID_stage/U253/Y (OR2X1_HVT)                      0.0677     0.9775 f
+  top0/ID_stage/U254/Y (OR2X1_HVT)                      0.0765     1.0539 f
+  top0/ID_stage/U255/Y (OR2X1_HVT)                      0.0802     1.1341 f
+  top0/ID_stage/U256/Y (OR2X1_HVT)                      0.0803     1.2144 f
+  top0/ID_stage/U277/Y (OR2X1_HVT)                      0.0803     1.2947 f
+  top0/ID_stage/U278/Y (OR2X1_HVT)                      0.0802     1.3749 f
+  top0/ID_stage/U292/Y (OR2X1_HVT)                      0.0802     1.4552 f
+  top0/ID_stage/U295/Y (OR2X1_HVT)                      0.0803     1.5354 f
+  top0/ID_stage/U298/Y (OR2X1_HVT)                      0.0874     1.6229 f
+  top0/ID_stage/U133/Y (INVX0_HVT)                      0.0332     1.6561 r
+  top0/ID_stage/U134/Y (INVX0_HVT)                      0.0375     1.6936 f
+  top0/ID_stage/U299/Y (XNOR2X1_HVT)                    0.1516     1.8452 r
+  top0/ID_stage/U356/Y (OR3X1_HVT)                      0.1129     1.9581 r
+  top0/ID_stage/U357/Y (OA21X1_HVT)                     0.1086     2.0667 r
+  top0/ID_stage/U358/Y (NOR4X1_HVT)                     0.1517     2.2183 f
+  top0/ID_stage/U371/Y (NAND2X0_HVT)                    0.0596     2.2779 r
   top0/ID_stage/clk_gate_instn_LW_SW_reg_2/EN (SNPS_CLOCK_GATE_HIGH_ID_stage_mydesign_1)
-                                                        0.0000     3.6665 f
+                                                        0.0000     2.2779 r
   top0/ID_stage/clk_gate_instn_LW_SW_reg_2/latch/D (LATCHX1_HVT)
-                                                        0.0000     3.6665 f
-  data arrival time                                                3.6665
+                                                        0.0000     2.2779 r
+  data arrival time                                                2.2779
 
-  clock clk' (rise edge)                                2.5000     2.5000
-  clock network delay (ideal)                           0.0000     2.5000
+  clock clk' (rise edge)                                1.9000     1.9000
+  clock network delay (ideal)                           0.0000     1.9000
   top0/ID_stage/clk_gate_instn_LW_SW_reg_2/latch/CLK (LATCHX1_HVT)
-                                                        0.0000     2.5000 r
-  time borrowed from endpoint                           1.1665     3.6665
-  data required time                                               3.6665
+                                                        0.0000     1.9000 r
+  time borrowed from endpoint                           0.3779     2.2779
+  data required time                                               2.2779
   --------------------------------------------------------------------------
-  data required time                                               3.6665
-  data arrival time                                               -3.6665
+  data required time                                               2.2779
+  data arrival time                                               -2.2779
   --------------------------------------------------------------------------
   slack (MET)                                                      0.0000
 
   Time Borrowing Information
   --------------------------------------------------------------
-  clk' nominal pulse width                              2.5000   
-  library setup time                                   -0.0937   
+  clk' nominal pulse width                              1.9000   
+  library setup time                                   -0.1178   
   --------------------------------------------------------------
-  max time borrow                                       2.4063   
-  actual time borrow                                    1.1665   
+  max time borrow                                       1.7822   
+  actual time borrow                                    0.3779   
   --------------------------------------------------------------
 
 

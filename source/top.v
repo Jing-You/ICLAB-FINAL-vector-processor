@@ -7,9 +7,9 @@ module top(
 	// boot_datai,
 	// boot_web,
 	//output (peripheral write)
-	peri_web,
-	peri_addr,
-	peri_datao,
+	// peri_web,
+	// peri_addr,
+	// peri_datao,
 	// MEM_stage
 	MEM_alu_result,
 	MEM_write_data,
@@ -28,9 +28,9 @@ input boot_up;
 // input [31:0] boot_datai;
 // input boot_web;
 
-output  peri_web;
-output [15:0] peri_addr;
-output [15:0] peri_datao;
+// output  peri_web;
+// output [15:0] peri_addr;
+// output [15:0] peri_datao;
 
 // MEM_stage
 output [31:0] MEM_alu_result;
@@ -255,9 +255,9 @@ ID_stage ID_stage(
 	.state(state),
 	.next_state(next_state),
 	.beq_enable(beq_enable),
-    .peri_web(peri_web),
-    .peri_addr(peri_addr),
-    .peri_datao(peri_datao),
+    // .peri_web(peri_web),
+    // .peri_addr(peri_addr),
+    // .peri_datao(peri_datao),
 	.read_data_v1_0(ID_read_data_v1_0),
 	.read_data_v1_1(ID_read_data_v1_1),
 	.read_data_v1_2(ID_read_data_v1_2),

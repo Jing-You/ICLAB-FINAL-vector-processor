@@ -1,7 +1,7 @@
 `include "../source/CPU_define.v"
 module test_top;
 
-parameter PERIOD = 10;
+parameter PERIOD = 5;
 parameter WORD = 255;
 //input
 reg clk;
@@ -16,9 +16,9 @@ reg [7:0] boot_addr;
 reg [31:0] boot_datai;
 reg boot_web;
 
-wire  peri_web;
-wire [15:0] peri_addr;
-wire [15:0] peri_datao;
+// wire  peri_web;
+// wire [15:0] peri_addr;
+// wire [15:0] peri_datao;
 
 // MEM_stage
 wire [31:0] MEM_alu_result;
@@ -39,9 +39,9 @@ top_pipe top_pipe(
 // .boot_datai(boot_datai),
 // .boot_web(boot_web),
 
-.peri_web(peri_web),
-.peri_addr(peri_addr),
-.peri_datao(peri_datao),
+// .peri_web(peri_web),
+// .peri_addr(peri_addr),
+// .peri_datao(peri_datao),
 
 // MEM_stage
 .MEM_alu_result(MEM_alu_result),

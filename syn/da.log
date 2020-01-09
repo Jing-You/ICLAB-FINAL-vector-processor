@@ -23,8 +23,8 @@ Initializing...
 set TOPLEVEL "top_pipe"
 top_pipe
 # change your timing constraint here
-set TEST_CYCLE 5
-5
+set TEST_CYCLE 3.8
+3.8
 source -echo -verbose 0_readfile.tcl 
 set TOP_DIR $TOPLEVEL
 top_pipe
@@ -89,9 +89,6 @@ Inferred memory devices in process
 ===============================================================================
 |     rst_n_d_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
 |    boot_up_d_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
-|    peri_web_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
-|    peri_addr_reg    | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
-|   peri_datao_reg    | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
 ===============================================================================
 Presto compilation completed successfully.
 Elaborated 1 design.
@@ -475,7 +472,7 @@ Information: Evaluating DesignWare library utilization. (UISN-27)
 ============================================================================
 
 
-Information: There are 152 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+Information: There are 87 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
 
   Simplifying Design 'top_pipe'
 
@@ -492,27 +489,27 @@ Information: Added key list 'DesignWare' to design 'regfile'. (DDB-72)
   Processing 'alu'
 Information: Added key list 'DesignWare' to design 'alu'. (DDB-72)
  Implement Synthetic for 'alu'.
-  Processing 'top'
-  Processing 'IF_ID'
+  Processing 'EX_MEM'
+  Processing 'controller'
   Processing 'PC'
  Implement Synthetic for 'PC'.
 Information: Added key list 'DesignWare' to design 'PC'. (DDB-72)
-  Processing 'EX_MEM'
-  Processing 'top_pipe'
   Processing 'ID_stage'
  Implement Synthetic for 'ID_stage'.
 Information: Added key list 'DesignWare' to design 'ID_stage'. (DDB-72)
   Processing 'ID_EXE'
-  Processing 'controller'
-  Processing 'WB_stage'
-  Processing 'MEM_WB_stage'
-  Processing 'EXE_stage'
- Implement Synthetic for 'EXE_stage'.
-Information: Added key list 'DesignWare' to design 'EXE_stage'. (DDB-72)
+  Processing 'top_pipe'
   Processing 'IF_stage'
   Processing 'SNPS_CLOCK_GATE_HIGH_ID_stage_mydesign_0'
   Processing 'SNPS_CLOCK_GATE_HIGH_regfile_mydesign_0'
   Processing 'SNPS_CLOCK_GATE_HIGH_IF_ID_mydesign_0'
+  Processing 'MEM_WB_stage'
+  Processing 'EXE_stage'
+ Implement Synthetic for 'EXE_stage'.
+Information: Added key list 'DesignWare' to design 'EXE_stage'. (DDB-72)
+  Processing 'top'
+  Processing 'IF_ID'
+  Processing 'WB_stage'
 
   Updating timing information
 Information: Updating design information... (UID-85)
@@ -530,11 +527,11 @@ Information: Skipping clock gating on design WB_stage, since there are no regist
 Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_IF_ID_mydesign_0, since there are no registers. (PWR-806)
 Information: Skipping clock gating on design controller, since there are no registers. (PWR-806)
 Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_ID_stage_mydesign_0, since there are no registers. (PWR-806)
-Information: Skipping clock gating on design ID_stage_DW01_dec_J5_0, since there are no registers. (PWR-806)
-Information: Skipping clock gating on design ID_stage_DW01_dec_J5_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design ID_stage_DW01_dec_J4_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design ID_stage_DW01_dec_J4_1, since there are no registers. (PWR-806)
 Information: Skipping clock gating on design alu, since there are no registers. (PWR-806)
-Information: Skipping clock gating on design EXE_stage_DP_OP_10J6_124_1299_J6_0, since there are no registers. (PWR-806)
-Information: Skipping clock gating on design EXE_stage_DW01_add_J6_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design EXE_stage_DP_OP_10J5_124_1299_J5_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design EXE_stage_DW01_add_J5_0, since there are no registers. (PWR-806)
 Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_regfile_mydesign_0, since there are no registers. (PWR-806)
 Information: Skipping clock gating on design regfile_DP_OP_96J1_124_636_J1_0, since there are no registers. (PWR-806)
 Information: Skipping clock gating on design alu_RSOP_155, since there are no registers. (PWR-806)
@@ -763,44 +760,11 @@ Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_IF_ID_mydesign
 Information: Performing clock-gating on design EX_MEM. (PWR-730)
 Information: Performing clock-gating on design MEM_WB_stage. (PWR-730)
 Information: Performing clock-gating on design ID_EXE. (PWR-730)
-Information: Performing clock-gating on design top_pipe. (PWR-730)
 Information: Performing clock-gating on design IF_ID. (PWR-730)
 Information: Performing clock-gating on design PC. (PWR-730)
+Information: Performing clock-gating on design top_pipe. (PWR-730)
 Information: Performing clock-gating on design ID_stage. (PWR-730)
 Information: Performing clock-gating on design regfile. (PWR-730)
-Information: The register 'peri_datao_reg[0]' is a constant and will be removed. (OPT-1206)
-Information: The register 'peri_datao_reg[1]' is a constant and will be removed. (OPT-1206)
-Information: The register 'peri_datao_reg[2]' is a constant and will be removed. (OPT-1206)
-Information: The register 'peri_datao_reg[3]' is a constant and will be removed. (OPT-1206)
-Information: The register 'peri_datao_reg[4]' is a constant and will be removed. (OPT-1206)
-Information: The register 'peri_datao_reg[5]' is a constant and will be removed. (OPT-1206)
-Information: The register 'peri_datao_reg[6]' is a constant and will be removed. (OPT-1206)
-Information: The register 'peri_datao_reg[7]' is a constant and will be removed. (OPT-1206)
-Information: The register 'peri_datao_reg[8]' is a constant and will be removed. (OPT-1206)
-Information: The register 'peri_datao_reg[9]' is a constant and will be removed. (OPT-1206)
-Information: The register 'peri_datao_reg[10]' is a constant and will be removed. (OPT-1206)
-Information: The register 'peri_datao_reg[11]' is a constant and will be removed. (OPT-1206)
-Information: The register 'peri_datao_reg[12]' is a constant and will be removed. (OPT-1206)
-Information: The register 'peri_datao_reg[13]' is a constant and will be removed. (OPT-1206)
-Information: The register 'peri_datao_reg[14]' is a constant and will be removed. (OPT-1206)
-Information: The register 'peri_datao_reg[15]' is a constant and will be removed. (OPT-1206)
-Information: The register 'peri_addr_reg[0]' is a constant and will be removed. (OPT-1206)
-Information: The register 'peri_addr_reg[1]' is a constant and will be removed. (OPT-1206)
-Information: The register 'peri_addr_reg[2]' is a constant and will be removed. (OPT-1206)
-Information: The register 'peri_addr_reg[3]' is a constant and will be removed. (OPT-1206)
-Information: The register 'peri_addr_reg[4]' is a constant and will be removed. (OPT-1206)
-Information: The register 'peri_addr_reg[5]' is a constant and will be removed. (OPT-1206)
-Information: The register 'peri_addr_reg[6]' is a constant and will be removed. (OPT-1206)
-Information: The register 'peri_addr_reg[7]' is a constant and will be removed. (OPT-1206)
-Information: The register 'peri_addr_reg[8]' is a constant and will be removed. (OPT-1206)
-Information: The register 'peri_addr_reg[9]' is a constant and will be removed. (OPT-1206)
-Information: The register 'peri_addr_reg[10]' is a constant and will be removed. (OPT-1206)
-Information: The register 'peri_addr_reg[11]' is a constant and will be removed. (OPT-1206)
-Information: The register 'peri_addr_reg[12]' is a constant and will be removed. (OPT-1206)
-Information: The register 'peri_addr_reg[13]' is a constant and will be removed. (OPT-1206)
-Information: The register 'peri_addr_reg[14]' is a constant and will be removed. (OPT-1206)
-Information: The register 'peri_addr_reg[15]' is a constant and will be removed. (OPT-1206)
-Information: The register 'peri_web_reg' is a constant and will be removed. (OPT-1206)
 
 Threshold voltage group cell usage:
 >> saed32cell_hvt 100.00%, saed32cell_svt 0.00%
@@ -853,14 +817,7 @@ Threshold voltage group cell usage:
   Global Optimization (Phase 29)
   Global Optimization (Phase 30)
   Global Optimization (Phase 31)
-  Mapping 'alu_DP_OP_155_160_8235_2'
-  Mapping 'alu_DP_OP_140_155_5242_2'
-  Mapping 'alu_DP_OP_152_159_309_2'
-  Mapping 'alu_DP_OP_146_157_1160_2'
-  Mapping 'alu_DP_OP_158_161_7896_2'
-  Mapping 'alu_DP_OP_149_158_9086_2'
-  Mapping 'alu_DP_OP_143_156_3201_2'
-  Mapping 'alu_DP_OP_161_162_4153_2'
+  Mapping 'alu_DP_OP_137_154_6280_3'
 
 Threshold voltage group cell usage:
 >> saed32cell_hvt 100.00%, saed32cell_svt 0.00%
@@ -878,37 +835,37 @@ Threshold voltage group cell usage:
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
   --------- --------- --------- --------- --------- ------------------------- --------- -----------
-    0:01:58   79317.8      0.00       0.0    3762.6                           1379034880.0000      0.00  
-    0:01:58   79317.8      0.00       0.0    3762.6                           1379034880.0000      0.00  
-    0:01:58   79317.8      0.00       0.0    3762.6                           1379034880.0000      0.00  
-    0:01:58   79317.8      0.00       0.0    3762.6                           1379034880.0000      0.00  
+    0:01:51   81729.9      0.00       0.0    3436.1                           1431060736.0000      0.00  
+    0:01:51   81729.9      0.00       0.0    3436.1                           1431060736.0000      0.00  
+    0:01:51   81729.9      0.00       0.0    3436.1                           1431060736.0000      0.00  
+    0:01:51   81729.9      0.00       0.0    3436.1                           1431060736.0000      0.00  
 
 Threshold voltage group cell usage:
 >> saed32cell_hvt 100.00%, saed32cell_svt 0.00%
 
   Beginning WLM Backend Optimization
   --------------------------------------
-    0:02:19   78891.9      0.00       0.0    3732.0                           1351072896.0000      0.00  
-    0:02:19   78889.9      0.00       0.0    3732.0                           1350992000.0000      0.00  
-    0:02:24   78443.3      0.00       0.0    3730.0                           1282639232.0000      0.00  
-    0:02:24   78443.3      0.00       0.0    3730.0                           1282639232.0000      0.00  
-    0:02:24   78443.3      0.00       0.0    3730.0                           1282639232.0000      0.00  
-    0:02:24   78443.3      0.00       0.0    3730.0                           1282639232.0000      0.00  
-    0:02:24   78443.3      0.00       0.0    3730.0                           1282639232.0000      0.00  
-    0:02:24   78443.3      0.00       0.0    3730.0                           1282639232.0000      0.00  
-    0:02:24   78443.3      0.00       0.0    3730.0                           1282639232.0000      0.00  
-    0:02:24   78443.3      0.00       0.0    3730.0                           1282639232.0000      0.00  
-    0:02:24   78443.3      0.00       0.0    3730.0                           1282639232.0000      0.00  
-    0:02:24   78443.3      0.00       0.0    3730.0                           1282639232.0000      0.00  
-    0:02:24   78443.3      0.00       0.0    3730.0                           1282639232.0000      0.00  
-    0:02:24   78443.3      0.00       0.0    3730.0                           1282639232.0000      0.00  
-    0:02:24   78443.3      0.00       0.0    3730.0                           1282639232.0000      0.00  
-    0:02:24   78443.3      0.00       0.0    3730.0                           1282639232.0000      0.00  
-    0:02:24   78443.3      0.00       0.0    3730.0                           1282639232.0000      0.00  
-    0:02:24   78443.3      0.00       0.0    3730.0                           1282639232.0000      0.00  
-    0:02:24   78443.3      0.00       0.0    3730.0                           1282639232.0000      0.00  
-    0:02:24   78443.3      0.00       0.0    3730.0                           1282639232.0000      0.00  
-    0:02:24   78443.3      0.00       0.0    3730.0                           1282639232.0000      0.00  
+    0:02:16   81305.0      0.00       0.0    3418.9                           1399602944.0000      0.00  
+    0:02:17   81259.0      0.00       0.0    3417.5                           1397998464.0000      0.00  
+    0:02:21   80763.4      0.00       0.0    3309.9                           1319683968.0000      0.00  
+    0:02:21   80763.4      0.00       0.0    3309.9                           1319683968.0000      0.00  
+    0:02:21   80763.4      0.00       0.0    3309.9                           1319683968.0000      0.00  
+    0:02:21   80763.4      0.00       0.0    3309.9                           1319683968.0000      0.00  
+    0:02:21   80763.4      0.00       0.0    3309.9                           1319683968.0000      0.00  
+    0:02:21   80763.4      0.00       0.0    3309.9                           1319683968.0000      0.00  
+    0:02:21   80763.4      0.00       0.0    3309.9                           1319683968.0000      0.00  
+    0:02:21   80763.4      0.00       0.0    3309.9                           1319683968.0000      0.00  
+    0:02:21   80763.4      0.00       0.0    3309.9                           1319683968.0000      0.00  
+    0:02:21   80763.4      0.00       0.0    3309.9                           1319683968.0000      0.00  
+    0:02:21   80763.4      0.00       0.0    3309.9                           1319683968.0000      0.00  
+    0:02:21   80763.4      0.00       0.0    3309.9                           1319683968.0000      0.00  
+    0:02:21   80763.4      0.00       0.0    3309.9                           1319683968.0000      0.00  
+    0:02:21   80763.4      0.00       0.0    3309.9                           1319683968.0000      0.00  
+    0:02:21   80763.4      0.00       0.0    3309.9                           1319683968.0000      0.00  
+    0:02:21   80763.4      0.00       0.0    3309.9                           1319683968.0000      0.00  
+    0:02:21   80763.4      0.00       0.0    3309.9                           1319683968.0000      0.00  
+    0:02:21   80763.4      0.00       0.0    3309.9                           1319683968.0000      0.00  
+    0:02:21   80763.4      0.00       0.0    3309.9                           1319683968.0000      0.00  
 
 
   Beginning Design Rule Fixing  (max_transition)  (max_fanout)  (max_capacitance)
@@ -918,43 +875,48 @@ Threshold voltage group cell usage:
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
   --------- --------- --------- --------- --------- ------------------------- --------- -----------
-    0:02:24   78443.3      0.00       0.0    3730.0                           1282639232.0000      0.00  
+    0:02:21   80763.4      0.00       0.0    3309.9                           1319683968.0000      0.00  
   Global Optimization (Phase 32)
   Global Optimization (Phase 33)
   Global Optimization (Phase 34)
-    0:02:42   83404.7      0.27       2.2    1202.7 top0/EXE_stage/alu/net99535 1366767104.0000      0.00  
-    0:02:45   84374.8      0.24       1.8     947.3 top0/EXE_stage/alu/net88894 1376063872.0000      0.00  
-    0:02:47   85033.3      0.24       1.8     750.5 top0/EXE_stage/alu/net88857 1383133824.0000      0.00  
-    0:02:50   85460.0      0.20       1.3     645.5 top0/EXE_stage/alu/net101485 1385874688.0000      0.00  
-    0:02:52   85659.7      0.15       1.0     610.0 top0/EXE_stage/alu/net96887 1387294464.0000      0.00  
-    0:02:54   86325.6      0.15       1.0     525.8 top0/EXE_stage/alu/net113618 1393161856.0000      0.00  
-    0:02:57   87001.9      0.15       1.0     437.0 top0/EXE_stage/alu/net106580 1399435648.0000      0.00  
-    0:02:59   87354.4      0.15       1.0     404.1 top0/ID_stage/regfile/net112889 1403111296.0000      0.00  
-    0:03:01   87723.6      0.11       0.8     391.7 top0/EXE_stage/alu/net107032 1406833920.0000      0.00  
-    0:03:03   88033.4      0.10       0.8     383.3 top0/EXE_stage/alu/net109121 1409221760.0000      0.00  
-    0:03:06   87946.0      0.10       0.8     381.3 top0/EXE_stage/alu/net116441 1404796032.0000      0.00  
-    0:03:08   87925.7      0.10       0.8     379.3 top0/EXE_stage/alu/net118124 1402514048.0000      0.00  
-    0:03:11   87908.2      0.10       0.8     378.6 top0/EXE_stage/alu/net121024 1401448064.0000      0.00  
-    0:03:12   87769.4      0.10       0.8     372.0 top0/EXE_stage/alu/net97354 1398597888.0000      0.00  
-    0:03:13   87763.3      0.10       0.8     371.8 top0/ID_stage/regfile/net85578 1398074368.0000      0.00  
-    0:03:16   89222.3      0.09       0.7     334.6 top0/ID_stage/regfile/net106334 1401194496.0000      0.00  
-    0:03:20   89297.6      0.09       0.8     322.4 top0/EXE_stage/alu/net113617 1402322176.0000      0.00  
-    0:03:23   89295.5      0.09       0.8     322.4 top0/EXE_stage/alu/net118080 1402219008.0000      0.00  
-    0:03:25   89285.4      0.09       0.8     322.0 top0/EXE_stage/alu/net120521 1402027264.0000      0.00  
-    0:03:29   89283.3      0.09       0.8     321.6 top0/EXE_stage/alu/net85609 1401971840.0000      0.00  
-    0:03:33   89289.9      0.08       0.8     321.3 top0/EXE_stage/alu/net103667 1402128768.0000      0.00  
-    0:03:38   89267.8      0.00       0.0     321.3 top0/EX_MEM/alu_result_v1_o_reg[31]/D 1399911808.0000      0.00  
-    0:03:41   89271.1      0.05       0.4     319.7 top0/EXE_stage/alu/ALUSrc 1399964160.0000      0.00  
-    0:03:46   89549.7      0.10       1.0     305.8 top0/EXE_stage/alu/net116837 1411770240.0000      0.00  
-    0:03:48   89541.3      0.10       1.0     305.4 top0/EXE_stage/alu/net119846 1411438976.0000      0.00  
-    0:03:52   89522.5      0.10       1.0     303.6 top0/EXE_stage/alu/net90860 1410227584.0000      0.00  
-    0:03:57   89531.9      0.01       0.0     303.3 top0/EX_MEM/alu_result_v7_o_reg[31]/D 1410660736.0000      0.00  
-    0:04:04   89517.9      0.00       0.0     303.3 top0/EXE_stage/alu/net88498 1409743488.0000      0.00  
-    0:04:07   89510.0      0.00       0.0     303.3 top0/EXE_stage/alu/net117303 1408426368.0000      0.00  
-    0:04:10   89503.7      0.00       0.0     303.3 top0/EXE_stage/alu/net116882 1407139328.0000      0.00  
-    0:04:12   89485.4      0.00       0.0     303.3 top0/EXE_stage/alu/net103667 1405011072.0000      0.00  
-    0:04:18   89480.8      0.00       0.0     303.3                           1404635520.0000      0.00  
-    0:04:19   89450.8      0.00       0.0     306.2                           1404153728.0000      0.00  
+    0:02:40   85453.9      0.21       1.8    1304.8 top0/EXE_stage/alu/net86571 1408966272.0000      0.00  
+    0:02:42   86370.1      0.18       1.1    1041.9 top0/ID_stage/regfile/net75019 1417823744.0000      0.00  
+    0:02:44   87103.5      0.18       1.4     842.7 top0/EXE_stage/alu/net103774 1426177152.0000      0.00  
+    0:02:47   87525.4      0.16       1.6     740.1 top0/ID_stage/regfile/net98379 1428407040.0000      0.00  
+    0:02:50   88064.7      0.14       1.8     682.4 top0/EXE_stage/alu/net92784 1436237824.0000      0.00  
+    0:02:52   88377.1      0.11       1.7     637.1 top0/ID_stage/cnt[12]     1439623168.0000      0.00  
+    0:02:54   89205.3      0.11       1.7     508.2 top0/EXE_stage/alu/net98712 1448067328.0000      0.00  
+    0:02:56   89615.0      0.11       1.7     473.5 top0/EXE_stage/alu/net99334 1449370112.0000      0.00  
+    0:02:59   89956.0      0.11       1.7     457.3 top0/EXE_stage/alu/net86329 1451298688.0000      0.00  
+    0:03:00   90539.1      0.11       1.2     442.8 top0/ID_stage/rd_addr[3]  1457632768.0000      0.00  
+    0:03:02   90608.9      0.11       1.2     439.6 top0/EXE_stage/alu/net101346 1457842176.0000      0.00  
+    0:03:04   90542.9      0.11       1.2     437.6 top0/EXE_stage/alu/net108743 1453481216.0000      0.00  
+    0:03:07   90506.3      0.11       1.2     435.0 top0/EXE_stage/alu/net110076 1450557952.0000      0.00  
+    0:03:09   90502.5      0.11       1.2     435.0 top0/EXE_stage/alu/net112471 1449719808.0000      0.00  
+    0:03:11   90349.0      0.11       1.2     429.2 top0/ID_stage/net113154   1445320320.0000      0.00  
+    0:03:12   90325.3      0.11       1.2     428.5 top0/EXE_stage/alu/net88745 1445035008.0000      0.00  
+    0:03:13   90321.3      0.11       1.2     428.5 top0/ID_stage/regfile/net76478 1444354304.0000      0.00  
+    0:03:15   91918.5      0.11       1.2     388.0 top0/EXE_stage/alu/net91017 1449319552.0000      0.00  
+    0:03:18   92543.0      0.11       1.1     371.3 top0/EXE_stage/alu/net81631 1450917632.0000      0.00  
+    0:03:20   92544.8      0.11       1.1     370.9 top0/EXE_stage/alu/net104490 1450942976.0000      0.00  
+    0:03:25   92535.9      0.11       1.1     370.7 top0/EXE_stage/alu/net112047 1450287232.0000      0.00  
+    0:03:28   92553.4      0.11       1.1     370.2 top0/EXE_stage/alu/net84247 1449967360.0000      0.00  
+    0:03:31   92582.9      0.11       1.1     369.5 top0/EXE_stage/alu/net103250 1450072576.0000      0.00  
+    0:03:34   92586.9      0.11       1.1     369.5 top0/EXE_stage/alu/net88707 1450171136.0000      0.00  
+    0:03:38   92588.2      0.01       0.0     369.0 top0/EX_MEM/alu_result_v5_o_reg[31]/D 1450871168.0000      0.00  
+    0:03:42   92587.5      0.03       0.2     366.8 top0/EXE_stage/alu/ALUSrc 1450460160.0000      0.00  
+    0:03:45   92764.1      0.04       0.2     356.0 top0/EXE_stage/alu/net101316 1454956928.0000      0.00  
+    0:03:48   92751.6      0.04       0.2     355.8 top0/EXE_stage/alu/net109899 1453177344.0000      0.00  
+    0:03:51   92747.8      0.04       0.2     355.8 top0/EXE_stage/alu/net108515 1452648832.0000      0.00  
+    0:03:54   92750.9      0.04       0.2     354.9 top0/EXE_stage/alu/net88708 1451604480.0000      0.00  
+    0:03:57   92833.0      0.13       0.6     349.5 top0/ID_stage/regfile/read_addr2[1] 1453217024.0000      0.00  
+    0:04:03   92837.0      0.01       0.0     348.3 top0/EX_MEM/alu_result_v0_o_reg[31]/D 1452969984.0000      0.00  
+    0:04:05   92826.9      0.00       0.0     348.0 top0/EXE_stage/alu/net107603 1452344064.0000      0.00  
+    0:04:09   92824.1      0.00       0.0     348.0 top0/EXE_stage/alu/net111366 1451840256.0000      0.00  
+    0:04:11   92809.3      0.00       0.0     348.0 top0/EXE_stage/alu/net88702 1450864768.0000      0.00  
+    0:04:13   92808.1      0.00       0.0     348.0 top0/EXE_stage/alu/net93136 1450617472.0000      0.00  
+    0:04:15   92805.8      0.00       0.0     348.0                           1450196608.0000      0.00  
+    0:04:15   92805.8      0.00       0.0     348.0                           1450196608.0000      0.00  
 
 Threshold voltage group cell usage:
 >> saed32cell_hvt 100.00%, saed32cell_svt 0.00%
@@ -967,7 +929,7 @@ Threshold voltage group cell usage:
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
   --------- --------- --------- --------- --------- ------------------------- --------- -----------
-    0:04:19   89450.8      0.00       0.0     306.2                           1404153728.0000      0.00  
+    0:04:15   92805.8      0.00       0.0     348.0                           1450196608.0000      0.00  
   Global Optimization (Phase 35)
   Global Optimization (Phase 36)
   Global Optimization (Phase 37)
@@ -983,65 +945,62 @@ Threshold voltage group cell usage:
   Global Optimization (Phase 47)
   Global Optimization (Phase 48)
   Global Optimization (Phase 49)
-  Global Optimization (Phase 50)
-  Global Optimization (Phase 51)
-  Global Optimization (Phase 52)
-  Global Optimization (Phase 53)
-  Global Optimization (Phase 54)
-    0:05:00   84383.2      0.01       0.0     303.0 top0/EX_MEM/alu_result_v0_o_reg[31]/D 1309024000.0000      0.00  
-    0:05:02   84383.2      0.00       0.0     303.0                           1309017856.0000      0.00  
-    0:05:03   84393.6      0.00       0.0     303.0                           1309436032.0000      0.00  
-    0:05:03   84393.6      0.00       0.0     303.0                           1309436032.0000      0.00  
-    0:05:06   84387.2      0.00       0.0     303.0                           1308068992.0000      0.00  
-    0:05:06   84387.2      0.00       0.0     303.0                           1308068992.0000      0.00  
-    0:05:06   84387.2      0.00       0.0     303.0                           1308068992.0000      0.00  
-    0:05:06   84387.2      0.00       0.0     303.0                           1308068992.0000      0.00  
-    0:05:06   84387.2      0.00       0.0     303.0                           1308068992.0000      0.00  
-    0:05:06   84387.2      0.00       0.0     303.0                           1308068992.0000      0.00  
-    0:05:06   84387.2      0.00       0.0     303.0                           1308068992.0000      0.00  
-    0:05:06   84387.2      0.00       0.0     303.0                           1308068992.0000      0.00  
-    0:05:06   84387.2      0.00       0.0     303.0                           1308068992.0000      0.00  
-    0:05:06   84387.2      0.00       0.0     303.0                           1308068992.0000      0.00  
-    0:05:06   84387.2      0.00       0.0     303.0                           1308068992.0000      0.00  
-    0:05:06   84387.2      0.00       0.0     303.0                           1308068992.0000      0.00  
-    0:05:06   84387.2      0.00       0.0     303.0                           1308068992.0000      0.00  
-    0:05:06   84387.2      0.00       0.0     303.0                           1308068992.0000      0.00  
-    0:05:06   84387.2      0.00       0.0     303.0                           1308068992.0000      0.00  
-    0:05:06   84387.2      0.00       0.0     303.0                           1308068992.0000      0.00  
-    0:05:06   84387.2      0.00       0.0     303.0                           1308068992.0000      0.00  
-    0:05:06   84387.2      0.00       0.0     303.0                           1308068992.0000      0.00  
-    0:05:06   84387.2      0.00       0.0     303.0                           1308068992.0000      0.00  
+    0:05:02   87507.9      0.01       0.1     347.4 top0/EX_MEM/alu_result_v0_o_reg[31]/D 1349554816.0000      0.00  
+    0:05:05   87506.4      0.01       0.0     347.4                           1349586432.0000      0.00  
+    0:05:06   87580.1      0.00       0.0     360.0                           1352054656.0000      0.00  
+    0:05:06   87580.1      0.00       0.0     360.0                           1352054656.0000      0.00  
+    0:05:10   87499.5      0.00       0.0     360.0                           1341023616.0000      0.00  
+    0:05:10   87499.5      0.00       0.0     360.0                           1341023616.0000      0.00  
+    0:05:10   87499.5      0.00       0.0     360.0                           1341023616.0000      0.00  
+    0:05:10   87499.5      0.00       0.0     360.0                           1341023616.0000      0.00  
+    0:05:10   87499.5      0.00       0.0     360.0                           1341023616.0000      0.00  
+    0:05:10   87499.5      0.00       0.0     360.0                           1341023616.0000      0.00  
+    0:05:10   87499.5      0.00       0.0     360.0                           1341023616.0000      0.00  
+    0:05:10   87499.5      0.00       0.0     360.0                           1341023616.0000      0.00  
+    0:05:10   87499.5      0.00       0.0     360.0                           1341023616.0000      0.00  
+    0:05:10   87499.5      0.00       0.0     360.0                           1341023616.0000      0.00  
+    0:05:10   87499.5      0.00       0.0     360.0                           1341023616.0000      0.00  
+    0:05:10   87499.5      0.00       0.0     360.0                           1341023616.0000      0.00  
+    0:05:10   87499.5      0.00       0.0     360.0                           1341023616.0000      0.00  
+    0:05:10   87499.5      0.00       0.0     360.0                           1341023616.0000      0.00  
+    0:05:10   87499.5      0.00       0.0     360.0                           1341023616.0000      0.00  
+    0:05:10   87499.5      0.00       0.0     360.0                           1341023616.0000      0.00  
+    0:05:10   87499.5      0.00       0.0     360.0                           1341023616.0000      0.00  
+    0:05:10   87499.5      0.00       0.0     360.0                           1341023616.0000      0.00  
+    0:05:10   87499.5      0.00       0.0     360.0                           1341023616.0000      0.00  
 
                                   TOTAL                                                            
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
   --------- --------- --------- --------- --------- ------------------------- --------- -----------
-    0:05:08   84429.2      0.00       0.0     303.0                           1308523520.0000      0.00  
-    0:05:11   84388.5      0.10       0.5     303.0                           1305993216.0000      0.00  
-    0:05:15   84403.5      0.01       0.0     306.4                           1307767040.0000      0.00  
-    0:05:17   84402.2      0.01       0.0     306.4                           1307753216.0000      0.00  
-    0:05:20   84394.1      0.01       0.0     306.4                           1307654016.0000      0.00  
-    0:05:23   84387.2      0.01       0.0     306.2                           1307384192.0000      0.00  
-    0:05:23   84387.2      0.01       0.0     306.2                           1307384192.0000      0.00  
-    0:05:26   84396.9      0.01       0.0     306.2                           1308240384.0000      0.00  
-    0:05:35   84381.7      0.01       0.0     306.2                           1308075008.0000      0.00  
-    0:05:44   84373.3      0.01       0.0     305.3 top0/EXE_stage/alu/net116699 1307441408.0000      0.00  
-    0:05:47   84373.0      0.01       0.0     305.3 top0/ID_stage/net120034   1307426432.0000      0.00  
-    0:05:50   84374.8      0.01       0.0     305.3 top0/EXE_stage/alu/net105489 1307468800.0000      0.00  
-    0:06:07   84374.8      0.01       0.0     305.3 top0/EX_MEM/alu_result_v1_o_reg[31]/D 1307468800.0000      0.00  
-    0:06:14   84381.9      0.00       0.0     304.6 top0/EXE_stage/alu/net124232 1307427712.0000      0.00  
-    0:06:22   84386.2      0.04       0.3     303.2 top0/EXE_stage/alu/net112224 1307248768.0000      0.00  
-    0:06:27   84389.3      0.05       0.4     301.5 top0/EXE_stage/alu/net118047 1307206272.0000      0.00  
-    0:06:30   84390.3      0.05       0.4     301.5 top0/EXE_stage/alu/net124232 1307351680.0000      0.00  
-    0:06:31   84390.3      0.05       0.4     301.5 top0/EXE_stage/alu/net101606 1307387904.0000      0.00  
-    0:06:33   84390.5      0.05       0.4     301.5 top0/EXE_stage/alu/net99250 1307411968.0000      0.00  
-    0:06:44   84393.9      0.01       0.1     301.5 top0/EXE_stage/alu/net97373 1307746560.0000      0.00  
-    0:06:45   84394.1      0.01       0.1     301.5 top0/EXE_stage/alu/net105590 1307770624.0000      0.00  
-    0:06:47   84393.9      0.01       0.1     301.5                           1307752576.0000      0.00  
-    0:06:47   84570.0      0.00       0.0     347.5                           1311088640.0000      0.00  
-    0:06:48   84570.0      0.00       0.0     347.5                           1311088640.0000      0.00  
-    0:06:48   84570.0      0.00       0.0     347.5                           1311088640.0000      0.00  
-    0:06:49   84551.4      0.00       0.0     347.5                           1309228032.0000      0.00  
+    0:05:12   87499.5      0.00       0.0     360.0                           1341023616.0000      0.00  
+    0:05:16   87385.9      0.11       0.8     359.3                           1334508672.0000      0.00  
+    0:05:20   87389.7      0.01       0.0     372.8                           1336613888.0000      0.00  
+    0:05:22   87385.4      0.01       0.0     372.9                           1336572416.0000      0.00  
+    0:05:24   87357.7      0.01       0.0     372.9                           1336131328.0000      0.00  
+    0:05:25   87356.2      0.01       0.0     372.9                           1336126720.0000      0.00  
+    0:05:25   87356.2      0.01       0.0     372.9                           1336126720.0000      0.00  
+    0:05:29   87371.1      0.01       0.0     372.9                           1337150720.0000      0.00  
+    0:05:35   87338.1      0.01       0.0     372.9                           1336792576.0000      0.00  
+    0:05:38   87304.8      0.00       0.0     372.8                           1336416512.0000      0.00  
+    0:05:47   87498.0      0.00       0.0     362.1 top0/EXE_stage/alu/net109893 1344647808.0000      0.00  
+    0:05:49   87477.4      0.00       0.0     352.0 top0/EXE_stage/alu/net120957 1341355520.0000      0.00  
+    0:05:53   87459.6      0.00       0.0     352.0 top0/EXE_stage/alu/net93160 1338685440.0000      0.00  
+    0:06:08   87459.3      0.00       0.0     352.0 top0/EX_MEM/alu_result_v0_o_reg[30]/D 1338622080.0000      0.00  
+    0:06:17   87458.1      0.00       0.0     352.0 top0/EXE_stage/alu/net106846 1338310272.0000      0.00  
+    0:06:20   87462.9      0.00       0.0     351.6 top0/EXE_stage/alu/read_data_v1_1[30] 1338354944.0000      0.00  
+    0:06:23   87476.6      0.07       0.5     349.2 top0/EXE_stage/alu/net108442 1338364288.0000      0.00  
+    0:06:27   87477.4      0.07       0.5     349.2 top0/EXE_stage/alu/net117757 1338452352.0000      0.00  
+    0:06:31   87478.1      0.07       0.5     349.2 top0/EXE_stage/alu/net118342 1338585472.0000      0.00  
+    0:06:36   87492.4      0.01       0.1     348.9 top0/EX_MEM/alu_result_v0_o_reg[30]/D 1339763712.0000      0.00  
+    0:06:41   87496.2      0.01       0.0     348.5 top0/EXE_stage/alu/net101018 1339745408.0000      0.00  
+    0:06:46   87495.4      0.01       0.1     348.5 top0/EXE_stage/alu/net120721 1339600128.0000      0.00  
+    0:06:49   87495.9      0.01       0.1     348.5 top0/EXE_stage/alu/net85584 1339572992.0000      0.00  
+    0:06:50   87494.4      0.01       0.1     348.5                           1339501568.0000      0.00  
+    0:06:51   87593.3      0.00       0.0     370.7                           1341594496.0000      0.00  
+    0:06:51   87593.3      0.00       0.0     370.7                           1341594496.0000      0.00  
+    0:06:51   87593.3      0.00       0.0     370.7                           1341594496.0000      0.00  
+    0:06:55   87566.3      0.00       0.0     372.4                           1338778624.0000      0.00  
 Loading db file '/usr/cadtool/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95v125c.db'
 Loading db file '/usr/cadtool/SAED32_EDK/lib/io_std/db_nldm/saed32io_wb_ss0p95v125c_2p25v.db'
 
@@ -1061,72 +1020,6 @@ Information: Propagating switching activity (low effort zero delay simulation). 
 #compile_ultra -incremental -exact_map -no_autoungroup -no_seq_output_inversion -no_boundary_optimization
 # remove dummy ports
 remove_unconnected_ports [get_cells -hierarchical *]
-Removing port 'peri_web' from design 'ID_stage'
-Removing port 'peri_addr[15]' from design 'ID_stage'
-Removing port 'peri_addr[14]' from design 'ID_stage'
-Removing port 'peri_addr[13]' from design 'ID_stage'
-Removing port 'peri_addr[12]' from design 'ID_stage'
-Removing port 'peri_addr[11]' from design 'ID_stage'
-Removing port 'peri_addr[10]' from design 'ID_stage'
-Removing port 'peri_addr[9]' from design 'ID_stage'
-Removing port 'peri_addr[8]' from design 'ID_stage'
-Removing port 'peri_addr[7]' from design 'ID_stage'
-Removing port 'peri_addr[6]' from design 'ID_stage'
-Removing port 'peri_addr[5]' from design 'ID_stage'
-Removing port 'peri_addr[4]' from design 'ID_stage'
-Removing port 'peri_addr[3]' from design 'ID_stage'
-Removing port 'peri_addr[2]' from design 'ID_stage'
-Removing port 'peri_addr[1]' from design 'ID_stage'
-Removing port 'peri_addr[0]' from design 'ID_stage'
-Removing port 'peri_datao[15]' from design 'ID_stage'
-Removing port 'peri_datao[14]' from design 'ID_stage'
-Removing port 'peri_datao[13]' from design 'ID_stage'
-Removing port 'peri_datao[12]' from design 'ID_stage'
-Removing port 'peri_datao[11]' from design 'ID_stage'
-Removing port 'peri_datao[10]' from design 'ID_stage'
-Removing port 'peri_datao[9]' from design 'ID_stage'
-Removing port 'peri_datao[8]' from design 'ID_stage'
-Removing port 'peri_datao[7]' from design 'ID_stage'
-Removing port 'peri_datao[6]' from design 'ID_stage'
-Removing port 'peri_datao[5]' from design 'ID_stage'
-Removing port 'peri_datao[4]' from design 'ID_stage'
-Removing port 'peri_datao[3]' from design 'ID_stage'
-Removing port 'peri_datao[2]' from design 'ID_stage'
-Removing port 'peri_datao[1]' from design 'ID_stage'
-Removing port 'peri_datao[0]' from design 'ID_stage'
-Removing port 'peri_web' from design 'top'
-Removing port 'peri_addr[15]' from design 'top'
-Removing port 'peri_addr[14]' from design 'top'
-Removing port 'peri_addr[13]' from design 'top'
-Removing port 'peri_addr[12]' from design 'top'
-Removing port 'peri_addr[11]' from design 'top'
-Removing port 'peri_addr[10]' from design 'top'
-Removing port 'peri_addr[9]' from design 'top'
-Removing port 'peri_addr[8]' from design 'top'
-Removing port 'peri_addr[7]' from design 'top'
-Removing port 'peri_addr[6]' from design 'top'
-Removing port 'peri_addr[5]' from design 'top'
-Removing port 'peri_addr[4]' from design 'top'
-Removing port 'peri_addr[3]' from design 'top'
-Removing port 'peri_addr[2]' from design 'top'
-Removing port 'peri_addr[1]' from design 'top'
-Removing port 'peri_addr[0]' from design 'top'
-Removing port 'peri_datao[15]' from design 'top'
-Removing port 'peri_datao[14]' from design 'top'
-Removing port 'peri_datao[13]' from design 'top'
-Removing port 'peri_datao[12]' from design 'top'
-Removing port 'peri_datao[11]' from design 'top'
-Removing port 'peri_datao[10]' from design 'top'
-Removing port 'peri_datao[9]' from design 'top'
-Removing port 'peri_datao[8]' from design 'top'
-Removing port 'peri_datao[7]' from design 'top'
-Removing port 'peri_datao[6]' from design 'top'
-Removing port 'peri_datao[5]' from design 'top'
-Removing port 'peri_datao[4]' from design 'top'
-Removing port 'peri_datao[3]' from design 'top'
-Removing port 'peri_datao[2]' from design 'top'
-Removing port 'peri_datao[1]' from design 'top'
-Removing port 'peri_datao[0]' from design 'top'
 1
 remove_unconnected_ports [get_cells -hierarchical *] -blast_buses
 Removing port 'instn[25]' from design 'controller'

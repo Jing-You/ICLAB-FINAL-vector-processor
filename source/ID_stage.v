@@ -50,9 +50,9 @@ module ID_stage(
 	state,
 	beq_enable,
 	next_state,
-    peri_web,
-    peri_addr,
-    peri_datao,
+    // peri_web,
+    // peri_addr,
+    // peri_datao,
 
 	read_data_v2_0,
 	read_data_v2_1,
@@ -114,12 +114,12 @@ output   MemtoReg;
 output	[1:0] next_state;
 output	beq_enable;
 
-output  peri_web;
-output [15:0] peri_addr;
-output [15:0] peri_datao;
-assign peri_web = 0; // dont care
-assign peri_addr = 0; // dont care
-assign peri_datao = 0; // dont care
+// output  peri_web;
+// output [15:0] peri_addr;
+// output [15:0] peri_datao;
+// assign peri_web = 0; // dont care
+// assign peri_addr = 0; // dont care
+// assign peri_datao = 0; // dont care
 
 output [31:0] read_data_v1_0;
 output [31:0] read_data_v1_1;

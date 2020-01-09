@@ -2,7 +2,7 @@
 (SAIFVERSION "2.0")
 (DIRECTION "backward")
 (DESIGN "top_pipe")
-(DATE "Tue Jan  7 00:25:46 2020")
+(DATE "Thu Jan  9 19:06:24 2020")
 (VENDOR "Synopsys, Inc")
 (PROGRAM_NAME "Power Compiler write_saif")
 (PROGRAM_VERSION "O-2018.06")

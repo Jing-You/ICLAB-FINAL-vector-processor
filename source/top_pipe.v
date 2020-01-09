@@ -7,9 +7,9 @@ module top_pipe(
   // boot_datai,
   // boot_web,
   //output (peripheral write)
-  peri_web,
-  peri_addr,
-  peri_datao,
+  // peri_web,
+  // peri_addr,
+  // peri_datao,
 	// MEM_stage
 	MEM_alu_result,
 	MEM_write_data,
@@ -28,9 +28,9 @@ input boot_up;
 // input [31:0] boot_datai;
 // input boot_web;
 
-output  peri_web;
-output [15:0] peri_addr;
-output [15:0] peri_datao;
+// output  peri_web;
+// output [15:0] peri_addr;
+// output [15:0] peri_datao;
 
 // MEM_stage
 output [31:0] MEM_alu_result;
@@ -49,13 +49,13 @@ reg boot_up_d;
 // reg [31:0] boot_datai_d;
 // reg boot_web_d;
 
-reg  peri_web;
-reg [15:0] peri_addr;
-reg [15:0] peri_datao;
+// reg  peri_web;
+// reg [15:0] peri_addr;
+// reg [15:0] peri_datao;
 
-wire  peri_web_pre;
-wire [15:0] peri_addr_pre;
-wire [15:0] peri_datao_pre;
+// wire  peri_web_pre;
+// wire [15:0] peri_addr_pre;
+// wire [15:0] peri_datao_pre;
 
 
 
@@ -77,9 +77,9 @@ always@(posedge clk) begin
   // boot_addr_d <= boot_addr;
   // boot_datai_d <= boot_datai;
   // boot_web_d <= boot_web;
-  peri_web <= peri_web_pre;
-  peri_addr <= peri_addr_pre;
-  peri_datao <= peri_datao_pre;
+  // peri_web <= peri_web_pre;
+  // peri_addr <= peri_addr_pre;
+  // peri_datao <= peri_datao_pre;
 end
 
 top top0(
@@ -94,9 +94,9 @@ top top0(
   // .peri_web(peri_web_pre),
   // .peri_addr(peri_addr_pre),
   // .peri_datao(peri_datao_pre)
-  .peri_web(peri_web_pre),
-  .peri_addr(peri_addr_pre),
-  .peri_datao(peri_datao_pre),
+  // .peri_web(peri_web_pre),
+  // .peri_addr(peri_addr_pre),
+  // .peri_datao(peri_datao_pre),
   // MEM
   .MEM_alu_result(MEM_alu_result),
   .MEM_write_data(MEM_write_data),
