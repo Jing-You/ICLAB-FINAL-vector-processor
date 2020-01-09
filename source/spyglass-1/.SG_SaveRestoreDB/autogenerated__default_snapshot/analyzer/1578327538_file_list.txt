@@ -1,0 +1,15 @@
+0 top_pipe.v
+1 top.v
+2 CPU_define.v
+3 alu.v
+4 controller.v
+5 PC.v
+6 regfile.v
+7 IF_stage.v
+8 IF_ID.v
+9 ID_stage.v
+10 ID_EXE.v
+11 EXE_stage.v
+12 EX_MEM.v
+13 MEM_WB_stage.v
+14 WB_stage.v

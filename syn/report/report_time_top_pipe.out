@@ -1,0 +1,87 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : top_pipe
+Version: O-2018.06
+Date   : Thu Jan  9 19:06:24 2020
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: ss0p95v125c   Library: saed32hvt_ss0p95v125c
+Wire Load Model Mode: enclosed
+
+  Startpoint: top0/ID_stage/cnt_reg_0_
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: top0/ID_stage/clk_gate_instn_LW_SW_reg_2/latch
+            (positive level-sensitive latch clocked by clk')
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ID_stage           35000                 saed32hvt_ss0p95v125c
+  top                140000                saed32hvt_ss0p95v125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                 0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  top0/ID_stage/cnt_reg_0_/CLK (DFFSSRX1_HVT)           0.0000     0.0000 r
+  top0/ID_stage/cnt_reg_0_/Q (DFFSSRX1_HVT)             0.2518     0.2518 f
+  top0/ID_stage/U149/Y (OR2X1_HVT)                      0.0859     0.3378 f
+  top0/ID_stage/U213/Y (INVX0_HVT)                      0.0366     0.3744 r
+  top0/ID_stage/U214/Y (NAND2X0_HVT)                    0.0676     0.4420 f
+  top0/ID_stage/U223/Y (NOR2X0_HVT)                     0.1270     0.5690 r
+  top0/ID_stage/U249/Y (NAND2X0_HVT)                    0.0879     0.6569 f
+  top0/ID_stage/U250/Y (OR2X1_HVT)                      0.0856     0.7425 f
+  top0/ID_stage/U251/Y (OR2X1_HVT)                      0.0798     0.8223 f
+  top0/ID_stage/U252/Y (OR2X1_HVT)                      0.0874     0.9097 f
+  top0/ID_stage/U253/Y (OR2X1_HVT)                      0.0677     0.9775 f
+  top0/ID_stage/U254/Y (OR2X1_HVT)                      0.0765     1.0539 f
+  top0/ID_stage/U255/Y (OR2X1_HVT)                      0.0802     1.1341 f
+  top0/ID_stage/U256/Y (OR2X1_HVT)                      0.0803     1.2144 f
+  top0/ID_stage/U277/Y (OR2X1_HVT)                      0.0803     1.2947 f
+  top0/ID_stage/U278/Y (OR2X1_HVT)                      0.0802     1.3749 f
+  top0/ID_stage/U292/Y (OR2X1_HVT)                      0.0802     1.4552 f
+  top0/ID_stage/U295/Y (OR2X1_HVT)                      0.0803     1.5354 f
+  top0/ID_stage/U298/Y (OR2X1_HVT)                      0.0874     1.6229 f
+  top0/ID_stage/U133/Y (INVX0_HVT)                      0.0332     1.6561 r
+  top0/ID_stage/U134/Y (INVX0_HVT)                      0.0375     1.6936 f
+  top0/ID_stage/U299/Y (XNOR2X1_HVT)                    0.1516     1.8452 r
+  top0/ID_stage/U356/Y (OR3X1_HVT)                      0.1129     1.9581 r
+  top0/ID_stage/U357/Y (OA21X1_HVT)                     0.1086     2.0667 r
+  top0/ID_stage/U358/Y (NOR4X1_HVT)                     0.1517     2.2183 f
+  top0/ID_stage/U371/Y (NAND2X0_HVT)                    0.0596     2.2779 r
+  top0/ID_stage/clk_gate_instn_LW_SW_reg_2/EN (SNPS_CLOCK_GATE_HIGH_ID_stage_mydesign_1)
+                                                        0.0000     2.2779 r
+  top0/ID_stage/clk_gate_instn_LW_SW_reg_2/latch/D (LATCHX1_HVT)
+                                                        0.0000     2.2779 r
+  data arrival time                                                2.2779
+
+  clock clk' (rise edge)                                1.9000     1.9000
+  clock network delay (ideal)                           0.0000     1.9000
+  top0/ID_stage/clk_gate_instn_LW_SW_reg_2/latch/CLK (LATCHX1_HVT)
+                                                        0.0000     1.9000 r
+  time borrowed from endpoint                           0.3779     2.2779
+  data required time                                               2.2779
+  --------------------------------------------------------------------------
+  data required time                                               2.2779
+  data arrival time                                               -2.2779
+  --------------------------------------------------------------------------
+  slack (MET)                                                      0.0000
+
+  Time Borrowing Information
+  --------------------------------------------------------------
+  clk' nominal pulse width                              1.9000   
+  library setup time                                   -0.1178   
+  --------------------------------------------------------------
+  max time borrow                                       1.7822   
+  actual time borrow                                    0.3779   
+  --------------------------------------------------------------
+
+
+1

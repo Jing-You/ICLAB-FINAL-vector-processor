@@ -5,7 +5,6 @@ module EX_MEM(
 	input [15:0] PC_i,
 	input RegWrite_i,
 	input [31:0] alu_result_i,
-	input wirte_enable,	// low activa for sram
   	input [4:0] write_addr_i,	// register addr
     input [31:0] write_data_i, // mem data
 
@@ -13,7 +12,7 @@ module EX_MEM(
   	input zero_i,
 	input MemtoReg_i,
 	input branch_i,
-    input [31:0] read_data2_i,
+    // input [31:0] read_data2_i,
     input [31:0] alu_result_v0_i,
     input [31:0] alu_result_v1_i,
     input [31:0] alu_result_v2_i,
@@ -34,7 +33,7 @@ module EX_MEM(
   	output reg zero_o,
 	output reg MemtoReg_o,
 	output reg branch_o,
-    output reg [31:0] read_data2_o,
+    // output reg [31:0] read_data2_o,
     output reg [31:0] alu_result_v0_o,
     output reg [31:0] alu_result_v1_o,
     output reg [31:0] alu_result_v2_o,
@@ -58,7 +57,7 @@ always @(posedge clk) begin
         zero_o          <= 0;
         MemtoReg_o      <= 0;
         branch_o        <= 0;
-        read_data2_o    <= 0;
+        // read_data2_o    <= 0;
         alu_result_v0_o <= 0; 
         alu_result_v1_o <= 0;
         alu_result_v2_o <= 0;
@@ -79,7 +78,7 @@ always @(posedge clk) begin
         zero_o          <= zero_i;
         MemtoReg_o      <= MemtoReg_i;
         branch_o        <= branch_i;
-        read_data2_o    <= read_data2_i;
+        // read_data2_o    <= read_data2_i;
         alu_result_v0_o <= alu_result_v0_i; 
         alu_result_v1_o <= alu_result_v1_i;
         alu_result_v2_o <= alu_result_v2_i;

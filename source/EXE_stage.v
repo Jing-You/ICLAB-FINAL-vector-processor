@@ -32,7 +32,7 @@ module EXE_stage(
 	read_data_v2_6,
 	read_data_v2_7,
 	cnt,
-	vlen,
+	// vlen,
 
 
 
@@ -40,7 +40,7 @@ module EXE_stage(
 	//output
 	write_addr,
 	alu_result,
-	alu_overflow,
+	// alu_overflow,
 	zero,
 	PC_out,
 
@@ -71,7 +71,7 @@ input ALUSrc;
 
 output reg[4:0] write_addr;
 output signed [31:0]alu_result;
-output alu_overflow;
+// output alu_overflow;
 output zero;
 output reg [15:0]PC_out;
 
@@ -91,8 +91,8 @@ input [31:0] read_data_v2_4;
 input [31:0] read_data_v2_5;
 input [31:0] read_data_v2_6;
 input [31:0] read_data_v2_7;
-input [4:0]  cnt;
-input [31:0] vlen;
+input [31:0]  cnt;
+// input [31:0] vlen;
 
 
 output [31:0] alu_result_v0;
@@ -125,7 +125,7 @@ end
 alu alu(
 	//input
 	//.en_exe(en_exe),
-	.cnt(cnt),
+	// .cnt(cnt),
 	.read_data1(read_data1),
 	.read_data2(read_data2),
 	.immd(immd),
@@ -135,7 +135,7 @@ alu alu(
 	.ALUSrc(ALUSrc),
 	//output
 	.alu_result(alu_result),
-	.alu_overflow(alu_overflow),
+	// .alu_overflow(alu_overflow),
 	.zero(zero),
 	.read_data_v1_0(read_data_v1_0),
 	.read_data_v1_1(read_data_v1_1),

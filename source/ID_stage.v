@@ -23,11 +23,11 @@ module ID_stage(
 	///////////////////////output//////////////////////
 	read_data1,
 	read_data2,
-	dsram_out,			//dsram Read data
+	// dsram_out,			//dsram Read data
 	//instruction type
-	opcode,
+	// opcode,
 	rd_addr,
-	rs_addr,
+	// rs_addr,
 	rt_addr,
 	shamt,  
 	funct, 
@@ -50,9 +50,9 @@ module ID_stage(
 	state,
 	beq_enable,
 	next_state,
-    peri_web,
-    peri_addr,
-    peri_datao,
+    // peri_web,
+    // peri_addr,
+    // peri_datao,
 
 	read_data_v2_0,
 	read_data_v2_1,
@@ -70,8 +70,8 @@ module ID_stage(
 	read_data_v1_5,
 	read_data_v1_6,
 	read_data_v1_7,
-	cnt,
-	vlen
+	cnt
+	// vlen
 
 );
 
@@ -95,8 +95,10 @@ input 	[31:0] write_data_v7;
 
 output 	[31:0]read_data1;
 output 	[31:0]read_data2;
-output  [5:0]opcode;
-output  [4:0]rd_addr, rs_addr, rt_addr;
+// output  [5:0]opcode;
+output  [4:0]rd_addr;
+// output  [4:0]rs_addr;
+output  [4:0]rt_addr;
 output  [4:0]shamt;
 output  [5:0]funct;
 output  [31:0]immd;
@@ -108,13 +110,16 @@ output   branch;
 output   MemWrite;		
 output   RegWrite;
 output   MemtoReg;
-output   [31:0]dsram_out;
+// output   [31:0]dsram_out;
 output	[1:0] next_state;
 output	beq_enable;
 
-output  peri_web;
-output [15:0] peri_addr;
-output [15:0] peri_datao;
+// output  peri_web;
+// output [15:0] peri_addr;
+// output [15:0] peri_datao;
+// assign peri_web = 0; // dont care
+// assign peri_addr = 0; // dont care
+// assign peri_datao = 0; // dont care
 
 output [31:0] read_data_v1_0;
 output [31:0] read_data_v1_1;
@@ -133,22 +138,24 @@ output [31:0] read_data_v2_5;
 output [31:0] read_data_v2_6;
 output [31:0] read_data_v2_7;
 output [31:0] cnt;
-output [31:0] vlen;
+// output [31:0] vlen;
+wire    [5:0]opcode;
 output VRegWrite;
-wire    [4:0]rt_addr, rs_addr;
+wire    [4:0]rt_addr;
+wire    [4:0]rs_addr;
 wire    MemWrite;
 //data memory
-wire [31:0] sw_data;
-wire [7:0] data_addr;
+// wire [31:0] sw_data;
+// wire [7:0] data_addr;
 // vector mode
 wire [31:0] vlen;
 reg [31:0] instn_LW_SW;
 reg [31:0] instn;
-reg [4:0] cnt, cnt_n;
-wire [4:0] cnt_offset;
+reg [31:0] cnt, cnt_n;
+wire [31:0] cnt_offset;
 reg VectorSWLW;
 
-assign cnt_offset = cnt - 1;
+assign cnt_offset = cnt_n - 1;
 
 assign rs_addr = instn[25:21];
 assign rt_addr = instn[20:16];
@@ -157,7 +164,7 @@ assign shamt   = instn[10:6];
 assign funct   = instn[5:0];
 
 assign immd    = {{16{instn[15]}}, instn[15:0]};
-assign data_addr = instn[7:0];
+// assign data_addr = instn[7:0];
 
 
 always @(*) begin
@@ -185,11 +192,11 @@ always @(posedge clk) begin
 end
 
 // old instn
-always @(*) begin
-	if (cnt > 0) begin
-		instn_LW_SW = {instn[31], 1'b0, instn[29:26], rs_addr[4:0], rt_addr[4:0], rd_addr[4:0], cnt_offset[4:0], instn[5:0]};
+always @(posedge clk) begin
+	if (cnt_n > 0) begin
+		instn_LW_SW <= {instn[31], 1'b0, instn[29:26], instn[25:21], instn[20:16], instn[15:11], cnt_offset[4:0], instn[5:0]};
 	end
-	else instn_LW_SW = instn;
+	else instn_LW_SW <= instn;
 end
 
 // Vector instn control SW/LW
@@ -238,7 +245,7 @@ regfile regfile(
 	.write(WB_RegWrite),
 	.VRegWrite(WB_VRegWrite),
 	//data memory
-	.sw_data(sw_data),
+	// .sw_data(sw_data),
 	// vector length
 	.vlen(vlen)
 );

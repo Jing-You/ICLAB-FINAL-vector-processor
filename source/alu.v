@@ -1,16 +1,16 @@
 module alu(
 	//en_exe,
-	cnt,
+	// cnt,
 	read_data1,
 	read_data2,
-	opcode,
+	// opcode,
 	shamt,
 	funct,
 	immd,
 	ALUOp,
 	ALUSrc,
 	alu_result,
-	alu_overflow,
+	// alu_overflow,
 	zero,
 	read_data_v1_0,
 	read_data_v1_1,
@@ -48,8 +48,8 @@ parameter 	ADD_V = 6'b110000,
 			MUL_V = 6'b110101;
 
 //input en_exe;
-input [5:0]opcode;
-input [4:0] cnt;
+// input [5:0]opcode;
+// input [31:0] cnt;
 input [4:0]shamt;
 input [5:0]funct;
 input signed[31:0] immd;
@@ -60,7 +60,7 @@ input ALUSrc;
 
 
 output wire signed [31:0] alu_result;
-output reg alu_overflow;			
+// output reg alu_overflow;			
 output reg zero;						//for branch condition
 
 reg signed [31:0] src1, src2;
@@ -233,13 +233,12 @@ end
 assign alu_result = (funct == `ABS)? abs_result : alu_result_tmp;
 
 
-always@(*) begin
-	if( (alu_result[31]==0 && src1[31]==1 && src2[31]==1 )||( alu_result[31]==1  && src1[31]==0 && src2[31]==0 ) )
-		alu_overflow = 1'b1;
-	else 
-		alu_overflow = 1'b0;
-
-end
+// always@(*) begin
+	// if( (alu_result[31]==0 && src1[31]==1 && src2[31]==1 )||( alu_result[31]==1  && src1[31]==0 && src2[31]==0 ) )
+		// alu_overflow = 1'b1;
+	// else 
+		// alu_overflow = 1'b0;
+// end
 
 assign sub_temp1 = (funct == `ABS)? (src1-src2) : 0;
 assign abs_result = (sub_temp1[31]==1)? (~sub_temp1+1) : sub_temp1;

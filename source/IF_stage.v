@@ -2,20 +2,18 @@ module IF_stage(
 input clk,
 input rst_n,
 input boot_up,
-input [7:0] boot_addr,
-input [31:0] boot_datai,
-input boot_web,
+// input [7:0] boot_addr,
+// input [31:0] boot_datai,
+// input boot_web,
 input [15:0] Branch_in,
 input PCSrc,
-output [31:0] instn,
+// output [31:0] instn,
 output PC_run,
 output [15:0] PC_add
 
 );
 
-wire [9:0] PC_out;
-wire [7:0] ins_addr;
-assign ins_addr = PC_add[9:2];
+// wire [9:0] PC_out;
 
 PC PC(
 	.clk(clk),
@@ -27,6 +25,7 @@ PC PC(
 	.Branch_in(Branch_in)
 );
 
+/*
 wire icache_en_wr = PC_run ? 1'b1 : boot_web;
 wire [7:0] icache_addr = PC_run ? ins_addr : boot_addr;
 
@@ -37,6 +36,6 @@ dsram icache(
 	.in(boot_datai),
 	.out(instn)
 );
-
+*/
 
 endmodule
